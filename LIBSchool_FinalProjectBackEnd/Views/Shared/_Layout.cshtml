@@ -1,0 +1,311 @@
+﻿@model HomeVM
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/scss/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <nav id="topbar">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-7 col-md-2 col-sm-2">
+                        <div class="contact mt-3">
+                            <ul class="d-flex">
+                                <li><i class="fa-solid fa-phone-flip me-1"></i> @layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="phone").Value</li>
+                                <li><i class="fa-solid fa-location-dot me-1"></i> @layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="location").Value</li>
+                                <li><i class="fa-regular fa-clock me-1"></i> Sizə uyğun vaxtda</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8 col-sm-9">
+
+                        <div class="account d-flex justify-content-end">
+                            <div class="responsiveIconsTopbar">
+                                <ul class="d-flex justify-content-end">
+                                    <li><a href="./wishlist.html"><i class="fa-regular fa-heart"></i></a></li>
+                                    <li>
+                                        <a href="./basket.html">
+                                            <i class="fa-solid fa-basket-shopping"></i>
+                                            <sup>2</sub>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                           id="searchBlurEffect"><i class="fa-solid fa-magnifying-glass me-4"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="./login.html">
+                                <span class="me-2">
+                                    <i class="fa-solid fa-user me-2"></i>Login
+                                </span>
+                            </a>
+                            <div class="line"></div>
+                            <a href="./login.html"><span class="ms-2">Register</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="mainbar">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-1">
+                        <div class="logo mt-2 d-flex justify-content-between">
+                            <img src="./assets/img/logo/LIB-logo.png" alt="">
+                            <i class="fa-solid fa-bars mt-4"></i>
+
+                        </div>
+                        <div class="respmenu mt-3">
+                            <ul>
+                                <li class="d-flex justify-content-between yellowService">
+                                    <div class="serviceRespo">
+                                        <a href="./service.html">XİDMƏTLƏR</a>
+                                    </div>
+                                    <div class="iconmenuresponsive">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+
+                                </li>
+                                <div class="serviceClick">
+                                    <ul>
+                                        <li>
+                                            <a href="./search.html">İngilis dili</a>
+                                            <div class="languageboxes">
+                                                <ul>
+                                                    <li><a href="./detail.html">- Ümumi ingilis dili</a></li>
+                                                    <li><a href="">- İELTS proqramı</a></li>
+                                                    <li><a href="">- Məktəblilər üçün ingilis dili</a></li>
+                                                    <li><a href="">- İngilis dili youtalk</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">Rus dili</a>
+                                            <div class="languageboxes">
+                                                <ul>
+                                                    <li><a href="">- Rus dili ümumi</a></li>
+                                                    <li><a href="">- Məktəblilər rus dili</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">Alman dili</a>
+                                            <div class="languageboxes">
+                                                <ul>
+                                                    <li><a href="">- Alman dili danışıq kursu</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="">Self study proqramı</a>
+                                            <div class="languageboxes">
+                                                <ul>
+                                                    <li><a href="">- İngilis dili self study proqramı</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <li class="d-flex justify-content-between yellowabout">
+                                    <div class="aboutRespo">
+                                        <a href="./about.html">HAQQIMIZDA</a>
+                                    </div>
+                                    <div class="iconmenuabout">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+
+                                </li>
+                                <div class="aboutClick">
+                                    <ul>
+                                        <li>
+                                            <div class="languageboxes">
+                                                <ul>
+                                                    <li><a href="./about.html">- Nə üçün biz?</a></li>
+                                                    <li><a href="./about.html">- Komandamız</a></li>
+                                                    <li><a href="./career.html">- Komandamıza qoşulun</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <li class="d-flex justify-content-between yellowbranch">
+                                    <div class="branchRespo">
+                                        <a href="./branch.html">FİLİALLAR</a>
+                                    </div>
+                                    <div class="iconmenubranch">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+
+                                </li>
+                                <div class="branchClick">
+                                    <ul>
+                                        <li>
+                                            <div class="languageboxes">
+                                                <ul>
+                                                    <li><a href="./branch.html #mainbranch">- Mərkəz Filialı</a></li>
+                                                    <li>
+                                                        <a href="./branch.html #anotherbranch">- Əhmədli Filialı</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <li><a href="./gallery.html">QALEREYA</a></li>
+                                <li><a href="./contact.html">ƏLAQƏ</a></li>
+                            </ul>
+                            <div class="searchinputResponsive">
+                                <input type="text" placeholder="Search...">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="menu">
+                            <ul class="d-flex justify-content-evenly">
+                                <li>
+                                    <a href="./service.html">XIDMƏTLƏR</a>
+                                    <div class="dropdown-menu">
+                                        <ul>
+                                            @foreach (Category category in Model.Categories)
+                                            {
+                                                <li>
+                                                    <a href ="#">
+                                                        @category.Name <i class="fa-solid fa-angle-right me-2"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu-1">
+                                                        <ul>
+                                                        @foreach (SubCategory sub in Model.SubCategories.FindAll(s => s.CategoryId == category.Id))
+                                                        {
+                                                                <li><a asp-route-id=@sub.Id>@sub.Name</a></li>
+                                                        }
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="./about.html">HAQQIMIZDA</a>
+                                    <div class="dropdown-menu">
+                                        <ul>
+                                            <li><a href="./about.html">Nə üçün biz? </a></li>
+                                            <li><a href="./about.html">Komandamız </a></li>
+                                            <li><a href="./career.html">Komandamıza qoşulun </a></li>
+                                            <li><a href="">Bloq </a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="./branch.html">FİLİALLAR</a>
+                                    <div class="dropdown-menu">
+                                        <ul>
+                                            <li><a href="./branch.html #mainbranch">Mərkəz Filialı </a></li>
+                                            <li><a href="./branch.html #anotherbranch">Əhmədli Filialı </a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="./gallery.html">QALEREYA</a></li>
+                                <li><a href="./contact.html">ƏLAQƏ</a></li>
+                                <li><a href="./wishlist.html"><i class="fa-regular fa-heart"></i></a></li>
+                                <li>
+                                    <a href="./basket.html">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                        <sup>2</sub>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                       id="searchBlurEffect"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="modal fade centerSearch " id="exampleModal" tabindex="-1"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog ">
+                                <label for="">AXTARIŞ</label>
+                                <div class="modal-content mt-2">
+                                    <div class="modal-body">
+                                        <div class="input">
+                                            <input type="text" name="" id=""
+                                                   placeholder="Axtarmaq istədiyiniz sözü yazın...">
+                                        </div>
+                                        <div class="btn">
+                                            <button class="btn btn-success">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <section id="copy">
+            <div class="container">
+                <div class="row mt-5 d-flex justify-content-between">
+                    <div class="col-10">
+                        <div class="text m-3">
+                            <img src="./assets/img/logo/lib-logo-white-2-50x56.png" alt="">
+                            <span class="ms-2">Bütün hüquqlar qorunur 2011-2021 © </span>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="social mt-3">
+                            <ul class="d-flex justify-content-evenly">
+                                <li><a href="@layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="facebook").URL"><span><i class="@layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="facebook").Value"></i></span></a></li>
+                                <li><a href="@layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="instagram").URL"><span><i class="@layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="instagram").Value"></i></span></a></li>
+                                <li><a href="@layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="linkedin").URL"><span><i class="@layoutservice.GetDatas().Result.FirstOrDefault(f=>f.Key.ToLower().Trim()=="linkedin").Value"></i></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="./assets/jquery.counterup.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="~/assets/js/script.js"></script>
+
+</body>
+
+</html>

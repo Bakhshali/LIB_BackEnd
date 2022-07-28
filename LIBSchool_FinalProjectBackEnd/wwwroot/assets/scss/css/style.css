@@ -1,0 +1,2886 @@
+header #mainbar .container .row .logo img {
+  width: 100px;
+}
+header #mainbar .container .row .logo i {
+  font-size: 30px;
+  color: #f2c448;
+  cursor: pointer;
+}
+header #mainbar .container .row .respmenu {
+  width: 100%;
+  background-color: #F0F2F5;
+}
+header #mainbar .container .row .respmenu .serviceClick {
+  background-color: white;
+}
+header #mainbar .container .row .respmenu .serviceClick li {
+  border: none;
+}
+header #mainbar .container .row .respmenu .serviceClick li a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2C75E4;
+  font-size: 16px;
+}
+header #mainbar .container .row .respmenu .serviceClick .languageboxes li a {
+  color: #273044;
+  font-size: 15px;
+}
+header #mainbar .container .row .respmenu .aboutClick {
+  background-color: white;
+}
+header #mainbar .container .row .respmenu .aboutClick li {
+  border: none;
+}
+header #mainbar .container .row .respmenu .aboutClick li a {
+  font-size: 15px;
+}
+header #mainbar .container .row .respmenu .branchClick {
+  background-color: white;
+}
+header #mainbar .container .row .respmenu .branchClick li {
+  border: none;
+}
+header #mainbar .container .row .respmenu .branchClick li a {
+  font-size: 15px;
+}
+header #mainbar .container .row .respmenu ul {
+  padding-left: 0px;
+}
+header #mainbar .container .row .respmenu ul li {
+  border-top: solid 1px rgb(209, 209, 209);
+  list-style: none;
+  padding: 15px;
+}
+header #mainbar .container .row .respmenu ul li a {
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  color: #555555;
+}
+header #mainbar .container .row .respmenu i {
+  font-size: 20px;
+  color: #858585;
+  cursor: pointer;
+}
+header #mainbar .container .row .respmenu .searchinputResponsive {
+  position: relative;
+}
+header #mainbar .container .row .respmenu .searchinputResponsive input {
+  border: solid 2px rgb(208, 208, 208);
+  width: 100%;
+  height: 65px;
+  padding-left: 10px;
+}
+header #mainbar .container .row .respmenu .searchinputResponsive i {
+  font-size: 22px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  top: 0%;
+  width: 65px;
+  height: 65px;
+  color: white;
+  background-color: #f5af19;
+}
+header #mainbar .container .row .menu {
+  margin-top: 35px;
+}
+header #mainbar .container .row .menu sup {
+  font-size: 14px;
+  color: #F15922;
+}
+header #mainbar .container .row .menu ul li {
+  list-style: none;
+}
+header #mainbar .container .row .menu ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  transition-delay: 0s, 0s, 0.3s;
+}
+header #mainbar .container .row .menu ul li a {
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 22px;
+  -webkit-text-decoration: none solid rgb(51, 51, 51);
+          text-decoration: none solid rgb(51, 51, 51);
+  color: black;
+  transition: 0.1s;
+}
+header #mainbar .container .row .menu ul li a i {
+  font-size: 18px;
+}
+header #mainbar .container .row .menu ul li a:hover {
+  color: #C79F30;
+}
+header #mainbar .container .row .menu .dropdown-menu {
+  display: none;
+  width: 180px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-top: #EAB830 solid 3px;
+  transition-delay: 0s, 0s, 0.3s;
+  -webkit-animation: Slide_Up 0.3s ease;
+          animation: Slide_Up 0.3s ease;
+}
+header #mainbar .container .row .menu .dropdown-menu ul {
+  padding-left: 0px;
+}
+header #mainbar .container .row .menu .dropdown-menu ul li {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+header #mainbar .container .row .menu .dropdown-menu ul li:hover .dropdown-menu-1 {
+  display: block;
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 165px;
+}
+header #mainbar .container .row .menu .dropdown-menu ul li a {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  -webkit-text-decoration: none solid rgb(0, 0, 0);
+          text-decoration: none solid rgb(0, 0, 0);
+  transition: 0.1s;
+}
+header #mainbar .container .row .menu .dropdown-menu ul li a .fa-solid {
+  float: right;
+  margin-left: 20px;
+  padding-top: 8px;
+  font-size: 12px;
+}
+header #mainbar .container .row .menu .dropdown-menu .dropdown-menu-1 {
+  padding: 5px;
+  display: none;
+  width: 180px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -webkit-animation: LeftTo 0.1s ease-in-out;
+          animation: LeftTo 0.1s ease-in-out;
+}
+header #topbar {
+  background-color: #F15922;
+}
+header #topbar .container .row .responsiveIconsTopbar ul {
+  list-style: none;
+}
+header #topbar .container .row .responsiveIconsTopbar ul a {
+  text-decoration: none;
+  padding-left: 10px;
+  color: white;
+  font-size: 18px;
+}
+header #topbar .container .row .contact ul li {
+  padding-left: 20px;
+  color: white;
+  list-style: none;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 14px;
+  -webkit-text-decoration: none solid rgb(255, 255, 255);
+          text-decoration: none solid rgb(255, 255, 255);
+}
+header #topbar .container .row .account {
+  margin-top: 11px;
+}
+header #topbar .container .row .account a {
+  text-decoration: none;
+}
+header #topbar .container .row .account span {
+  font-size: 14px;
+  color: white;
+  transform: 0.2s;
+  cursor: pointer;
+  transition: 0.2s;
+}
+header #topbar .container .row .account span:hover {
+  color: #E9B732;
+}
+header #topbar .container .row .account span i {
+  cursor: pointer;
+  font-size: 13px;
+  color: white;
+}
+header #topbar .container .row .account .line {
+  width: 0.8px;
+  height: 15px;
+  background-color: rgb(110, 110, 110);
+  margin-top: 5px;
+}
+
+main #slider #carouselExampleCaptions .carousel-inner .carousel-item img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  height: 700px;
+}
+main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption {
+  top: 40%;
+}
+main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h1 {
+  -webkit-animation: Slide_Up 1.4s ease;
+          animation: Slide_Up 1.4s ease;
+  font-size: 40px;
+  font-weight: 700;
+  color: #f2c448;
+  text-shadow: 4px 4px 5px black;
+}
+main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption p {
+  -webkit-animation: Slide_Up 2.1s ease;
+          animation: Slide_Up 2.1s ease;
+  font-size: 25px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 75px;
+  text-shadow: 2px 2px 5px black;
+}
+main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btn a {
+  -webkit-animation: Slide_Up 2.4s ease;
+          animation: Slide_Up 2.4s ease;
+  background-color: rgb(241, 89, 34);
+  width: 180px;
+  border-radius: 30px;
+  height: 55px;
+  font-size: 21px;
+  border: solid 2px white;
+  transition: 0.6s;
+}
+main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btn a:hover {
+  border: solid 2px rgb(45, 45, 232);
+}
+main #language .container .row .box {
+  width: 100%;
+  height: 46px;
+  background: linear-gradient(to right, #f12711, #f5af19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+main #language .container .row .box:hover {
+  background: linear-gradient(to bottom, #f12711, #f5af19);
+}
+main #language .container .row .box span {
+  color: white;
+  font-size: 17px;
+}
+main #quiz .container {
+  background-color: rgb(247, 247, 247);
+}
+main #quiz .container .row .box {
+  text-align: center;
+  width: 100%;
+}
+main #quiz .container .row .box h2 {
+  color: #FE6C61;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+}
+main #quiz .container .row .box p {
+  color: black;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main #quiz .container .row .box .btn a {
+  width: 120px;
+  height: 41px;
+  font-size: 17px;
+  background-color: #FFA825;
+  border: none;
+  color: white;
+}
+main #level-quiz .container .row .infotest {
+  transition: 1s;
+}
+main #level-quiz .container .row .infotest:hover .boxtest {
+  display: block;
+}
+main #level-quiz .container .row h3 {
+  color: rgb(39, 48, 68);
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+}
+main #level-quiz .container .row .box {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgb(217, 217, 217);
+}
+main #level-quiz .container .row .box .image img {
+  width: 100%;
+}
+main #level-quiz .container .row .box .text p {
+  color: rgb(149, 149, 149);
+}
+main #level-quiz .container .row .box .text strong {
+  font-size: 17px;
+}
+main #level-quiz .container .row .box .line {
+  width: 270px;
+  height: 0.5px;
+  background-color: rgb(169, 169, 169);
+  margin-left: 15px;
+  margin-top: 17px;
+}
+main #level-quiz .container .row .boxtest {
+  -webkit-animation: Slide_Up 0.8s ease;
+          animation: Slide_Up 0.8s ease;
+  width: 360px;
+  height: 400px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  transition: 1s;
+  margin-left: -20px;
+  border-radius: 3px;
+}
+main #level-quiz .container .row .boxtest .image img {
+  border-radius: 50%;
+}
+main #level-quiz .container .row .boxtest .text h4 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+main #level-quiz .container .row .boxtest .text h4:hover {
+  color: rgb(44, 117, 228);
+}
+main #level-quiz .container .row .boxtest .text p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 26px;
+  width: 300px;
+  color: rgb(119, 119, 119);
+}
+main #level-quiz .container .row .boxtest .btn a {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  width: 300px;
+  height: 45px;
+  background-color: rgb(44, 117, 228);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+main #level-quiz .container .row .boxtest .btn a:hover {
+  color: white;
+  background-color: rgb(82, 171, 82);
+}
+main #level-quiz .container .row .boxtest .wishlist i {
+  color: rgb(119, 119, 119);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px rgb(119, 119, 119);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+main #level-quiz .container .row .boxtest .wishlist i:hover {
+  background-color: rgb(37, 33, 47);
+  color: white;
+}
+main #level-quiz .container .row .boxtest .wishlist span {
+  font-size: 13px;
+  color: rgb(137, 137, 137);
+}
+main #level-quiz .container .row .boxtest .wishlist strong {
+  font-size: 16px;
+}
+main #course .container .row h3 {
+  text-align: center;
+  font-size: 37px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+  color: rgb(39, 48, 68);
+}
+main #course .container .row .box {
+  position: relative;
+}
+main #course .container .row .box:hover .textbox .btn a {
+  display: flex;
+}
+main #course .container .row .box .image img {
+  width: 100%;
+  height: 260px;
+}
+main #course .container .row .box .price {
+  width: 90px;
+  height: 35px;
+  background-color: #2C75E4;
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+main #course .container .row .box .price p {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  margin-top: 7px;
+}
+main #course .container .row .box .textbox {
+  width: 100%;
+  height: 120px;
+  border: solid 1px rgb(215, 215, 215);
+}
+main #course .container .row .box .textbox .title span {
+  color: black;
+  font-size: 18px;
+}
+main #course .container .row .box .textbox .btn a {
+  -webkit-animation: Slide_Up 0.5s ease;
+          animation: Slide_Up 0.5s ease;
+  width: 100%;
+  height: 42px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  background-color: rgb(44, 117, 228);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.3s;
+  display: none;
+}
+main #course .container .row .box .textbox .btn a:hover {
+  background-color: #F15922;
+  color: white;
+}
+main #course .container .row .box .comment {
+  width: 100%;
+  height: 70px;
+  border: solid 1px rgb(215, 215, 215);
+}
+main #course .container .row .box .comment span {
+  color: #848484;
+  font-size: 15px;
+}
+main #course .container .row .box .comment span i {
+  font-size: 14px;
+  color: #848484;
+}
+main #course .container .row .box .comment .monthly span {
+  font-size: 19px;
+  color: black;
+}
+main #achivement {
+  background-image: url(https://lib-school.az/wp-content/uploads/2018/09/achivements.jpg);
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+main #achivement .title {
+  text-align: center;
+}
+main #achivement .title h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+  color: white;
+}
+main #achivement .icons i {
+  font-size: 65px;
+  color: white;
+}
+main #achivement .number h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 55px;
+  color: rgb(234, 184, 48);
+}
+main #achivement .number span {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 55px;
+  color: white;
+}
+main #email {
+  background-color: #F15922;
+}
+main #email .container .row .text h3 {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+}
+main #email .container .row .text p {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+  margin-top: 15px;
+}
+main #email .container .row .electron h4 {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+}
+main #email .container .row .electron .subs {
+  position: relative;
+}
+main #email .container .row .electron .subs input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  padding-left: 15px;
+}
+main #email .container .row .electron .subs .btn button {
+  background-color: #273044;
+  border: none;
+}
+main #email .container .row .electron .btn button {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  z-index: 999;
+  width: 130px;
+  height: 45px;
+}
+main #faq .container .row .faq.active .answer {
+  max-height: 300px;
+  -webkit-animation: faq 1s ease-in-out;
+          animation: faq 1s ease-in-out;
+}
+main #faq .container .row .faq.active .boxfaq {
+  background-color: #F0F2F5;
+}
+main #faq .container .row .faq.active span {
+  color: #45799F;
+}
+main #faq .container .row .faq.active i {
+  color: #75777A;
+}
+main #faq .container .row .faq.active p {
+  color: #273044;
+}
+main #faq .container .row .faq.active li {
+  color: #273044;
+}
+main #faq .container .row .faq.active i {
+  transform: rotate(180deg);
+}
+main #faq .container .row h2 {
+  text-align: center;
+  font-size: 38px;
+}
+main #faq .container .row .boxfaq {
+  width: 100%;
+  background-color: #75777A;
+  cursor: pointer;
+}
+main #faq .container .row .boxfaq .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+main #faq .container .row .boxfaq .answer ul li {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin-top: 5px;
+  padding: 3px;
+}
+main #faq .container .row .boxfaq p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 26px;
+  color: white;
+}
+main #faq .container .row .boxfaq span {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 26px;
+  color: white;
+}
+main #faq .container .row .boxfaq span i {
+  font-size: 20px;
+  color: white;
+  transition: transform 0.5s ease-in;
+}
+main #title-service {
+  background-color: #457992;
+}
+main #title-service h1 {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 55px;
+  text-align: center;
+  text-transform: uppercase;
+}
+main #title-service p {
+  text-align: center;
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 34px;
+}
+main #whyus {
+  border-top: solid 3px #E5E5E5;
+}
+main #whyus .box.active span {
+  color: white;
+}
+main #whyus .title {
+  text-align: center;
+}
+main #whyus .title .aboutinfo {
+  transition: 0.2s;
+}
+main #whyus .title .writeus {
+  transition: 0.2s;
+}
+main #whyus .title h2 {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+}
+main #whyus .text p {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  width: 95%;
+  padding: 10px;
+}
+main #whyus .image img {
+  width: 95%;
+}
+main #whyus .line {
+  width: 94%;
+  height: 3px;
+  background-color: #2C75E4;
+}
+main #whyus .box {
+  width: 94%;
+  background-color: #2C75E4;
+  margin-top: 2px;
+}
+main #whyus .box span {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  color: white;
+  cursor: pointer;
+}
+main #whyus .profession {
+  -webkit-animation: faq 0.2s ease-in-out;
+          animation: faq 0.2s ease-in-out;
+}
+main #whyus .profession h3 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 34px;
+  color: #273044;
+}
+main #whyus .profession ul li {
+  font-size: 18px;
+  padding: 3px;
+}
+main #whyus .appeal {
+  -webkit-animation: faq 0.2s ease-in-out;
+          animation: faq 0.2s ease-in-out;
+}
+main #whyus .appeal form input {
+  width: 45%;
+  height: 45px;
+  border: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 10px;
+}
+main #whyus .appeal form input,
+main #whyus .appeal form select {
+  background-color: #F0F2F5;
+}
+main #whyus .appeal form input:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #whyus .appeal form .message {
+  margin-top: 28px;
+}
+main #whyus .appeal form .message textarea {
+  width: 94%;
+  border: none;
+  padding-left: 10px;
+}
+main #whyus .appeal form .message textarea::-moz-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #whyus .appeal form .message textarea:-ms-input-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #whyus .appeal form .message textarea::placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #whyus .appeal form .message textarea,
+main #whyus .appeal form .message select {
+  background-color: #F0F2F5;
+}
+main #whyus .appeal form .message textarea:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #whyus .appeal .btn button {
+  width: 160px;
+  border-radius: 50px;
+  height: 50px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 14px;
+  background-color: rgb(44, 117, 228);
+  border: none;
+}
+main .shortline {
+  width: 80%;
+  height: 3px;
+  background-color: #2C75E4;
+}
+main .longline {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(176, 176, 176);
+}
+main #result .title {
+  text-align: center;
+}
+main #result .title h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+  color: #273044;
+}
+main #result .image img {
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+main #result .text {
+  text-align: center;
+}
+main #result .text p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  color: #273044;
+}
+main #startnow .box {
+  width: 100%;
+  border: solid 3px #FE6C61;
+  border-radius: 5px;
+}
+main #startnow .box .text h2 {
+  color: rgb(254, 108, 97);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+}
+main #startnow .box .text p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main #startnow .box .btn a {
+  background-color: #7FBC7B;
+  width: 130px;
+  height: 45px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+main #startnow .box .btn a:hover {
+  background-color: #6b9e68;
+}
+main #filtercourse #searchinput input {
+  height: 35px;
+  border: none;
+}
+main #filtercourse #searchinput input[type=text] {
+  padding-left: 15px;
+}
+main #filtercourse #searchinput input,
+main #filtercourse #searchinput select {
+  background-color: white;
+}
+main #filtercourse #searchinput input:focus {
+  background-color: white;
+  outline: none !important;
+}
+main #filtercourse option {
+  font-size: 17px;
+}
+main #filtercourse select {
+  height: 45px;
+  width: 270px;
+  border: solid 1px rgb(203, 203, 203);
+  border-radius: 4px;
+  padding-left: 8px;
+  color: #273044;
+}
+main #filtercourse h1 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 55px;
+  color: #273044;
+}
+main #filtercourse .box .filtre {
+  margin-top: 11px;
+}
+main #filtercourse .box span {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main #filtercourse .box .grip {
+  color: #273044;
+  font-size: 26px;
+  margin-top: 3px;
+  transition: 0.2s;
+}
+main #filtercourse .box .grip i {
+  width: 37px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main #filtercourse .box .list {
+  color: #2C75E4;
+  font-size: 22px;
+  margin-top: 3px;
+  transition: 0.2s;
+}
+main #filtercourse .box .list i {
+  width: 37px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main #filtershow .listimage img {
+  width: 100%;
+  height: 250px;
+}
+main #filtershow .btnfilter a {
+  width: 100%;
+  border-radius: 0px;
+  background-color: #195EC8;
+  border: none;
+  height: 45px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #filtershow .textfilter h4 {
+  cursor: pointer;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+  color: #273044;
+  transition: 0.1s;
+}
+main #filtershow .textfilter h4:hover {
+  color: #195EC8;
+}
+main #filtershow .pricefilter ul {
+  padding-left: 0;
+}
+main #filtershow .pricefilter ul li {
+  list-style: none;
+  color: #606060;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+}
+main #filtershow .pricefilter ul li span {
+  color: #F15922;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+}
+main #filtershow .pricefilter span {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 26px;
+  color: rgb(119, 119, 119);
+}
+main #filtershow .wishlistfilter strong {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  color: #273044;
+}
+main #filtershow .wishlistfilter span {
+  font-size: 13px;
+  color: #75777A;
+  width: 30px;
+}
+main #filtershow .wishlistfilter span i {
+  font-size: 19px;
+  width: 30px;
+  height: 30px;
+}
+main #filtershow .wishlistfilter span i:hover {
+  color: red;
+}
+main #careerwrite form input {
+  padding-left: 15px;
+  margin-top: 35px;
+  width: 45%;
+  height: 45px;
+  border: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #careerwrite form input,
+main #careerwrite form select {
+  background-color: #F0F2F5;
+}
+main #careerwrite form input:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #careerwrite form textarea {
+  width: 83%;
+  border: none;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+main #careerwrite form textarea::-moz-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #careerwrite form textarea:-ms-input-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #careerwrite form textarea::placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #careerwrite form textarea,
+main #careerwrite form select {
+  background-color: #F0F2F5;
+}
+main #careerwrite form textarea:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #careerwrite .btn button {
+  width: 160px;
+  border-radius: 50px;
+  height: 50px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 14px;
+  background-color: rgb(44, 117, 228);
+  border: none;
+}
+main .branchinfos .text {
+  text-align: center;
+}
+main .branchinfos .text h2 {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+}
+main .branchinfos .text p {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main .branchinfos .map iframe {
+  width: 100%;
+}
+main #maingallery .box {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px rgb(156, 211, 222);
+  cursor: pointer;
+}
+main #maingallery .box img {
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+main #maingallery .box h5 {
+  font-size: 17px;
+  color: rgb(66, 139, 202);
+}
+main #photoalbum .title {
+  text-align: center;
+}
+main #photoalbum .title h2 {
+  font-family: Aladin;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 38px;
+  -webkit-text-decoration: none solid rgb(39, 48, 68);
+          text-decoration: none solid rgb(39, 48, 68);
+}
+main #photoalbum .images img {
+  width: 100%;
+}
+main #photoalbum .lastresult {
+  text-align: center;
+}
+main #photoalbum .lastresult h2 {
+  font-family: "Finger Paint";
+  font-size: 30px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 30px;
+}
+main #contactinfo {
+  margin-top: 30px;
+  border-top: solid 3px #E5E5E5;
+}
+main #contactinfo iframe {
+  width: 100%;
+}
+main #contactinfo .title h3 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 34px;
+  color: #273044;
+}
+main #contactinfo .line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(210, 210, 210);
+}
+main #contactinfo .box i {
+  font-size: 35px;
+  color: #E9B732;
+}
+main #contactinfo .box h5 {
+  color: #555555;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #contactinfo .box p {
+  color: rgb(131, 131, 131);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  transition: 0.1s;
+}
+main #contactinfo .box p:hover {
+  color: #555555;
+}
+main #contactinfo .box a {
+  text-decoration: none;
+  color: rgb(131, 131, 131);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  transition: 0.1s;
+}
+main #contactinfo .box a:hover {
+  color: #195EC8;
+}
+main #question .shortline {
+  width: 80%;
+  height: 3px;
+  background-color: #2C75E4;
+}
+main #question .longline {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(176, 176, 176);
+}
+main #question .title h3 {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 34px;
+}
+main #question form input {
+  padding-left: 15px;
+  width: 45%;
+  height: 45px;
+  border: 2px solid rgb(227, 227, 227);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #question form input,
+main #question form select {
+  background-color: white;
+}
+main #question form input:focus {
+  background-color: white;
+  outline: none !important;
+  border: #E9B732 solid 2px;
+}
+main #question form .message {
+  margin-top: 28px;
+}
+main #question form .message textarea {
+  width: 94%;
+  border: 2px solid rgb(227, 227, 227);
+  padding-left: 10px;
+  padding-top: 8px;
+}
+main #question form .message textarea::-moz-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #question form .message textarea:-ms-input-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #question form .message textarea::placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+}
+main #question form .message textarea,
+main #question form .message select {
+  background-color: white;
+}
+main #question form .message textarea:focus {
+  background-color: white;
+  outline: none !important;
+  border: #E9B732 solid 2px;
+}
+main #question .btn button {
+  width: 160px;
+  border-radius: 50px;
+  height: 50px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 14px;
+  background-color: rgb(44, 117, 228);
+  border: none;
+}
+main #transition {
+  background-color: #eeeeee;
+}
+main #transition .text a {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  color: rgb(170, 170, 170);
+  text-decoration: none;
+  transition: 0.2s;
+}
+main #transition .text span {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  color: rgb(170, 170, 170);
+  transition: 0.2s;
+}
+main #transition .text span:hover {
+  color: #f5af19;
+}
+main #transition .text i {
+  font-size: 11px;
+  color: rgb(170, 170, 170);
+}
+main #addedBasket .box {
+  width: 100%;
+  border: solid 4px #10C45C;
+}
+main #addedBasket .box i {
+  font-size: 18px;
+  color: #10C45C;
+}
+main #addedBasket .box span {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  color: #10C45C;
+}
+main #addedBasket .btn a {
+  width: 100%;
+  background-color: #2C75E4;
+  border: none;
+  border-radius: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 42px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #detailcourse .title h2 {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 38px;
+}
+main #detailcourse .category i {
+  font-size: 30px;
+  color: #EAB830;
+}
+main #detailcourse .category span {
+  color: #AAAAB2;
+  font-size: 13px;
+}
+main #detailcourse .category a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 13px;
+  transition: 0.2s;
+}
+main #detailcourse .category a:hover {
+  color: #f5af19;
+}
+main #detailcourse .images img {
+  width: 100%;
+}
+main #detailcourse .infocourse {
+  text-align: center;
+}
+main #detailcourse .infocourse strong {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+}
+main #detailcourse p {
+  margin-top: 40px;
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+}
+main #detailcourse ul {
+  margin-top: 30px;
+}
+main #detailcourse ul li {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  padding: 5px;
+}
+main #detailcourse ul li strong {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+}
+main #detailcourse a {
+  text-decoration: none;
+}
+main #detailcourse .choose p {
+  color: rgb(170, 170, 170);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 12px;
+}
+main #detailcourse .choose span {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main #detailcourse .education p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 16px;
+  color: rgb(170, 170, 170);
+}
+main #detailcourse .education option {
+  font-size: 17px;
+}
+main #detailcourse .education select {
+  height: 45px;
+  width: 100%;
+  border: solid 1px rgb(203, 203, 203);
+  border-radius: 4px;
+  padding-left: 8px;
+  color: #273044;
+}
+main #detailcourse .education #price p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #273044;
+}
+main #detailcourse .education #price span {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main #detailcourse .btn button {
+  width: 290px;
+  height: 75px;
+  background-color: #2C75E4;
+  border: none;
+  border-radius: 0px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+}
+main #detailcourse .line {
+  width: 290px;
+  height: 1px;
+  background-color: #E5E5E5;
+}
+main #detailcourse .box {
+  width: 100%;
+  background-color: #DFF2FE;
+}
+main #detailcourse .box .title {
+  text-align: center;
+}
+main #detailcourse .box .title strong {
+  text-align: center;
+  color: rgb(94, 127, 150);
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+}
+main #detailcourse .box .attention i {
+  color: rgb(86, 176, 238);
+  font-size: 27px;
+}
+main #detailcourse .box .attention ul li {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  color: rgb(94, 127, 150);
+}
+main #table i {
+  cursor: pointer;
+  color: #2C75E4;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 14.4px;
+}
+main #table span {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14.4px;
+  font-weight: 700;
+}
+main #table span a {
+  text-decoration: none;
+}
+main #table td .info {
+  margin-top: 33px;
+}
+main #table td form input {
+  margin-top: 20px;
+  width: 35%;
+  height: 45px;
+  border: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+main #table td form input,
+main #table td form select {
+  background-color: #F0F2F5;
+}
+main #table td form input:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+  color: #2C75E4;
+}
+main #order .paybox {
+  width: 100%;
+  border: solid 5px #D5D5D5;
+  margin-top: 35px;
+}
+main #order .paybox p {
+  color: #273044;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 21px;
+}
+main #order .btn a {
+  background-color: #2C75E4;
+  border-radius: 0px;
+  width: 180px;
+  height: 48px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 22px;
+}
+main #order h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main #order .shortline {
+  width: 80%;
+  height: 3px;
+  background-color: #2C75E4;
+}
+main #order .longline {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(176, 176, 176);
+}
+main #order h2 {
+  color: #273044;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main #order .box {
+  position: relative;
+}
+main #order .box:hover .textbox .btn a {
+  display: flex;
+}
+main #order .box .image img {
+  width: 100%;
+}
+main #order .box .price {
+  width: 90px;
+  height: 35px;
+  background-color: #2C75E4;
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+main #order .box .price p {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  margin-top: 7px;
+}
+main #order .box .textbox {
+  width: 100%;
+  height: 120px;
+  border: solid 1px rgb(215, 215, 215);
+}
+main #order .box .textbox .title span {
+  color: black;
+  font-size: 18px;
+}
+main #order .box .textbox .btn a {
+  -webkit-animation: Slide_Up 0.5s ease;
+          animation: Slide_Up 0.5s ease;
+  width: 100%;
+  height: 42px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  background-color: rgb(44, 117, 228);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.3s;
+  display: none;
+}
+main #order .box .textbox .btn a:hover {
+  background-color: #F15922;
+  color: white;
+}
+main #order .box .comment {
+  width: 100%;
+  height: 70px;
+  border: solid 1px rgb(215, 215, 215);
+}
+main #order .box .comment span {
+  color: #848484;
+  font-size: 15px;
+}
+main #order .box .comment span i {
+  font-size: 14px;
+  color: #848484;
+}
+main #order .box .comment .monthly span {
+  font-size: 19px;
+  color: black;
+}
+main #account {
+  border-top: solid 4px #E5E5E5;
+  margin-top: 30px;
+}
+main #account .title {
+  text-align: center;
+}
+main #account .title p {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+main #account h3 {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 34px;
+}
+main #account .loginbox {
+  width: 100%;
+  background-color: #385BCE;
+  transition: 0.2s;
+}
+main #account .loginbox label {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin-top: 30px;
+  margin-left: 40px;
+  transition: 0.2s;
+}
+main #account .loginbox #inputlogin input {
+  margin-left: 40px;
+  width: 85%;
+  height: 45px;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+}
+main #account .loginbox #inputlogin input[type=text]::-moz-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #969696;
+}
+main #account .loginbox #inputlogin input[type=text]:-ms-input-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #969696;
+}
+main #account .loginbox #inputlogin input[type=text]::placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #969696;
+}
+main #account .loginbox #inputlogin input,
+main #account .loginbox #inputlogin select {
+  background-color: #F0F2F5;
+}
+main #account .loginbox #inputlogin input:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #account .loginbox .remember .largeCheck {
+  width: 110px;
+  height: 25px;
+  margin-top: 20px;
+}
+main #account .loginbox .remember span {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin-top: 3px;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+main #account .loginbox .remember .btn button {
+  width: 135px;
+  height: 50px;
+  background-color: rgb(23, 210, 146);
+  border-radius: 50px;
+  border: none;
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 14px;
+}
+main #account .registerbox {
+  width: 100%;
+  background-color: #EEF1F7;
+  transition: 0.2s;
+}
+main #account .registerbox label {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin-top: 30px;
+  transition: 0.2s;
+}
+main #account .registerbox input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  margin-top: 5px;
+}
+main #account .registerbox input[type=text]::-moz-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #bcbcbc;
+}
+main #account .registerbox input[type=text]:-ms-input-placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #bcbcbc;
+}
+main #account .registerbox input[type=text]::placeholder {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #bcbcbc;
+}
+main #account .registerbox input:focus {
+  background-color: white;
+  outline: none !important;
+}
+main #account .registerbox .remember .largeCheck {
+  width: 110px;
+  height: 25px;
+  margin-top: 20px;
+}
+main #account .registerbox .remember span {
+  color: #2C75E4;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin-top: 3px;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+main #account .registerbox .btn button {
+  width: 135px;
+  height: 50px;
+  background-color: rgb(23, 210, 146);
+  border-radius: 50px;
+  border: none;
+  margin-bottom: 30px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 14px;
+}
+main #quizinfo .title h1 {
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 55px;
+}
+main #quizinfo .aboutbox img {
+  width: 45px;
+  border-radius: 50%;
+}
+main #quizinfo .aboutbox span {
+  color: #7d7d7d;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+main #quizinfo .aboutbox span p {
+  color: #273044;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+main #quizinfo .aboutbox i {
+  font-size: 30px;
+  color: #385BCE;
+}
+main #quizinfo .aboutquiz {
+  width: 100%;
+  background-color: #F0F4FA;
+  cursor: pointer;
+}
+main #quizinfo .aboutquiz ul {
+  padding-left: 0;
+}
+main #quizinfo .aboutquiz ul li {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 21.4286px;
+  list-style: none;
+  color: #273044;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main #quizinfo .aboutquiz #quizboxs {
+  transition: 0.1s;
+}
+main #quizinfo .quizimage img {
+  width: 100%;
+}
+main #quizinfo .quizimage p {
+  color: #555555;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 30px;
+}
+main #quizinfo .quizimage p a {
+  text-decoration: none;
+}
+main #quizinfo .educationFormat h3 {
+  color: #273044;
+  font-size: 26px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main #quizinfo .educationFormat .box {
+  background-color: rgb(240, 244, 250);
+}
+main #quizinfo .educationFormat .box span:nth-child(2) {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+  transition: 0.1s;
+}
+main #quizinfo .educationFormat .box span:nth-child(2):hover {
+  color: #385BCE;
+}
+main #quizinfo .educationFormat .box .numberquiz span {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+}
+main #quizinfo .condition ul li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #273044;
+  padding: 10px;
+}
+main #quizinfo .btn {
+  width: 100%;
+  height: 75px;
+}
+main #quizinfo .btn a {
+  background-color: #2C75E4;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+main #quizinfo .listener {
+  width: 100%;
+}
+main #quizinfo .listener span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #273044;
+}
+main #quizinfo .listener strong {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+  font-weight: 700;
+}
+main #quizinfo .listener i {
+  font-size: 22px;
+  color: #385BCE;
+}
+main #quizinfo .line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(211, 211, 211);
+}
+main #quizinfo .working {
+  border: solid 1px rgb(185, 185, 185);
+}
+main #quizinfo .working h4 {
+  font-size: 21px;
+  color: #273044;
+}
+main #quizinfo .working ul {
+  padding-left: 23px;
+}
+main #quizinfo .working ul li {
+  padding: 5px;
+  border-bottom: dashed 1px rgb(196, 196, 196);
+}
+main #quizinfo .working ul li:hover {
+  color: #7FBC7B;
+}
+main #quizinfo .working ul li span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #273044;
+}
+main #complete h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #273044;
+}
+main #complete label {
+  font-family: monospace;
+  font-size: 14px;
+  color: #adadad;
+}
+main #complete abbr {
+  color: #F13E3E;
+  font-size: 16px;
+}
+main #complete form input[type=text]::-moz-placeholder {
+  padding-left: 10px;
+}
+main #complete form input[type=text]:-ms-input-placeholder {
+  padding-left: 10px;
+}
+main #complete form input[type=text]::placeholder {
+  padding-left: 10px;
+}
+main #complete form input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+  padding-left: 10px;
+}
+main #complete form input,
+main #complete form select {
+  background-color: #F0F2F5;
+}
+main #complete form input:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #complete form textarea {
+  width: 94%;
+  border: none;
+  padding-left: 10px;
+}
+main #complete form textarea,
+main #complete form select {
+  background-color: #F0F2F5;
+}
+main #complete form textarea:focus {
+  background-color: white;
+  outline: none !important;
+  border: 2px solid rgb(236, 236, 236);
+}
+main #complete form select {
+  height: 45px;
+  width: 100%;
+  border: solid 1px rgb(203, 203, 203);
+  border-radius: 4px;
+  padding-left: 8px;
+  font-size: 13px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 700;
+  background-color: white;
+}
+main a {
+  text-decoration: none;
+}
+main #yourorder h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #273044;
+}
+main #yourorder ul {
+  padding-left: 0px;
+}
+main #yourorder ul li {
+  list-style: none;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+  padding: 5px;
+}
+main #yourorder label {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 900;
+  color: #555555;
+}
+main #yourorder p {
+  color: #7B7B7B;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+}
+main #yourorder .btn button {
+  background-color: rgb(44, 117, 228);
+  border: none;
+  border-radius: 0px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  height: 47px;
+}
+main #privacy .title {
+  text-align: center;
+}
+main #privacy .title h3 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #273044;
+}
+main #privacy p {
+  color: #273044;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 5px;
+}
+main #privacy ul {
+  padding-left: 20px;
+}
+main #privacy ul li {
+  padding: 3px;
+  color: #273044;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+main #myprofil .image img {
+  width: 100%;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+main #myprofil .image img:hover {
+  opacity: 30%;
+}
+main #myprofil h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #273044;
+}
+main #myprofil h4 {
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  color: #273044;
+}
+main #myprofil .box {
+  width: 100%;
+  background-color: #EEF1F7;
+}
+main #myprofil .box .main {
+  position: relative;
+}
+main #myprofil .box .main input {
+  width: 100%;
+}
+main #myprofil .box label {
+  color: #273044;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+main #myprofil .box input {
+  padding-left: 45px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+main #myprofil .box .iconkey i {
+  position: absolute;
+  top: 61%;
+  left: 8%;
+  font-size: 18px;
+  color: #AAAAAA;
+}
+main #myprofil .box .iconeye i {
+  position: absolute;
+  top: 61%;
+  right: 7%;
+  font-size: 17px;
+  color: #AAAAAA;
+}
+main #myprofil .box .iconeye #hide2 {
+  display: none;
+}
+main #myprofil .btn button {
+  background-color: #2C75E4;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 50px;
+}
+main #myprofil .close button {
+  color: #273044;
+  background-color: rgb(238, 241, 247);
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 50px;
+}
+main #myprofil .close button:hover {
+  background-color: #385BCE;
+  color: white;
+}
+main #myprofil .close button:hover i {
+  color: white;
+}
+main #myprofil .close i {
+  font-size: 15px;
+  color: #273044;
+  transition: 0.2s;
+}
+main #favorite span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  color: #273044;
+  font-weight: 700;
+}
+main #course .box {
+  position: relative;
+  cursor: pointer;
+}
+main #course .close i {
+  color: rgb(189, 189, 189);
+  position: absolute;
+  right: 2%;
+  top: 3%;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: solid 2px rgb(173, 173, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+  cursor: pointer;
+}
+main #course .close i:hover {
+  color: red;
+  border: solid 2px red;
+}
+main #levelQuiz #terms h3 {
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+  font-weight: 700;
+}
+main #levelQuiz #terms h1 {
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  color: #273044;
+}
+main #levelQuiz #terms p {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #273044;
+}
+main #levelQuiz #terms button {
+  background-color: #2C75E4;
+  border: none;
+  border-radius: 20px;
+  width: 160px;
+  height: 53px;
+}
+main #levelQuiz #terms button h5 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer #copy {
+  background-color: #F15922;
+}
+footer #copy .container .row .text img {
+  width: 30px;
+}
+footer #copy .container .row .text span {
+  color: white;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+}
+footer #copy .container .row .social ul li {
+  list-style: none;
+}
+footer #copy .container .row .social ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.centerSearch {
+  margin-top: 250px;
+}
+.centerSearch label {
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.modal-body {
+  position: relative;
+  height: 60px;
+}
+.modal-body input {
+  border: none;
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 22px;
+  color: #5F5F5F;
+  padding-bottom: 5px;
+}
+.modal-body input::-moz-placeholder {
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.modal-body input:-ms-input-placeholder {
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.modal-body input::placeholder {
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.modal-body button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 60px;
+  width: 68px;
+  background-color: #EAB830;
+  border: none;
+  border-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.modal-body button i {
+  font-size: 24px;
+}
+.modal-body input:focus {
+  outline: none !important;
+}
+
+.facebooks {
+  position: relative;
+  display: grid;
+}
+.facebooks::before, .facebooks::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  margin: -5px;
+  box-shadow: inset 0 0 0 2px #0D7EC4;
+  -webkit-animation: IconSocial 3s linear infinite;
+          animation: IconSocial 3s linear infinite;
+}
+.facebooks::before {
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+.facebooks i {
+  border-radius: 5px;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  background-color: #0D7EC4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.facebooks .fa-twitter {
+  background-color: #1DA1F2;
+}
+.facebooks .fa-pinterest {
+  background-color: #E60023;
+}
+.facebooks .fa-instagram {
+  background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+}
+
+.pinter::before, .pinter::after {
+  box-shadow: inset 0 0 0 2px #E60023;
+}
+
+.twit::before, .twit::after {
+  box-shadow: inset 0 0 0 2px #1DA1F2;
+}
+
+.insta::before, .insta::after {
+  box-shadow: inset 0 0 0 2px #F27121;
+}
+
+@-webkit-keyframes Slide_Up {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes Slide_Up {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes LeftTo {
+  0% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes LeftTo {
+  0% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes faq {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes faq {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes IconSocial {
+  0% {
+    clip: rect(0, 100px, 2px, 0);
+  }
+  100% {
+    clip: rect(0, 100px, 2px, 0);
+  }
+  25% {
+    clip: rect(0, 2px, 100px, 0);
+  }
+  50% {
+    clip: rect(98px, 100px, 100px, 0);
+  }
+  75% {
+    clip: rect(0, 100px, 100px, 98px);
+  }
+}
+@keyframes IconSocial {
+  0% {
+    clip: rect(0, 100px, 2px, 0);
+  }
+  100% {
+    clip: rect(0, 100px, 2px, 0);
+  }
+  25% {
+    clip: rect(0, 2px, 100px, 0);
+  }
+  50% {
+    clip: rect(98px, 100px, 100px, 0);
+  }
+  75% {
+    clip: rect(0, 100px, 100px, 98px);
+  }
+}
+@media only screen and (max-width: 992px) {
+  header #mainbar .menu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  header #topbar .contact {
+    display: none;
+  }
+}
+@media only screen and (max-width: 300px) {
+  header #topbar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header #topbar .responsiveIconsTopbar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  main #language .box span i {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  main #language .box span {
+    display: flex;
+  }
+  main #language .box span i {
+    display: block;
+    margin-top: 3px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  main #level-quiz .box .line {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  main #filtercourse .filtre {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  main #filtercourse .grip {
+    display: none;
+  }
+  main #filtercourse .list {
+    display: none;
+  }
+}
+@media only screen and (max-width: 260px) {
+  main #filtercourse select {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 220px) {
+  main #filtercourse select {
+    width: 170px;
+  }
+  main #filtercourse h1 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 180px) {
+  main #filtercourse select {
+    width: 140px;
+  }
+  main #filtercourse h1 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  main #filtershow .listimage img {
+    width: 100%;
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 882px) {
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item img {
+    height: 500px;
+  }
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption {
+    top: 30%;
+  }
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h1 {
+    font-size: 30px;
+  }
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 661px) {
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item img {
+    height: 400px;
+  }
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption {
+    top: 30%;
+  }
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h1 {
+    font-size: 28px;
+  }
+  main #slider #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 402px) {
+  main #slider .carousel-caption {
+    top: 30%;
+  }
+  main #slider .carousel-caption h1 {
+    font-size: 28px;
+  }
+  main #slider .carousel-caption p {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  main #careerwrite form input .smallinput {
+    width: 100%;
+    background-color: red;
+  }
+  main #careerwrite form input {
+    width: 100%;
+  }
+  main #careerwrite form textarea {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 394px) {
+  main #title-service h1 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 292px) {
+  main #title-service h1 {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 220px) {
+  main #title-service h1 {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  main .registerbox input {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  main .registerbox input {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header #mainbar .logo i {
+    display: none;
+  }
+  header #mainbar .respmenu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main #achivement {
+    height: 850px;
+  }
+  main #achivement .title h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 335px) {
+  main #detailcourse .btn button {
+    width: 210px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  main #whyus .box {
+    margin-top: 50px;
+  }
+  main #whyus .line {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main #result .shortline {
+    display: none;
+  }
+  main #result .longline {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

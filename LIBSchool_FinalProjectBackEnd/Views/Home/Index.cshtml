@@ -1,0 +1,389 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+        <section id="slider">
+            <div id="carouselExampleCaptions" class="carousel slide mt-3" data-bs-ride="false">
+                <div class="carousel-inner">
+                    @{int i = 0;}
+                   @foreach (Slider slider in Model.Sliders)
+            {
+                
+                var active = i++ == 0 ? "active" : "slider";
+                <div class="carousel-item @active">
+                        <img 
+                            src="./assets/img/slider/@slider.Image"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h1>@slider.Title</h1>
+                                <p>@slider.Subtitle</p>
+                                <div class="btn">
+                                    <a href="./service.html" class="btn btn-danger">Elə indi başla</a>
+                                </div>
+                        </div>
+                    </div>
+                  }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section id="language">
+            <div class="container">
+                <div class="row d-flex justify-content-center justify-content-evenly">
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div data-aos="flip-left" data-aos-delay="50" data-aos-offset="0" class="box  mt-5">
+                            <a href="./detail.html"><span><i class="fa-regular fa-comments me-2"></i>Ümumi İngilis
+                                    dili</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div data-aos="flip-left" data-aos-delay="150" data-aos-offset="0" class="box mt-5">
+                            <a href="./detail.html"><span><i class="fa-solid fa-person-chalkboard me-2"></i>IELTS
+                                    kursu</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div data-aos="flip-left" data-aos-delay="250" data-aos-offset="0" class="box mt-5">
+                            <a href="./detail.html"><span><i class="fa-solid fa-person-circle-question me-2"></i>Rus
+                                    dili ümumi</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div data-aos="flip-left" data-aos-delay="350" data-aos-offset="0" class="box mt-5">
+                            <a href="./detail.html"><span><i class="fa-solid fa-earth-asia me-2"></i>Alman dili
+                                    ümumi</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div data-aos="flip-left" data-aos-delay="450" data-aos-offset="0" class="box mt-5">
+                            <a href="./detail.html"><span><i class="fa-solid fa-computer me-2"></i>Self study
+                                    proqramı</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="quiz">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="box mt-4 p-3">
+                            <h2>Ödənişsiz level testi imkanını qaçırmayın!</h2>
+                            <p class="mt-4">İndi daxil olun, ödənişsiz olaraq həm dil səviyyənizi yoxlayın həm də nümunə
+                                dərs şansını əldə edin!</p>
+                            <div class="btn mt-2">
+                                <a href="./login.html" class="btn btn-danger">Hesab yarat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="level-quiz">
+            <div class="container">
+                <div class="row d-flex justify-content-center mt-5">
+                    <h3>Level testləri</h3>
+                    <div class="col-lg-3 infotest">
+                        <div class="boxtest">
+                            <div class="image ms-4 mt-4">
+                                <img width="45px" src="./assets/img/account/stm_lms_avatar1.png" alt="">
+                                <span>Test Test</span>
+                            </div>
+                            <div class="text ms-4 mt-4">
+                                <h4>Rus dili level testi</h4>
+                                <p class="mt-4">Ödənişsiz olaraq rus dili level testi imtahanında iştirak edə
+                                    bilərsiniz. Elə indi daxil olun və dil səviyyənizi təyin edin!</p>
+                                <span><i class="fa-regular fa-clock"></i> 1 saat </span>
+                            </div>
+                            <div class="btn ms-2 mt-4">
+                                <a href="./infoquiz.html" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                            </div>
+                            <div class="wishlist ms-4 mt-3 d-flex">
+                                <i class="fa-regular fa-heart me-2"></i>
+                                <span class="mt-1">Bəyənmə siyahısına əlavə et</span>
+                                <strong class="ms-5">Pulsuz</strong>
+                            </div>
+                        </div>
+                        <div class="box mt-4">
+
+                            <div class="image">
+                                <img src="./assets/img/quiz-time/LIB-dil-mərkəzi-rus-dili-testi-300x150.jpg" alt="">
+                            </div>
+                            <div class="text ms-3 mt-3">
+                                <p>Quiz</p>
+                                <strong>Rus dili level testi</strong>
+                            </div>
+                            <div class="line"></div>
+                            <div class="info ms-3 mt-3 d-flex justify-content-between">
+                                <span><i class="fa-regular fa-clock me-2"></i>1 saat</span>
+                                <strong style="font-size: 18px;" class="me-4">Pulsuz</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 infotest">
+                        <div class="boxtest">
+                            <div class="image ms-4 mt-4">
+                                <img width="45px" src="./assets/img/account/stm_lms_avatar1.png" alt="">
+                                <span>Test Test</span>
+                            </div>
+                            <div class="text ms-4 mt-4">
+                                <h4>Rus dili level testi</h4>
+                                <p class="mt-4">Ödənişsiz olaraq rus dili level testi imtahanında iştirak edə
+                                    bilərsiniz. Elə indi daxil olun və dil səviyyənizi təyin edin!</p>
+                                <span><i class="fa-regular fa-clock"></i> 1 saat </span>
+                            </div>
+                            <div class="btn ms-2 mt-4">
+                                <a href="./infoquiz.html" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                            </div>
+                            <div class="wishlist ms-4 mt-3 d-flex">
+                                <i class="fa-regular fa-heart me-2"></i>
+                                <span class="mt-1">Bəyənmə siyahısına əlavə et</span>
+                                <strong class="ms-5">Pulsuz</strong>
+                            </div>
+                        </div>
+                        <div class="box mt-4">
+
+                            <div class="image">
+                                <img src="./assets/img/quiz-time/LIB-dil-mərkəzi-rus-dili-testi-300x150.jpg" alt="">
+                            </div>
+                            <div class="text ms-3 mt-3">
+                                <p>Quiz</p>
+                                <strong>Rus dili level testi</strong>
+                            </div>
+                            <div class="line"></div>
+                            <div class="info ms-3 mt-3 d-flex justify-content-between">
+                                <span><i class="fa-regular fa-clock me-2"></i>1 saat</span>
+                                <strong style="font-size: 18px;" class="me-4">Pulsuz</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="course">
+            <div class="container">
+                <div class="row  mt-5">
+                    <h3 class="mt-5">Kurslar</h3>
+                    @foreach (Course course in Model.Courses)
+                   {
+                       <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="box mt-4">
+                            <div class="price">
+                                   <p>@course.GroupPrice AZN</p>
+                            </div>
+                            <div class="image">
+                                <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id"><img
+                                        src="./assets/img/courses/@course.Image"
+                                        alt=""></a>
+                            </div>
+                            <div class="textbox">
+                                <div class="title ms-3 mt-3">
+                                    <a href="./detail.html"><span>@course.Name</span></a>
+                                </div>
+                                <div class="btn mt-3">
+                                    <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="icons mt-2">
+                                    <span class="me-2 ms-3"><i class="fa-solid fa-comment me-1"></i>0</span>
+                                    <span><i class="fa-solid fa-user me-1"></i>0</span>
+                                </div>
+                                <div class="monthly d-flex justify-content-end me-3">
+                                  <span>@course.GroupPrice @if (@course.İndividualPrice==null)
+                                    {
+                                        @(" " + @course.İndividualPrice);
+                                    }
+                                    else
+                                    {
+                                         @("- " + @course.İndividualPrice);
+                                    }
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   }
+                </div>
+            </div>
+        </section>
+        <section id="achivement">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="title mt-5">
+                        <h2>Göstəricilərimiz</h2>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                        <div class="icons  mt-5">
+                            <i class="fa-regular fa-building"></i>
+                        </div>
+                        <div class="number mt-3 ">
+                            <h2 class="counter">10</h2>
+                            <span>İLLİK TƏCRÜBƏ</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4  col-md-4 col-sm-4 text-center">
+                        <div class="icons  mt-5">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="number mt-3">
+                            <h2 class="counter">70</h2>
+                            <span>SERTİFİKATLI MÜƏLLİM</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                        <div class="icons  mt-5">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <div class="number mt-3">
+                            <h2 class="counter">11500</h2>
+                            <span>MƏZUN SAYI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="email">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="col-lg-6">
+                        <div class="text m-4">
+                            <h3>Özəl fürsətlər ilk sizə gəlsin!</h3>
+                            <p>Sizə özəl və limitli sayda kampaniyalardan vaxtında yararlana bilmək üçün email
+                                ünvanınızı bizimlə paylaşın.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="electron mt-3">
+                            <h4>ELEKTRON POÇTUNUZ</h4>
+                            <div class="subs mt-4">
+                                <div class="send">
+                                    <input placeholder="Enter your E-mail" type="text">
+                                </div>
+
+                                <div class="btn">
+
+                                    <button class="btn btn-dark">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq">
+            <div class="container">
+                <div class="row mt-5 d-flex justify-content-center">
+                    <h2>FAQ</h2>
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-4 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>Cədvəl necə təyin olunur?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+                                <p>Dil səviyyənizi ödənişsiz olaraq müəyyən etdikdən sonra, sizə uyğun saatda ödənişsiz
+                                    nümunə dərs və cədvəl təyin edirik</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-3 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>Ödənişsiz nümunə dərs olur?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+                                <p>Bəli, dərslərimizin keyfiyyətindən əmin olmaq üçün ilk olaraq ödənişsiz nümunə dərsdə
+                                    iştirak edəcəksiniz.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-3 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>Qrupun yığılmasını tam
+                                    gözləyirik?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+                                <p>Xeyr, cədvəl 3 iş günü ərzində təyin olunur. Kursa başlamaq üçün qrupun tam
+                                    yığılmasını gözləmirsiniz.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-3 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>Bir qrupda neçə nəfər olur?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+                                <p>Qrupda ən çoxu 5 nəfər ola bilər.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-3 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>LIB-də conversation olur?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+                                <p>Bəli, tələbələrimiz üçün özəl olaraq speaking dərsləri və conversation-lar ödənişsiz
+                                    olaraq təşkil olunur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-3 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>LIB-nin ofisləri haradadır?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+
+                                <p class="ms-2"><strong>Baş Ofis :</strong> Dil səviyyənizi ödənişsiz olaraq müəyyən
+                                    etdikdən sonra, sizə uyğun saatda ödənişsiz nümunə dərs və cədvəl təyin edirik</p>
+                                <p class="ms-2"><strong>Əhmədli filialı: :</strong> Sarayevo küç 26, Bakı Kinoteatrının
+                                    yanı, 0552384006, 012 5114006</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-11 faq">
+                        <div class="boxfaq p-2 mt-3 ">
+                            <div class="question m-1 mt-2">
+                                <span><i class="fa-solid fa-angle-down ms-2 me-2"></i>Nəyə görə LİB?</span>
+                            </div>
+                            <div class="answer ms-3 mt-2">
+                                <ul>
+                                    <li>Dərslər danışığın inkişafına yönəlik keçirilir. Ödənişsiz nümunə dərsdə iştirak
+                                        edib bundan əmin ola bilərsiniz. </li>
+                                    <li>Danışığa lazım olan qrammatika, yeni sözlər, başa düşmə və danışıq öyrədilir.
+                                    </li>
+                                    <li>Müəllimlərimiz minimum 3 il iş təcrübəsinə malikdir.
+                                    </li>
+                                    <li>Ölkədə ilk dəfə olaraq Elektron Tədris Sistemi (ofis mühitində) ilə dərslərin
+                                        təşkil olunması..
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+
