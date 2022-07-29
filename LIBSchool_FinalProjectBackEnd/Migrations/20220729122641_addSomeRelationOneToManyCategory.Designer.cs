@@ -4,14 +4,16 @@ using LIBSchool_FinalProjectBackEnd.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LIBSchool_FinalProjectBackEnd.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220729122641_addSomeRelationOneToManyCategory")]
+    partial class addSomeRelationOneToManyCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,10 +43,7 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BelongText")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BelongTitle")
+                    b.Property<string>("Belong")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("CategoryId")
@@ -57,6 +56,7 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                         .HasColumnType("decimal(5,2)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

@@ -8,6 +8,7 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         public List<Setting> Settings { get; set; }
         public List<Slider> Sliders { get; set; }
         public List<Category> Categories { get; set; }
+        public Category Category { get; set; }
         public List<SubCategory> SubCategories { get; set; }
         public List<Course> Courses { get; set; }
         public Course Course { get; set; }

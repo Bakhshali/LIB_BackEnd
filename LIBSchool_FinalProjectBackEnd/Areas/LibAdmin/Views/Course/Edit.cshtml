@@ -1,0 +1,65 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="m-3 mt-5">
+    <div class="title">
+        <h2 style="color:#273044"> <span style="color:#FF0000">#</span> Course əlavə et</h2>
+    </div>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        <div>
+            <input class="form-control" asp-for="Name" placeholder="Kurs adı"> <br/>
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <input class="form-control" asp-for="SubName" placeholder="ikinci adı(əgər varsa)"> <br/>
+            <span class="text-danger" asp-validation-for="SubName"></span>
+        </div>
+        <div>
+            <input class="form-control" asp-for="BelongTitle" placeholder="Kurs haqqında(başlıq)"> <br/>
+            <span class="text-danger" asp-validation-for="BelongTitle"></span>
+        </div>
+        <div>
+            <input class="form-control" asp-for="BelongText" placeholder="Kurs haqqında(yazı)"> <br/>
+            <span class="text-danger" asp-validation-for="BelongText"></span>
+        </div>
+         <div>
+            <input class="form-control" asp-for="Condition" placeholder="Şərtlər"> <br/>
+            <span class="text-danger" asp-validation-for="Condition"></span>
+        </div>
+        <div>
+            <input class="form-control" asp-for="İnformation" placeholder="ilkin məlumat(əgər varsa)"> <br/>
+            <span class="text-danger" asp-validation-for="İnformation"></span>
+        </div>
+       
+        <div>
+            <input class="form-control" asp-for="GroupPrice" placeholder="Qrup şəkildə hazırlıq qiyməti_*"> <br/>
+            <span class="text-danger" asp-validation-for="GroupPrice"></span>
+        </div>
+         <div>
+            <input class="form-control" asp-for="İndividualPrice" placeholder="Fərdi hazırlıq_*"> <br/>
+            <span class="text-danger" asp-validation-for="İndividualPrice"></span>
+        </div>
+        @*   <div>
+            <select asp-for="Category">
+                
+                    @foreach (Category category in Model.Category)
+                   {
+                       <option>ca</option>
+                   }
+                
+            </select> <br/>
+            <span class="text-danger" asp-validation-for="Category"></span>
+        </div>*@
+        <div>
+            <input asp-for="Photo"><br/>
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success mt-4">Yadda saxla</button>
+        </div>
+    </form>
+</div>
+
+

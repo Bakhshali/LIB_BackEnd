@@ -6,16 +6,15 @@
 
 <main>
     <section id="title-service" class="mt-3 p-5">
-        <h1 lang="tr">İngilis dili ümumi</h1>
-        <p>General English</p>
+        <h1 lang="tr">@Model.Course.Name</h1>
+        <p>@Model.Course.SubName</p>
     </section>
     <section id="transition">
         <div class="container">
             <div class="row p-1">
                 <div class="text">
-                    <a href="#"><span>HOME</span></a><i class="fa-solid fa-angle-right ms-2 me-2"></i>
-                    <a href="#"><span>ÜMUMİ İNGİLİS DİLİ</span></a><i class="fa-solid fa-angle-right ms-2 me-2"></i>
-                    <span>İNGİLİS DİLİ ÜMUMİ</span>
+                    <a asp-controller="home" asp-action="index"><span>HOME</span></a><i class="fa-solid fa-angle-right ms-2 me-2"></i>
+                    <a ><span style="text-transform:uppercase" lang="tr">@Model.Course.Name</span></a>
                 </div>
             </div>
         </div>
@@ -48,133 +47,155 @@
     <section id="detailcourse">
         <div class="container">
             <div class="row mt-5">
-                    <div class="col-lg-8">
-                        <div class="title">
-                            <h2>@Model.Course.Name</h2>
+                <div class="col-lg-8">
+                    <div class="title">
+                        <h2>@Model.Course.Name</h2>
+                    </div>
+                    <div class="category d-flex mt-4">
+                        <div class="icon mt-2">
+                            <i class="fa-regular fa-bookmark"></i>
                         </div>
-                        <div class="category d-flex mt-4">
-                            <div class="icon mt-2">
-                                <i class="fa-regular fa-bookmark"></i>
-                            </div>
-                            <div class="text ms-3">
-                                <span>Kateqoriya:</span> <br>
-                                <a href="">İNGİLİS DİLİ </a> / <a href="">ÜMUMİ İNGİLİS DİLİ</a>
-                            </div>
-                        </div>
-                        <div class="images mt-4">
-                            <img src="~/assets/img/slider/@Model.Image"
-                             alt="">
-                        </div>
-                        <div class="infocourse mt-5">
-                            <strong> <img width="20px" src="./assets/img/1f538.svg" alt=""> @Model.Name – (@Model.SubName) ilkin məlumat:</strong>
-                        </div>
-                        <p>
-                            İngilis dili proqramı həm online, həm də Caspian Plaza və Əhmədli filialımızda əyani olaraq
-                            tədris olunur. Dərslər xarici dildə danışığın inkişafına yönəlmiş şəkildə keçirilir. 11
-                            illik təcrübəmizə əsaslanaraq deyə bilərik ki, ən təcrübəli müəllimlərindən biri ilə dərsə
-                            başlayacaqsınız. Ən önəmlisi təcrübəli müəllim heyəti Sizin xarici dildə danışmanızı təmin
-                            edəcək.
-                        </p>
-
-                        <div class="infocourse mt-5">
-                            <strong>
-                                <img width="20px" src="./assets/img/1f538.svg" alt=""> 
-                                @if (@Model.SubName==null)
-                                {
-                                    @Model.Name
-
-                                }
-                                else{
-                                    @Model.SubName
-                                }
-                                proqramına
-                                nə aiddir?
-                            </strong>
-                        </div>
-                        <ul>
-                            <li>
-                                <strong>Həftədə 2 dəfə hər biri 90 dəqiqə olmaqla ingilis dili dərsi –</strong>Bu Sizin
-                                ingilis dili üzrə biliyinizin hərtərəfli formalaşamasına yardım edəcək. İngilis dili
-                                mühitində peşəkar müəllim tədrisi Sizi gözləyir.
-                            </li>
-                            <li>
-                                <strong>5 dəfə Youtalk danışıq dərsində iştirak –</strong>Sizin 40-a yaxın situasiyada
-                                xarici dil mühiti “yaşamanızı” təmin edəcək. Sürətli danışıq üçün bu çox önəmlidir.
-                                Unutmayaq ki, xarici dildə yaxşı danışmağın yolu həm danışmaq, həm dinləməkdən keçir.
-                            </li>
-                            <li>
-                                <strong>Elektron tədris sistemində (ETS) şəxsi kabinet –</strong>Ölkədə ilk dəfə LIB
-                                tərəfindən 4 il əvvəl istifadəyə verilən bu sistem Sizin dərs müddətini qrammatika, ev
-                                tapşırıqları, testlər, listening-lərlə deyil, məhz danışığa çox vaxt ayırmağınıza
-                                yardımçı olacaq.
-                            </li>
-                        </ul>
-                        <p>
-                            Yuxarıda qeyd olunduğu kimi əlavə 5 dəfə danışıq dərsində iştirak və ev tapşırıqlarınızı
-                            kabinetdə işləmək fürsəti Sizin <strong>SÜRƏTLİ</strong> və <strong>EFFEKTİV</strong>
-                            şəkildə ingilis dilində danışmağınızı təmin edəcək! Eyni zamanda xarici dildə Sizinlə
-                            ünsiyyət quracaq müəllimlər xarici dil mühitini yaşamağınıza yardım edəcək.
-                        </p>
-
-                        <div class="infocourse mt-5">
-                            <strong>
-                                <img width="20px" src="./assets/img/1f538.svg" alt=""> General English proqramına
-                                qoşulma şərtləri:
-                            </strong>
-                        </div>
-
-                        <p>
-                            General English proqramı paket ödənişi qrupla 89 azn, fərdi isə 159 azn-dir. 18:00-dan
-                            sonrakı dərslərdə qrup dərsində qiymət eyni, fərdi dərslərdə isə əlavə 30 manat ödəniş ilə
-                            hesablanır.
-                        </p>
-                        <p>
-                            Keyfiyyətdən əmin olmağınız üçün ilk dərs ödənişsizdir. Sınaq dərsdə iştirak üçün <a href="#">level testi</a> linkinə daxil olub dil səviyyənizi təyin edə, qeydiyyatla bizə
-                            müraciət edə bilərsiniz.
-                        </p>
-
-                        <div class="box p-3 mt-5">
-                            <div class="title">
-                                <strong>DİQQƏT!</strong>
-                            </div>
-                            <div class="attention d-flex">
-                                <i class="fa-solid fa-circle-info mt-5 ms-3 me-2"></i>
-                                <ul>
-                                    <li>
-                                        LIB Dil Mərkəzinə sayt üzərindən ödəniş etdikdə və ya qeydiyyatdan keçdikdə
-                                        məlumatlarınızın dəqiq qeyd olunmasına diqqət etməniz xahiş olunur.
-                                    </li>
-                                    <li>
-                                        Ödəniş etdikdə yarana biləsi hər hansı texniki fors-major ehtimalını nəzərə
-                                        alaraq ödənişinizi təsdiq edən online çeki saxlamanız mütləqdir.
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="text ms-3">
+                            <span>Kateqoriya:</span> <br>
+                            @foreach (Category category in Model.Categories.FindAll(c=>c.Id == @Model.Course.CategoryId))
+                           {
+                               <a href="" style="text-transform:uppercase" lang="tr">@category.Name / </a>  <a href="" style="text-transform:uppercase" lang="tr">@Model.Course.Name</a>
+                           }
                         </div>
                     </div>
-                }
+                    <div class="images mt-4">
+                        <img src="~/assets//img/courses/@Model.Course.Image"
+                             alt="">
+                    </div>
+                    <div class="infocourse mt-5">
+                        @if (@Model.Course.İnformation != null)
+                        {
+                             <strong>
+                            <img width="20px" src="~/assets/img/1f538.svg" alt="">
+                            @if (@Model.Course.SubName != null)
+                            {
+                                @( @Model.Course.Name + " proqramı - " + (@Model.Course.SubName.ToLower()))
+                                ;
+                                ;
+                            }
+                            else
+                            {
+                                @( @Model.Course.Name + " proqramı  -")
+                                ;
+                            }
+                            ilkin məlumat:
+                        </strong>
+                        }
+                    </div>
+                    <p>
+                       @Model.Course.İnformation
+                    </p>
+
+                    <div class="infocourse mt-5">
+                        <strong>
+                            <img width="20px" src="~/assets/img/1f538.svg" alt="">
+                            @if (@Model.Course.SubName == null)
+                            {
+                                @Model.Course.Name
+
+                            }
+                            else
+                            {
+                                @Model.Course.SubName
+                            }
+                            proqramına
+                            nə aiddir?
+                        </strong>
+                    </div>
+                    <ul>
+                        <li>
+                            <strong>@if(@Model.Course.BelongTitle!=null){@(Model.Course.BelongTitle + " – ")}</strong>@Model.Course.BelongText
+                        </li>
+                    </ul>
+                    <p>
+                        Yuxarıda qeyd olunduğu kimi əlavə 5 dəfə danışıq dərsində iştirak və ev tapşırıqlarınızı
+                        kabinetdə işləmək fürsəti Sizin <strong>SÜRƏTLİ</strong> və <strong>EFFEKTİV</strong>
+                        şəkildə ingilis dilində danışmağınızı təmin edəcək! Eyni zamanda xarici dildə Sizinlə
+                        ünsiyyət quracaq müəllimlər xarici dil mühitini yaşamağınıza yardım edəcək.
+                    </p>
+
+                    <div class="infocourse mt-5">
+                        <strong>
+                            <img width="20px" src="~/assets/img/1f538.svg" alt=""> @if (@Model.Course.SubName == null)
+                            {
+                                @Model.Course.Name
+
+                            }
+                            else
+                            {
+                                @Model.Course.SubName
+                            } proqramına
+                            qoşulma şərtləri:
+                        </strong>
+                    </div>
+
+                    <p>
+                       @Model.Course.Condition
+                    </p>
+                    <p>
+                        Keyfiyyətdən əmin olmağınız üçün ilk dərs ödənişsizdir. Sınaq dərsdə iştirak üçün <a href="#">level testi</a> linkinə daxil olub dil səviyyənizi təyin edə, qeydiyyatla bizə
+                        müraciət edə bilərsiniz.
+                    </p>
+
+                    <div class="box p-3 mt-5">
+                        <div class="title">
+                            <strong>@Model.Course.Name müraciəti üçün DİQQƏT!</strong>
+                        </div>
+                        <div class="attention d-flex">
+                            <i class="fa-solid fa-circle-info mt-5 ms-3 me-2"></i>
+                            <ul>
+                                <li>
+                                    LIB Dil Mərkəzinə sayt üzərindən ödəniş etdikdə və ya qeydiyyatdan keçdikdə
+                                    məlumatlarınızın dəqiq qeyd olunmasına diqqət etməniz xahiş olunur.
+                                </li>
+                                <li>
+                                    Ödəniş etdikdə yarana biləsi hər hansı texniki fors-major ehtimalını nəzərə
+                                    alaraq ödənişinizi təsdiq edən online çeki saxlamanız mütləqdir.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="col-lg-3">
                     <div class="choose ms-3">
                         <p>QİYMƏT</p>
-                        <span>89.00 AZN - <br> 159.00 AZN</span>
+                        <span>
+                            @if (Model.Course.İndividualPrice != null)
+                            {
+                               @(@Model.Course.GroupPrice + " AZN-" +  @Model.Course.İndividualPrice + " AZN")
+                            }
+                            else
+                            {
+                                @(@Model.Course.GroupPrice + "AZN")
+                            }
+                        </span>
                     </div>
-                    <div class="education mt-2 ms-3">
-                        <p for="">Tədris formatı</p>
-                        <select name="" id="selCourse">
-                            <option value="">Seçim edin</option>
-                            <option value="individual">Fərdi hazırlıq</option>
-                            <option value="group">Qrup şəklində hazırlıq</option>
-                        </select>
-                        <div class="individual" id="price">
-                            <p>Yayın son endirimi!</p>
-                            <span>159.00 AZN</span>
+                    @if (@Model.Course.İndividualPrice != null)
+                    {
+                        <div class="education mt-2 ms-3">
+                            <p for="">Tədris formatı</p>
+                            <select name="" id="selCourse">
+                                <option value="">Seçim edin</option>
+                                <option value="individual">Fərdi hazırlıq</option>
+                                <option value="group">Qrup şəklində hazırlıq</option>
+                            </select>
+                            <div class="individual" id="price">
+                                <p>Yayın son endirimi!</p>
+                                <span>@Model.Course.İndividualPrice AZN</span>
+                            </div>
+                            <div class="group" id="price">
+                                <p>Yayın son endirimi!</p>
+                                <span>@Model.Course.GroupPrice AZN</span>
+                            </div>
                         </div>
-                        <div class="group" id="price">
-                            <p>Yayın son endirimi!</p>
-                            <span>89.00 AZN</span>
-                        </div>
-                    </div>
+                    }
                     <div class="btn mt-4 ms-1">
                         <button type="submit" id="submit" class="btn btn-dark">SƏBƏTƏ ƏLAVƏ ET</button>
                     </div>
@@ -182,16 +203,16 @@
 
                     <div class="socials d-flex">
                         <div class="facebooks mt-4 ms-4">
-                            <i class="fa-brands fa-facebook-f"></i>
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="facebookShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="facebookShare").Value"></i></a>
                         </div>
                         <div class="facebooks mt-4 ms-4 pinter">
-                            <i class="fa-brands fa-pinterest"></i>
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").Value"></i></a>
                         </div>
                         <div class="facebooks mt-4 ms-4 insta">
-                            <i class="fa-brands fa-instagram"></i>
+                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").Value"></i></a>
                         </div>
                         <div class="facebooks mt-4 ms-4 twit">
-                            <i class="fa-brands fa-twitter"></i>
+                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").Value"></i></a>
                         </div>
 
                     </div>

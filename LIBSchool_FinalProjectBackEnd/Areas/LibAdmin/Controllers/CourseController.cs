@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 {
     [Area("LibAdmin")]
-    public class SliderController : Controller
+    public class CourseController : Controller
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
 
-        public SliderController(AppDbContext context,IWebHostEnvironment env)
+        public CourseController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
@@ -25,8 +25,8 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Slider> sliders = await _context.Sliders.ToListAsync();
-            return View(sliders);
+            List<Course> courses = await _context.Courses.ToListAsync();
+            return View(courses);
         }
 
         public IActionResult Create()
@@ -36,19 +36,20 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Create(Slider  slider)
-        {
-            if (!ModelState.IsValid)  return View();
 
-            if (slider.Photo!=null)
+        public async Task<IActionResult> Create(Course course)
+        {
+            if (!ModelState.IsValid) return View();
+
+            if (course.Photo != null)
             {
-                if (!slider.Photo.IsOkay(1))
+                if (!course.Photo.IsOkay(1))
                 {
                     ModelState.AddModelError("Photo", "Seçdiyiniz şəkil düzgün formatda deyil(başqa şəkil seçin)!");
                     return View();
                 }
 
-                slider.Image = await slider.Photo.FileCreate(_env.WebRootPath, @"assets\img\slider\");
+                course.Image = await course.Photo.FileCreate(_env.WebRootPath, @"assets\img\courses\");
             }
             else
             {
@@ -56,46 +57,40 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
                 return View();
             }
 
-            await _context.Sliders.AddAsync(slider);
+            await _context.Courses.AddAsync(course);
             await _context.SaveChangesAsync();
-
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Detail(int id)
         {
-            Slider slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
-            if (slider == null) return View();
-            return View(slider);
-             
+            Course course = await _context.Courses.FindAsync(id);
+            if (course == null) return NotFound();
+            return View(course);
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            Slider slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
-            if (slider == null) return View();
-            return View(slider);
+            Course course = await _context.Courses.FindAsync(id);
+            if (course == null) return NotFound();
+            return View(course);
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
 
-        public async Task<IActionResult> Edit(Slider slider)
+        public async Task<IActionResult> Edit(Course course)
         {
-            if (!ModelState.IsValid) return View();
-            Slider existedSlider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == slider.Id);
+            Course existedCourse = await _context.Courses.FirstOrDefaultAsync(c => c.Id == course.Id);
+            if (existedCourse == null) return NotFound();
 
-            if (slider.Id != existedSlider.Id) return BadRequest();
-            if (existedSlider == null) return NotFound();
+            _context.Entry(existedCourse).CurrentValues.SetValues(course);
 
-            existedSlider.Title = slider.Title;
-            existedSlider.Subtitle = slider.Subtitle;
-
-            if (slider.Photo != null)
+            if (course.Photo != null)
             {
-                if (slider.Photo.IsOkay(1))
+                if (course.Photo.IsOkay(1))
                 {
-                    existedSlider.Image = await slider.Photo.FileCreate(_env.WebRootPath, @"assets\img\slider");
+                    existedCourse.Image = await course.Photo.FileCreate(_env.WebRootPath, @"assets\img\slider");
                 }
                 else
                 {
@@ -106,37 +101,39 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+
         }
 
-        public async Task<IActionResult> Delete (int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Slider slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
-            if (slider == null) return View();
-            return View(slider);
+            Course course = await _context.Courses.FindAsync(id);
+            if (course == null) return NotFound();
+            return View(course);
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         [ActionName("Delete")]
 
-        public async Task<IActionResult> DeleteSlider(int id)
+        public async Task<IActionResult> DeleteCourse(int id)
         {
-            Slider existedSlider = await _context.Sliders.FirstOrDefaultAsync(d => d.Id == id);
+            Course existedCourse = await _context.Courses.FirstOrDefaultAsync(d => d.Id == id);
 
-            if (existedSlider == null) return NotFound();
+            if (existedCourse == null) return NotFound();
 
-            string path = Path.Combine (_env.WebRootPath, @"assets\img\slider" , existedSlider.Image);
+            string path = Path.Combine(_env.WebRootPath, @"assets\img\courses", existedCourse.Image);
 
             if (System.IO.File.Exists(path))
             {
                 System.IO.File.Delete(path);
             }
 
-            _context.Remove(existedSlider);
+            _context.Remove(existedCourse);
 
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

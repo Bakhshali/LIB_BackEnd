@@ -18,7 +18,9 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         public async Task<IActionResult> Index(int id) 
         {
             Course course = await _context.Courses.FirstOrDefaultAsync(d => d.Id == id);
+            Category category = await _context.Categories.FirstOrDefaultAsync();
             if (course == null) return NotFound();
+            
 
             HomeVM model = new HomeVM()
             {
@@ -28,6 +30,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 SubCategories = await _context.SubCategories.ToListAsync(),
                 Courses = await _context.Courses.ToListAsync(),
                 Course = course,
+                Category = category,
                 Quizzes = await _context.Quizzes.ToListAsync(),
             };
             return View(model);

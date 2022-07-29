@@ -31,6 +31,26 @@
     <Compile Remove="Migrations\20220728072342_createdPriceTableAddField.Designer.cs" />
     <Compile Remove="Migrations\20220728075230_addedSomeFieldOnCourse.cs" />
     <Compile Remove="Migrations\20220728075230_addedSomeFieldOnCourse.Designer.cs" />
+    <Compile Remove="Migrations\20220729083302_AddOneToManyRelationBetweenCourseAndSubCategory.cs" />
+    <Compile Remove="Migrations\20220729083302_AddOneToManyRelationBetweenCourseAndSubCategory.Designer.cs" />
+    <Compile Remove="Migrations\20220729095743_AddOneToManyRelation.cs" />
+    <Compile Remove="Migrations\20220729095743_AddOneToManyRelation.Designer.cs" />
+    <Compile Remove="Migrations\20220729095849_AddOneToManyRelation.cs" />
+    <Compile Remove="Migrations\20220729095849_AddOneToManyRelation.Designer.cs" />
+    <Compile Remove="Migrations\20220729100022_AddOneToManyRelation.cs" />
+    <Compile Remove="Migrations\20220729100022_AddOneToManyRelation.Designer.cs" />
+    <Compile Remove="Migrations\20220729103501_AddSomeRelationWithCategoryAndCourse.cs" />
+    <Compile Remove="Migrations\20220729103501_AddSomeRelationWithCategoryAndCourse.Designer.cs" />
+    <Compile Remove="Migrations\20220729104515_AddSomeRelationWithCategoryAndCourse.cs" />
+    <Compile Remove="Migrations\20220729104515_AddSomeRelationWithCategoryAndCourse.Designer.cs" />
+    <Compile Remove="Migrations\20220729121057_addSomeRelationOneToManyCategory.cs" />
+    <Compile Remove="Migrations\20220729121057_addSomeRelationOneToManyCategory.Designer.cs" />
+    <Compile Remove="Migrations\20220729122419_addSomeRelationOneToManyCategory.cs" />
+    <Compile Remove="Migrations\20220729122419_addSomeRelationOneToManyCategory.Designer.cs" />
+    <Compile Remove="Migrations\20220729173617_addTextBelong.cs" />
+    <Compile Remove="Migrations\20220729173617_addTextBelong.Designer.cs" />
+    <Compile Remove="Migrations\20220729210335_somecheckRelation.cs" />
+    <Compile Remove="Migrations\20220729210335_somecheckRelation.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

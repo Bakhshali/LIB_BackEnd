@@ -1,0 +1,61 @@
+﻿@model Course
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="m-4">
+    <div>
+        <h4>Image</h4>
+        <img style="width:400px;height:250px" src="~/assets/img/courses/@Model.Image">
+    </div>
+    <div>
+        <h4 class="mt-3">Kursun adı</h4>
+        <p>@Model.Name</p>
+    </div>
+    <div>
+        <h4>
+            @if (@Model.SubName == null)
+            {
+                @(" ")
+                ;
+            }
+            else
+            {
+                @("ikinci ad")
+                ;
+            }
+        </h4>
+        <p>@Model.SubName</p>
+    </div>
+    <div>
+        @if (@Model.İnformation != null)
+        {
+            <h4 class="mt-3">ilkin məlumat</h4>
+            <p>@Model.İnformation</p>
+        }
+    </div>
+    <div>
+        <h4 class="mt-3">Şərtlər</h4>
+        <p>@Model.Condition</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Kurs haqqında</h4>
+        <p>@Model.BelongText</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Qrup şəklində hazırlıq</h4>
+        <p>@Model.GroupPrice AZN</p>
+    </div>
+     <div>
+        @if (@Model.İndividualPrice != null)
+        {
+            <h4 class="mt-3">Fərdi hazırlıq</h4>
+            <p>@Model.İndividualPrice Azn</p>
+        }
+    </div>
+    <div>
+        <a asp-controller="course" asp-action="index" class="btn btn-success mt-2">Back</a>
+    </div>
+</div>
+
