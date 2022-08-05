@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LIBSchool_FinalProjectBackEnd.DAL
 {
-    public class AppDbContext:IdentityDbContext
+    public class AppDbContext:IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext>options):base(options)
         {
@@ -25,5 +25,12 @@ namespace LIBSchool_FinalProjectBackEnd.DAL
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Quiz> Quizzes { get; set; }
+        public DbSet<Branch> Branches { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Result> Results { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

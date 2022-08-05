@@ -1,0 +1,112 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+
+    <section id="transition">
+        <div class="container">
+            <div class="row p-1 mt-4">
+                <div class="text">
+                    <a href="#"><span>HOME</span></a><i class="fa-solid fa-angle-right ms-2 me-2"></i>
+                    @foreach (Category category in Model.Categories.Where(c=>c.Id==Model.Category.Id))
+                    {
+                        <a href="#"><span>@category.Name</span></a>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="filtercourse">
+        <div class="container mt-5">
+              @foreach (Category category in Model.Categories.Where(c=>c.Id==Model.Category.Id))
+                    {
+                         <h1>@category.Name</h1>
+                    }
+           
+
+            <div class="row mt-5 d-flex justify-content-between align-items-center"
+                 style="background-color:#F0F2F5 ;">
+
+                <div class="col-lg-4 mt-4 mb-4" id="searchinput">
+                    <input type="text" style="width:70% ;" placeholder="Search the courses">
+                    <input type="submit" name="" value="Search"
+                           style="width: 25%; background-color: #EAB830; color: white;">
+                </div>
+              
+                    
+                    <div class="col-lg-5 mt-3">
+                    <div class="box mb-3  d-flex justify-content-evenly">
+                        <select name="" id="" class="customerSelect">
+                            @foreach (Course course1 in Model.Courses)
+                           {
+                               <a asp-controller="category" asp-action="index" asp-route-category="@course1.Id"><option value="" id="1">All courses</option></a>
+                           }
+                        </select>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+
+    <section id="course">
+        <div class="container">
+            <div class="row  mt-3">
+                @foreach (Course course in Model.Courses.Where(c=>c.CategoryId==Model.Category.Id))
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+
+                        <div data-aos="zoom-in-up" data-aos-delay="200" class="box mt-4">
+                            <div class="price">
+                                <p>89.00 AZN</p>
+                            </div>
+                            <div class="image">
+                                <img src="~/assets/img/courses/@course.Image"
+                                 alt="">
+                            </div>
+                            <div class="textbox">
+                                <div class="title ms-3 mt-3">
+                                    <span>@course.Name</span>
+                                </div>
+                                <div class="btn mt-3">
+                                    <a href="" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="icons mt-2">
+                                    <span class="me-2 ms-3"><i class="fa-solid fa-comment me-1"></i>0</span>
+                                    <span><i class="fa-solid fa-user me-1"></i>0</span>
+                                </div>
+                                <div class="monthly d-flex justify-content-end me-3">
+                                    <span>89.00 AZN - 159.00 AZN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="lines">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1 mt-3">
+                    <div class="shortline mt-4 ms-2"></div>
+                </div>
+                <div class="col-lg-11 mt-3">
+                    <div class="longline mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+

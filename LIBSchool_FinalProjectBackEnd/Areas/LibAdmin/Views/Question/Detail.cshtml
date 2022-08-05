@@ -1,0 +1,30 @@
+﻿@model Contact
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="m-4">
+  
+    <div>
+        <h4 class="mt-3">Adı</h4>
+        <p>@Model.Name</p>
+    </div>
+     <div>
+        <h4 class="mt-3">Əlaqə nömrəsi</h4>
+        <p>@Model.Phone</p>
+    </div>
+    <div>
+        <h4 class="mt-3">E-poçt</h4>
+        <a href="mailto:@Model.Email" style="text-decoration:none">@Model.Email</a>
+    </div>
+    <div>
+        <h4 class="mt-3">Sual</h4>
+        <p>@Model.Subject</p>
+    </div>
+    <div>
+        <a asp-controller="question" asp-action="index" class="btn btn-success mt-2">Back</a>
+    </div>
+</div>
+
+

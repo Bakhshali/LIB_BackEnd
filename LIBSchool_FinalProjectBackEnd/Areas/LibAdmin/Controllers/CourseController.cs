@@ -29,8 +29,10 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
             return View(courses);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Categories = await _context.Categories.ToListAsync();
+
             return View();
         }
 
@@ -39,6 +41,8 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         public async Task<IActionResult> Create(Course course)
         {
+            ViewBag.Categories = await _context.Categories.ToListAsync();
+
             if (!ModelState.IsValid) return View();
 
             if (course.Photo != null)
@@ -64,6 +68,7 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         public async Task<IActionResult> Detail(int id)
         {
+
             Course course = await _context.Courses.FindAsync(id);
             if (course == null) return NotFound();
             return View(course);
@@ -71,6 +76,7 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.Categories = await _context.Categories.ToListAsync();
             Course course = await _context.Courses.FindAsync(id);
             if (course == null) return NotFound();
             return View(course);
@@ -81,16 +87,27 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         public async Task<IActionResult> Edit(Course course)
         {
+            ViewBag.Categories = await _context.Categories.ToListAsync();
+
             Course existedCourse = await _context.Courses.FirstOrDefaultAsync(c => c.Id == course.Id);
+
             if (existedCourse == null) return NotFound();
 
-            _context.Entry(existedCourse).CurrentValues.SetValues(course);
+            existedCourse.Name = course.Name;
+            existedCourse.SubName = course.SubName;
+            existedCourse.GroupPrice = course.GroupPrice;
+            existedCourse.İndividualPrice = course.İndividualPrice;
+            existedCourse.CategoryId = course.CategoryId;
+            existedCourse.BelongText = course.BelongText;
+            existedCourse.BelongTitle = course.BelongTitle;
+            existedCourse.Condition = course.Condition;
+            existedCourse.İnformation = course.İnformation;
 
             if (course.Photo != null)
             {
                 if (course.Photo.IsOkay(1))
                 {
-                    existedCourse.Image = await course.Photo.FileCreate(_env.WebRootPath, @"assets\img\slider");
+                    existedCourse.Image = await course.Photo.FileCreate(_env.WebRootPath, @"assets\img\courses");
                 }
                 else
                 {
@@ -134,6 +151,5 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
     }
 }

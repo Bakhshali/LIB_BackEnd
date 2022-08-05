@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace LIBSchool_FinalProjectBackEnd.Models
 {
@@ -6,6 +7,7 @@ namespace LIBSchool_FinalProjectBackEnd.Models
     {
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public List<SubCategory> SubCategories { get; set; }

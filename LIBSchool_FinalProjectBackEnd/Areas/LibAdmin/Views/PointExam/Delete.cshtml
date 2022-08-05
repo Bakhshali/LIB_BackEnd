@@ -1,0 +1,26 @@
+﻿@model Result
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="m-4">
+
+    <div>
+        <h4 class="mt-3">Name</h4>
+        <p>@Model.Name</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Point</h4>
+        <p>@Model.Point</p>
+    </div>
+    <div>
+        <form method="post">
+            <button class="btn btn-danger mt-2">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+

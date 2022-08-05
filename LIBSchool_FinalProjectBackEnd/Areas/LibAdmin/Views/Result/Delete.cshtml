@@ -1,0 +1,41 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="m-4">
+    
+    <div>
+        <h4 class="mt-3">Id</h4>
+        <p>@Model.ResultId</p>
+    </div>
+    <div>
+        <h4>Image</h4>
+        <img style="width:400px;height:250px" src="~/assets/img/result/@Model.ResultImage">
+    </div>
+    <div>
+        <h4 class="mt-3">Name</h4>
+        <p>@Model.Name</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Surname</h4>
+        <p>@Model.Surname</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Subject</h4>
+        <p>@Model.Result.Name</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Point</h4>
+        <p>@Model.Result.Point</p>
+    </div>
+    
+    <div>
+
+        <form method="post">
+            <button class="btn btn-danger mt-2">Delete</button>
+        </form>
+    </div>
+</div>
+

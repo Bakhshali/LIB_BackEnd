@@ -32,7 +32,6 @@
             <input class="form-control" asp-for="İnformation" placeholder="ilkin məlumat(əgər varsa)"> <br/>
             <span class="text-danger" asp-validation-for="İnformation"></span>
         </div>
-       
         <div>
             <input class="form-control" asp-for="GroupPrice" placeholder="Qrup şəkildə hazırlıq qiyməti_*"> <br/>
             <span class="text-danger" asp-validation-for="GroupPrice"></span>
@@ -41,17 +40,10 @@
             <input class="form-control" asp-for="İndividualPrice" placeholder="Fərdi hazırlıq_*"> <br/>
             <span class="text-danger" asp-validation-for="İndividualPrice"></span>
         </div>
-        @*   <div>
-            <select asp-for="Category">
-                
-                    @foreach (Category category in Model.Category)
-                   {
-                       <option>ca</option>
-                   }
-                
-            </select> <br/>
-            <span class="text-danger" asp-validation-for="Category"></span>
-        </div>*@
+        <div>
+            <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select> <br/>
+            <span class="text-danger" asp-validation-for="CategoryId"></span>
+        </div>
         <div>
             <input asp-for="Photo"><br/>
             <span class="text-danger" asp-validation-for="Photo"></span>

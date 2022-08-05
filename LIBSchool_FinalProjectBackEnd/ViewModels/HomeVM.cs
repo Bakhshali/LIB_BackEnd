@@ -13,6 +13,15 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         public List<Course> Courses { get; set; }
         public Course Course { get; set; }
         public List<Quiz> Quizzes { get; set; }
+        public List<Branch> Branches { get; set; }
+        public Branch Branch { get; set; }
+        public List<Student> Students { get; set; }
+        public List<Result> Results { get; set; }
+        public List<Team> Teams { get; set; }
+        public List<Album> Albums { get; set; }
+        public List<Gallery> Galleries { get; set; }
+        public List<Contact> Contacts { get; set; }
+        public Contact Contact { get; set; }
 
     }
 }

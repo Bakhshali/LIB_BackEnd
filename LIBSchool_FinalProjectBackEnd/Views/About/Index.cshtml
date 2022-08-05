@@ -1,0 +1,130 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="whyus" class="mt-4">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="title" data-aos="flip-right" data-aos-delay="50">
+                        <h2>Nə üçün biz?</h2>
+                    </div>
+                    <div class="text mt-4" data-aos="fade-up" data-aos-duration="1000">
+                        <p>@layoutservice.GetDatas().Result.FirstOrDefault(c=>c.Key=="text1").Value</p>
+                        <p>@layoutservice.GetDatas().Result.FirstOrDefault(c=>c.Key=="text2").Value</p>
+                        <p>@layoutservice.GetDatas().Result.FirstOrDefault(c=>c.Key=="text3").Value</p>
+                        <p>@layoutservice.GetDatas().Result.FirstOrDefault(c=>c.Key=="text4").Value</p>
+                        <p>@layoutservice.GetDatas().Result.FirstOrDefault(c=>c.Key=="text5").Value</p>
+                    </div>
+                    @foreach (Team team in Model.Teams)
+                    {
+                        <div class="image ms-2 mt-5" data-aos="zoom-in-up">
+                            <img src="~/assets/img/whyus/@team.Image" alt="">
+                        </div>
+                    }
+                </div>
+                <div class="col-lg-6">
+                    <div class="line"></div>
+                    <div class="box p-3">
+                        <div class="title d-flex justify-content-around">
+                            <span class="aboutinfo" style="color: #273044 ;">TƏCRÜBƏ</span>
+                            <span class="writeus">BİZƏ YAZIN</span>
+                        </div>
+                    </div>
+                    <div class="profession mt-5   ">
+                        <h3>Professional heyət və tədris sistemi</h3>
+                        <ul>
+                            <li>Onlayn tədris sistemi</li>
+                            <li>Yüksək təcrübli kollektiv</li>
+                            <li>10 illik iş təcrübəsi</li>
+                        </ul>
+                    </div>
+                    <div class="appeal mt-5">
+                        <form action="">
+                            <input type="text" placeholder="Adınız">
+                            <input class="ms-4" type="text" placeholder="Telefon">
+                            <input class="mt-4" type="text" placeholder="Emailiniz">
+                            <div class="message">
+                                <textarea name="" id="" rows="8" placeholder="Mövzu"></textarea>
+                            </div>
+                        </form>
+                        <div class="btn mt-3">
+                            <button type="submit" class="btn btn-dark">MÜRACİƏT ET</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="result">
+        <div class="container">
+            <div class="row  mt-5">
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <div class="shortline mt-4 ms-2"></div>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="longline mt-4"></div>
+                </div>
+
+                <div class="title mt-5" data-aos="flip-right" data-aos-delay="50">
+                    <h2>Nəticələrimiz</h2>
+                </div>
+
+                @foreach (Student student in Model.Students)
+                {
+                    <div class="col-lg-4" data-aos="zoom-out">
+                        <div class="image mt-5">
+                            <img src="~/assets/img/result/@student.ResultImage" alt="">
+                        </div>
+                        <div class="text mt-4" data-aos="flip-up">
+                            <p>
+                                @student.Surname @student.Name @foreach (Result result in Model.Results.Where(c => c.Id == student.ResultId))
+                                {
+                                    @(("(" + @result.Name + " - " + @result.Point + " bal" + ")"))
+                                }
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="startnow">
+        <div class="container">
+            <div class="row mt-5 text-center">
+                <div class="col-lg-12">
+                    <div class="box p-4">
+                        <div class="text">
+                            <h2>İstədiyin xarici dil kursuna indi başla</h2>
+                            <p class="mt-4">Bunun üçün ofisə gəlməyə ehtiyac yoxdur. Kursu seç, ödəniş et və öyrənməyə başla.</p>
+                        </div>
+                        <div class="btn mt-2">
+                            <a href="./course.html" class="btn btn-dark">Kursa Başla</a>
+                        </div>
+                    </div>
+                    <div class="socials d-flex mt-4">
+                        <div class="facebooks mt-4 ms-4" data-aos="flip-right" data-aos-delay="50" data-aos-offset="0">
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="facebookShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="facebookShare").Value"></i></a>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 pinter" data-aos="flip-right" data-aos-delay="100" data-aos-offset="0">
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").Value"></i></a>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 insta" data-aos="flip-right" data-aos-delay="150" data-aos-offset="0">
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").Value"></i></a>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 twit" data-aos="flip-right" data-aos-delay="200" data-aos-offset="0">
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").Value"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

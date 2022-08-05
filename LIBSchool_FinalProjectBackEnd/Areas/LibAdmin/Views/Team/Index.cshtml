@@ -1,0 +1,30 @@
+﻿@model List<Team>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive">
+    <a asp-controller="Team" asp-action="create" class="btn btn-success" style="border-radius:15px; position:absolute;right:40px;top:90px; background-color:#6366F1;border:none; width:50px;"><i class="fa-solid fa-plus"></i></a>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Image <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Edit <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Delete <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Team team in Model)
+            {
+                <tr>
+                    <td><img style="width:400px;height:250px" src="~/assets/img/whyus/@team.Image"></td>
+                    <td><a asp-controller="Team" asp-action="edit" asp-route-id="@team.Id" class="btn btn-success" style="border-radius:15px; background-color:#6366F1;border:none; width:50px;"><i class="fa-solid fa-pen-clip"></i></a></td>
+                    <td><a asp-controller="Team" asp-action="delete" asp-route-id="@team.Id" class="btn btn-danger" style="border-radius:15px;border:none; width:50px;"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

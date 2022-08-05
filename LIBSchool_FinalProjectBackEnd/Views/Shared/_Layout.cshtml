@@ -13,6 +13,8 @@
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet'>
+    
     <link rel="stylesheet" href="~/assets/scss/css/style.css">
     <title>Document</title>
 </head>
@@ -50,13 +52,26 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="./login.html">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a asp-controller="account" asp-action="edit">
+                                <span class="me-2">
+                                    <i class="fa-solid fa-user me-2"></i>@User.Identity.Name
+                                </span>
+                            </a>
+                            <div class="line"></div>
+                                <a asp-controller="account" asp-action="logout"><span class="ms-2">Log Out</span></a>
+                            }
+                            else
+                            {
+                                <a asp-controller="account" asp-action="login">
                                 <span class="me-2">
                                     <i class="fa-solid fa-user me-2"></i>Login
                                 </span>
                             </a>
                             <div class="line"></div>
-                            <a href="./login.html"><span class="ms-2">Register</span></a>
+                            <a asp-controller="account" asp-action="register"><span class="ms-2">Register</span></a>
+                            }
                         </div>
                     </div>
                 </div>
@@ -67,7 +82,7 @@
                 <div class="row d-flex justify-content-between">
                     <div class="col-lg-1">
                         <div class="logo mt-2 d-flex justify-content-between">
-                            <a asp-controller="home" asp-action="index" ><img src="~/assets/img/logo/LIB-logo.png" alt=""></a>
+                            <a asp-controller="home" asp-action="index"><img src="~/assets/img/logo/LIB-logo.png" alt=""></a>
                             <i class="fa-solid fa-bars mt-4"></i>
 
                         </div>
@@ -187,47 +202,49 @@
                                     <a href="./service.html">XIDMƏTLƏR</a>
                                     <div class="dropdown-menu">
                                         <ul>
-                                            @foreach (Category category in Model.Categories)
+                                         @*   @foreach (Category category in Model.Categories)
                                             {
                                                 <li>
-                                                    <a href ="#">
+                                                    <a asp-controller="Category" asp-action="index" asp-route-id="@category.Id">
                                                         @category.Name <i class="fa-solid fa-angle-right me-2"></i>
                                                     </a>
-                                                    <div class="dropdown-menu-1">
+                                                    <div class="dropdown-menu-1 p-2">
                                                         <ul>
-                                                        @foreach (SubCategory sub in Model.SubCategories.FindAll(s => s.CategoryId == category.Id))
-                                                        {
-                                                                <li><a asp-route-id=@sub.Id>@sub.Name</a></li>
-                                                        }
+                                                            @foreach (Course course in Model.Courses.FindAll(s => s.CategoryId == category.Id))
+                                                            {
+                                                                <li><a asp-controller="detail" asp-action="index" asp-route-id="@course.Id">@course.Name</a></li>
+                                                            }
                                                         </ul>
                                                     </div>
                                                 </li>
-                                            }
+                                            }*@
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="./about.html">HAQQIMIZDA</a>
+                                    <a asp-controller="about" asp-action="index">HAQQIMIZDA</a>
                                     <div class="dropdown-menu">
                                         <ul>
-                                            <li><a href="./about.html">Nə üçün biz? </a></li>
-                                            <li><a href="./about.html">Komandamız </a></li>
+                                            <li><a asp-controller="about" asp-action="index">Nə üçün biz? </a></li>
+                                            <li><a asp-controller="about" asp-action="index">Komandamız </a></li>
                                             <li><a href="./career.html">Komandamıza qoşulun </a></li>
                                             <li><a href="">Bloq </a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="./branch.html">FİLİALLAR</a>
-                                    <div class="dropdown-menu">
+                                    <a asp-controller="branch" asp-action="index">FİLİALLAR</a>
+                                    <div class="dropdown-menu p-2">
                                         <ul>
-                                            <li><a href="./branch.html #mainbranch">Mərkəz Filialı </a></li>
-                                            <li><a href="./branch.html #anotherbranch">Əhmədli Filialı </a></li>
+                                            @*@foreach (Branch branch in Model.Branches)
+                                                {
+                                                <li><a asp-controller="branch" asp-action="index">@branch.Name </a></li>
+                                                }*@
                                         </ul>
                                     </div>
                                 </li>
-                                <li><a href="./gallery.html">QALEREYA</a></li>
-                                <li><a href="./contact.html">ƏLAQƏ</a></li>
+                                <li><a asp-controller="gallery" asp-action="index">QALEREYA</a></li>
+                                <li><a asp-controller="contact" asp-action="index">ƏLAQƏ</a></li>
                                 <li><a href="./wishlist.html"><i class="fa-regular fa-heart"></i></a></li>
                                 <li>
                                     <a href="./basket.html">
@@ -248,15 +265,17 @@
                                 <label for="">AXTARIŞ</label>
                                 <div class="modal-content mt-2">
                                     <div class="modal-body">
-                                        <div class="input">
-                                            <input type="text" name="" id=""
+                                       <form method="get">
+                                            <div class="input">
+                                            <input type="search" value="@ViewBag.Search" name="searchCourse" 
                                                    placeholder="Axtarmaq istədiyiniz sözü yazın...">
                                         </div>
                                         <div class="btn">
-                                            <button class="btn btn-success">
+                                            <button asp-controller="Search" asp-action="index" type="submit" class="btn btn-success">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
                                         </div>
+                                       </form>
                                     </div>
 
                                 </div>

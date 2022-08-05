@@ -1,0 +1,83 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+        <section id="title-service" class="mt-3 p-5">
+            <h1>QALEREYA</h1>
+        </section>
+
+        <section id="maingallery">
+            <div class="container">
+                <div class="row mt-4">
+                   @foreach (Gallery gallery in Model.Galleries)
+                  {
+                       <div class="col-lg-3 col-md-6 col-sm-12 mt-4">
+                        <div class="box">
+                            <a href="@gallery.URL"><img
+                                    src="~/assets/img/thumbnail/@gallery.YoutubeImage" alt=""></a>
+                            <a href="@gallery.URL">
+                                <h5 class="mt-1 mb-4 ms-2">@gallery.Title</h5>
+                            </a>
+                        </div>
+                    </div>
+                  }
+                </div>
+            </div>
+        </section>
+
+        <section id="photoalbum">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="title">
+                        <h2>Foto Qalereya</h2>
+                    </div>
+                    <div class="col-lg-9 d-flex">
+                        <div class="row mt-5">
+                           @foreach (Album album in Model.Albums)
+                          {
+                               <div class="col-lg-4">
+                                <div class="images">
+                                    <img src="~/assets/img/photoalbum/@album.Image"
+                                        alt="">
+                                </div>
+                            </div>
+                          }
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <div class="lastresult mt-5">
+                            <h2>Son IELTS nəticələrimiz</h2>
+                        </div>
+                        <div class="images mt-4">
+                            <img src="./assets/img/ieltsresult/aysel-768x768.jpg" alt="">
+                            <img class="mt-3" src="./assets/img/ieltsresult/Adilov-Tural-IELTS-nəticə-7-250x250.jpeg"
+                                alt="">
+                            <img class="mt-4"
+                                src="./assets/img/ieltsresult/70230510_2543747078980812_4497091592275886080_n-150x150.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="socials d-flex ">
+                        <div class="facebooks mt-4 ms-4">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 pinter">
+                            <i class="fa-brands fa-pinterest"></i>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 insta">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 twit">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    </main>

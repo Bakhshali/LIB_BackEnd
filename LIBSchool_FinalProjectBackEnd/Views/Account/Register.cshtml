@@ -1,0 +1,66 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<main>
+    <section id="account">
+        <div class="container">
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="title">
+                    <p>
+                        Saytımıza xoş gəlmisiniz! Siz hazırda saytımızda qeydiyyatdan keçərək proqramlara yazıla
+                        bilərsiniz, eyni zamanda xarici dilsəviyyənizi yoxlamaq şansınız var. Həmçinin özəl təklif
+                        və məhsullarımız haqqında ilk məlumat almaq və fürsətlərdən yararlanmaq imkanınız var.
+                    </p>
+                </div>
+
+                <div class="col-lg-5 mt-5">
+                    <h3>Qeydiyyat</h3>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    <form method="post">
+                        <div class="registerbox row mt-4">
+                            <div class="col-lg-6">
+                                <label for="">AD</label><br>
+                                <input asp-for="Name" placeholder="Adınızı daxil edin">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                                <label for="">USERNAME</label><br>
+                                <input asp-for="Username" placeholder="Username daxil edin">
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                                <label for="">ŞİFRƏ</label><br>
+                                <input asp-for="Password" placeholder="Şifrəni daxil edin">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">SOYAD</label><br>
+                                <input asp-for="Surname" placeholder="Soyadınızı daxil edin">
+                                <span asp-validation-for="Surname" class="text-danger"></span>
+                                <label for="">E-POÇT</label><br>
+                                <input asp-for="Email" placeholder="E-poçtunuzu daxil edin">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                                <label for="">ŞİFRƏNİ TƏKRARLAYIN</label><br>
+                                <input asp-for="ConfirmPassword" placeholder="Şifrəni təkrar daxil edin">
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="remember mt-4 d-flex">
+                                <div class="checkRemember">
+                                    <input asp-for="IsCondition" class="largeCheck" >
+                                     <span asp-validation-for="IsCondition" class="text-danger"></span>
+                                </div>
+                                <span>
+                                    Sayt üzərində bütün şəxsi məlumatlar tərəfimizdən məxfilik siyasətinə uyğun
+                                    qorunur, və heç bir halda 3-cü şəxsə verilmir.
+                                </span> <br>
+
+                            </div>
+                            <div class="btn d-flex justify-content-end mt-3">
+                                <button type="submit" class="btn btn-dark">QEYDİYYAT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>

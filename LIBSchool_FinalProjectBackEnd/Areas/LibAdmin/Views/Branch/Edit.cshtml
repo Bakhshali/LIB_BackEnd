@@ -1,0 +1,35 @@
+﻿@model Branch
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="m-3 mt-5">
+    <div class="title">
+        <h2 style="color:#273044"> <span style="color:#FF0000">#</span> Dəyişiklik et</h2>
+    </div>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        <div>
+            <input class="form-control" asp-for="Name" placeholder="Filialın adı"> <br/>
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <input class="form-control" asp-for="Location" placeholder="Ünvanı"> <br/>
+            <span class="text-danger" asp-validation-for="Location"></span>
+        </div>
+          <div>
+            <input class="form-control" asp-for="PhoneNumber" placeholder="Əlaqə nömrəsi"> <br/>
+            <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+        </div>
+          <div>
+            <input class="form-control" asp-for="OfficeNumber" placeholder="Əlaqə nömrəsi(ofis)"> <br/>
+            <span class="text-danger" asp-validation-for="OfficeNumber"></span>
+        </div>
+          <div>
+            <input class="form-control" asp-for="Map" placeholder="Xəritə"> <br/>
+            <span class="text-danger" asp-validation-for="Map"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success mt-3">Yadda saxla</button>
+        </div>
+    </form>
+</div>

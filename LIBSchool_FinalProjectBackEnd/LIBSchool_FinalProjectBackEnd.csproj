@@ -51,6 +51,16 @@
     <Compile Remove="Migrations\20220729173617_addTextBelong.Designer.cs" />
     <Compile Remove="Migrations\20220729210335_somecheckRelation.cs" />
     <Compile Remove="Migrations\20220729210335_somecheckRelation.Designer.cs" />
+    <Compile Remove="Migrations\20220802113739_createdGalleryTables.cs" />
+    <Compile Remove="Migrations\20220802113739_createdGalleryTables.Designer.cs" />
+    <Compile Remove="Migrations\20220804160156_addedSomeField.cs" />
+    <Compile Remove="Migrations\20220804160156_addedSomeField.Designer.cs" />
+    <Compile Remove="Migrations\20220804160328_addedSomeTablesWithField.cs" />
+    <Compile Remove="Migrations\20220804160328_addedSomeTablesWithField.Designer.cs" />
+    <Compile Remove="Migrations\20220804161411_addedSomeTablesWithField.cs" />
+    <Compile Remove="Migrations\20220804161411_addedSomeTablesWithField.Designer.cs" />
+    <Compile Remove="Migrations\20220804163620_addedSomeregular.cs" />
+    <Compile Remove="Migrations\20220804163620_addedSomeregular.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

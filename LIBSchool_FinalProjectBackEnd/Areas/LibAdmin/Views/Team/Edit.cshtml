@@ -1,0 +1,22 @@
+﻿@model Team
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="m-3 mt-5">
+    <div class="title">
+        <h2 style="color:#273044"> <span style="color:#FF0000">#</span> Düzəliş et</h2>
+    </div>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        <div>
+            <input asp-for="Photo" > <br/>
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success mt-3">Yadda saxla</button>
+        </div>
+    </form>
+</div>
+
+

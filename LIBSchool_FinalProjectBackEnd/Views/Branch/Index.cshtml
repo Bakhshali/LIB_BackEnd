@@ -1,0 +1,50 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="title-service" class="mt-3 p-5">
+        <h1>FİLİALLAR</h1>
+    </section>
+
+    <section class="branchinfos">
+        <div class="container">
+            <div class="row mt-5">
+                @foreach (Branch branch in Model.Branches)
+                {
+                    <div class="text mt-5">
+                        <h2>@branch.Name</h2>
+                        <p class="mt-4">@branch.Location</p>
+                        <p>@branch.PhoneNumber, @branch.OfficeNumber</p>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="map mt-4">
+                            <iframe src="@branch.Map" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                }
+            </div>
+             <div class="socials d-flex mt-4">
+                        <div class="facebooks mt-4 ms-4">
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="facebookShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="facebookShare").Value"></i></a>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 pinter">
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").Value"></i></a>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 insta">
+                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").Value"></i></a>
+                        </div>
+                        <div class="facebooks mt-4 ms-4 twit">
+                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").Value"></i></a>
+                        </div>
+
+                    </div>
+        </div>
+    </section>
+
+
+</main>
+
+

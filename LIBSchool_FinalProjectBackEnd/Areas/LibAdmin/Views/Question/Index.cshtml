@@ -1,0 +1,45 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive">
+    <table class="table mt-5">
+  <thead>
+    <tr>
+      
+      <th scope="col">Name <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+      <th scope="col">Phone <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+      <th scope="col">Email <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+      <th scope="col">Subject <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+
+      <th scope="col">Detail <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (Contact contact in Model)
+  {
+      <tr>
+          <td>@contact.Name</td>
+          <td>@contact.Phone</td>
+          <td>@contact.Email</td>
+                    <td>@if (@contact.Subject.Length >= 30)
+                        {
+                            @(@contact.Subject.Substring(0,30) + "...")
+                            
+                        }
+                        else
+                        {
+                            @contact.Subject
+                        }
+                    </td>
+
+          <td ><a asp-controller="question" asp-action="detail" asp-route-id="@contact.Id" class="btn btn-success" style="border-radius:15px; background-color:#FFA500;border:none; width:50px;" ><i style="font-size:17px" class="fa-solid fa-circle-info"></i></a></td>
+      </tr>
+  }
+ 
+  </tbody>
+</table>
+</div>
+
+

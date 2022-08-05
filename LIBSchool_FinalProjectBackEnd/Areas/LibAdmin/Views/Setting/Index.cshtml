@@ -1,0 +1,42 @@
+﻿@model List<Setting>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+
+                <th scope="col">Key <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Value <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+
+                <th scope="col">Detail <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Edit <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Setting setting in Model)
+            {
+                <tr>
+                    <td>@setting.Key</td>
+                    <td>
+                        @if (@setting.Value.Length >= 80)
+                        {
+                            @(setting.Value.Substring(0,80).ToString() + "...")
+                        }
+                        else
+                        {
+                            @setting.Value
+                        }
+                    </td>
+                    <td><a asp-controller="setting" asp-action="details" asp-route-id="@setting.Id" class="btn btn-success" style="border-radius:15px; background-color:#FFA500;border:none; width:50px;"><i style="font-size:17px" class="fa-solid fa-circle-info"></i></a></td>
+                    <td><a asp-controller="setting" asp-action="edit" asp-route-id="@setting.Id" class="btn btn-success" style="border-radius:15px; background-color:#6366F1;border:none; width:50px;"><i class="fa-solid fa-pen-clip"></i></a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

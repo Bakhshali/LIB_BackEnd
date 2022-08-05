@@ -40,5 +40,7 @@ namespace LIBSchool_FinalProjectBackEnd.Models
         [NotMapped]
         public IFormFile Photo { get; set; }
 
+
+
     }
 }

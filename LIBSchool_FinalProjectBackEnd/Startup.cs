@@ -1,8 +1,10 @@
 using LIBSchool_FinalProjectBackEnd.DAL;
+using LIBSchool_FinalProjectBackEnd.Models;
 using LIBSchool_FinalProjectBackEnd.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +35,25 @@ namespace LIBSchool_FinalProjectBackEnd
             {
                 opt.UseSqlServer(_configuration.GetConnectionString("Default"));
             });
+
+            services.AddIdentity<AppUser, IdentityRole>(option =>
+            {
+                option.Password.RequireDigit = true;
+                option.Password.RequireLowercase = true;
+                option.Password.RequiredLength = 8;
+                option.Password.RequireNonAlphanumeric = false;
+                option.Password.RequireUppercase = false;
+
+                option.Lockout.MaxFailedAccessAttempts = 3;
+                option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+                option.Lockout.AllowedForNewUsers = true;
+
+                option.SignIn.RequireConfirmedEmail = false;
+
+                option.User.RequireUniqueEmail = false;
+                option.User.AllowedUserNameCharacters = "qwertyuiopasdfghjklzxcvbnm_1234567890";
+
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +66,10 @@ namespace LIBSchool_FinalProjectBackEnd
 
             app.UseRouting();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

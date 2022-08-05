@@ -1,0 +1,26 @@
+﻿@model Gallery
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="m-4">
+
+    <div>
+        <h4>Image</h4>
+        <img style="width:400px;height:250px" src="~/assets/img/thumbnail/@Model.YoutubeImage">
+    </div>
+    <div>
+        <h4>Title</h4>
+        <p>@Model.Title</p>
+    </div>
+    <div>
+        <h4>Title</h4>
+        <p>@Model.URL</p>
+    </div>
+    <div>
+        <form method="post">
+            <button class="btn btn-danger mt-2">Delete</button>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,121 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+<section id="contactinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="title mt-4">
+                    <h3>Əlaqə məlumatları</h3>
+                </div>
+                <div class="line mt-4"></div>
+                <div class="box d-flex mt-4">
+                    <div class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="text ms-4">
+                        <h5>Ünvanlarımız</h5>
+                        <p>Mərkəz filialı: Caspian plaza 1/6.</p>
+                        <p>Əhmədli filialı: Əhmədli qəs, Sarayevo 17.</p>
+                    </div>
+                </div>
+                <div class="line mt-4"></div>
+                <div class="box d-flex mt-4">
+                    <div class="icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="text ms-4">
+                        <h5>Telefon</h5>
+                        <p>Mərkəzi filial: 055 238 40 02</p>
+                        <p>Əhmədli filialı: 055 238 40 06</p>
+                    </div>
+                </div>
+                <div class="line mt-4"></div>
+                <div class="web d-flex justify-content-between">
+                    <div class="box d-flex mt-4">
+                        <div class="icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div class="text ms-4">
+                            <h5>E-poçt</h5>
+                            <a href="mailto:info@lib-school.az">info@lib-school.az</a>
+                        </div>
+                    </div>
+                    <div class="box d-flex mt-4 me-5">
+                        <div class="icon">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <div class="text ms-4">
+                            <h5>Web</h5>
+                            <a href="https://lib-school.az/">lib-school.az</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="title mt-4">
+                    <h3>Xəritədə biz:</h3>
+                </div>
+                <div class="map mt-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.0814239729725!2d49.828975420190126!3d40.38488795918292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d756515fa31%3A0x83b07b2d15f125d!2sLib%20School!5e0!3m2!1sen!2s!4v1658122957671!5m2!1sen!2s" width="600" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="question">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-1">
+                <div class="shortline mt-4 ms-2"></div>
+            </div>
+            <div class="col-lg-10">
+                <div class="longline mt-4"></div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="title mt-4">
+                    <h3>Sualınız var?</h3>
+                </div>
+                <form method="post" class="mt-4">
+                    <input asp-for="@Model.Contact.Name" placeholder="Adınız">
+                    <span class="text-danger" asp-validation-for="@Model.Contact.Name"></span>
+                    <input asp-for="@Model.Contact.Phone" type="text" placeholder="Telefon">
+                    <span class="text-danger" asp-validation-for="@Model.Contact.Phone"></span>
+                    <input class="mt-4" asp-for="@Model.Contact.Email" placeholder="Emailiniz">
+                    <span class="text-danger" asp-validation-for="@Model.Contact.Email"></span>
+                    <div class="message">
+                        <textarea asp-for="@Model.Contact.Subject"  rows="8"></textarea>
+                        <span class="text-danger" asp-validation-for="@Model.Contact.Subject"></span>
+                    </div>
+                    <div class="btn mt-3">
+                        <button type="submit" class="btn btn-dark">MÜRACİƏT ET</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="socials d-flex justify-content-end mt-2">
+                <div class="facebooks mt-4 ms-4">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="facebooks mt-4 ms-4 pinter">
+                    <i class="fa-brands fa-pinterest"></i>
+                </div>
+                <div class="facebooks mt-4 ms-4 insta">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="facebooks mt-4 ms-4 twit">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
