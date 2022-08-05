@@ -209,3 +209,8 @@ C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBa
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Question\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Question\Detail.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Career\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\bin\Debug\netcoreapp3.1\DataAnnotationsExtensions.dll
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Vacancy\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Vacancy\Detail.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Vacancy\Delete.cshtml.g.cs

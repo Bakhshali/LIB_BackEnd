@@ -32,5 +32,6 @@ namespace LIBSchool_FinalProjectBackEnd.DAL
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Career> Careers { get; set; }
     }
 }

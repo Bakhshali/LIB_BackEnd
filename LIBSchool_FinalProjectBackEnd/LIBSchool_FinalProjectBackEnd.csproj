@@ -64,6 +64,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DataAnnotationsExtensions" Version="5.0.1.27" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.27" />
@@ -1915,6 +1916,7 @@
   <ItemGroup>
     <Folder Include="Areas\LibAdmin\Data\" />
     <Folder Include="Areas\LibAdmin\Models\" />
+    <Folder Include="wwwroot\assets\img\cv\" />
   </ItemGroup>
 
 </Project>

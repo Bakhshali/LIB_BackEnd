@@ -1,0 +1,83 @@
+﻿@model Career
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="title-service" class="mt-3 p-5">
+        <h1>KARYERA</h1>
+    </section>
+
+
+    <section id="careerwrite">
+        <div class="container">
+            <div class="row mt-5">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="inputs">
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Fullname"></span> <br />
+                            <input class="me-4" asp-for="Fullname" placeholder="Adınız, soyadınız">
+                            <input class="smallinput" asp-for="Phone" style="width:40% ;" placeholder="Əlaqə telefonu">
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Phone"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="inputs">
+                            <input asp-for="Email" placeholder="Emailiniz"> <br />
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="inputs">
+                            <input asp-for="VacancyName" placeholder="Müraciət etdiyiniz vakansiya adı"> <br />
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="VacancyName"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="inputs">
+                            <input asp-for="Experience" placeholder="Müraciət etdiyiniz istiqamət üzrə təcrübə müddəti (il)"> <br />
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Experience"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="inputs mt-5">
+                            <textarea asp-for="Subject" rows="8" placeholder="Son iş yeriniz və ayrılma səbəbiminiz"></textarea> <br />
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Subject"></span>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-4" style="background-color:white">
+                           <H5 class="ms-3">CV yükləyin<abbr class="required ms-2 text-danger" title="required">*</abbr></H5> 
+                            <input asp-for="Photo"> <br />
+                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Photo"></span>
+                        </div>
+
+                        <div class="btn mt-3">
+                            <button type="submit" class="btn btn-dark">MÜRACİƏT ET</button>
+                        </div>
+
+                    </div>
+
+
+                </form>
+                <div class="socials d-flex justify-content-end mt-4">
+                    <div class="facebooks mt-4 ms-4">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <div class="facebooks mt-4 ms-4 pinter">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </div>
+                    <div class="facebooks mt-4 ms-4 insta">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="facebooks mt-4 ms-4 twit">
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+

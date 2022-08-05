@@ -6,16 +6,16 @@ namespace LIBSchool_FinalProjectBackEnd.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(maximumLength: 15)]
+        [Required(ErrorMessage = "Tələb olunan hissələr doldurulmalıdır."), StringLength(maximumLength: 15)]
         public string Name { get; set; }
 
-        [Required, DataType(DataType.PhoneNumber), MaxLength(10)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
+        [Required(ErrorMessage = "Tələb olunan hissələr doldurulmalıdır."), DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Telefon nömrəsi düzgün deyil(nömrə 0 ilə başlamalıdır).")]
         public string Phone { get; set; }
 
-        [Required, DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Tələb olunan hissələr doldurulmalıdır."), DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Tələb olunan hissələr doldurulmalıdır.")]
         public string Subject { get; set; }
     }
 }

@@ -1,0 +1,38 @@
+﻿@model List<Career>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive">
+    <table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">CV <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+      <th scope="col">Fullname <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+      <th scope="col">PhoneNumber <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+
+      <th scope="col">Detail <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+      <th scope="col">Delete <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (Career career in Model)
+  {
+      <tr>
+          <td><img style="width:300px;height:450px" src="~/assets/img/cv/@career.Image"></td>
+          <td>@career.Fullname</td>
+          <td>@career.Phone</td>
+      
+          <td ><a asp-controller="vacancy" asp-action="detail" asp-route-id="@career.Id" class="btn btn-success" style="border-radius:15px; background-color:#FFA500;border:none; width:50px;" ><i style="font-size:17px" class="fa-solid fa-circle-info"></i></a></td>
+          <td><a asp-controller="vacancy" asp-action="delete" asp-route-id="@career.Id" class="btn btn-danger" style="border-radius:15px;border:none; width:50px;"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+  }
+ 
+  </tbody>
+</table>
+</div>
+
+
+
+

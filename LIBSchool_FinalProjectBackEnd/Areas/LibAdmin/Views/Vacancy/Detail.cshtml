@@ -1,0 +1,40 @@
+﻿@model Career
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="m-4">
+    <div>
+        <h4 >CV</h4>
+        <img style="width:400px;height:550px" src="~/assets/img/cv/@Model.Image">
+    </div>
+    <div>
+        <h4 class="mt-3">Fullname</h4>
+        <p>@Model.Fullname</p>
+    </div>
+      <div>
+        <h4 class="mt-3">Phone</h4>
+        <p>@Model.Phone</p>
+    </div>
+      <div>
+        <h4 class="mt-3">Email</h4>
+        <p>@Model.Email</p>
+    </div>
+     <div>
+        <h4 class="mt-3">Vacancy Name</h4>
+        <p>@Model.VacancyName</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Experience</h4>
+        <p>@Model.Experience il</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Last work places </h4>
+        <p>@Model.Subject</p>
+    </div>
+    <div>
+        <a asp-controller="vacancy" asp-action="index" class="btn btn-success mt-2">Geri</a>
+    </div>
+</div>
+
+

@@ -22,6 +22,7 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         public List<Gallery> Galleries { get; set; }
         public List<Contact> Contacts { get; set; }
         public Contact Contact { get; set; }
+        public Career Careers { get; set; }
 
     }
 }

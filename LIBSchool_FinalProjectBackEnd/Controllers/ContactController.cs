@@ -1,6 +1,9 @@
 ﻿using LIBSchool_FinalProjectBackEnd.DAL;
 using LIBSchool_FinalProjectBackEnd.Models;
+using LIBSchool_FinalProjectBackEnd.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LIBSchool_FinalProjectBackEnd.Controllers
@@ -14,9 +17,14 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+           
+            HomeVM model = new HomeVM
+            {
+                Branches = await _context.Branches.ToListAsync(),
+            };
+            return View(model);
         }
 
         [HttpPost]
@@ -24,7 +32,12 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
         public async Task<IActionResult> Index(Contact contact)
         {
-            if (!ModelState.IsValid) return View();
+            HomeVM model = new HomeVM
+            {
+                Branches = await _context.Branches.ToListAsync(),
+            };
+           
+            if (!ModelState.IsValid) return View(model);
 
             await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
