@@ -784,11 +784,11 @@ main #whyus .box span {
   color: white;
   cursor: pointer;
 }
-main #whyus .profession {
+main #whyus .appeal {
   -webkit-animation: faq 0.2s ease-in-out;
           animation: faq 0.2s ease-in-out;
 }
-main #whyus .profession h3 {
+main #whyus .appeal h3 {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 24px;
   font-style: normal;
@@ -798,15 +798,15 @@ main #whyus .profession h3 {
   line-height: 34px;
   color: #273044;
 }
-main #whyus .profession ul li {
+main #whyus .appeal ul li {
   font-size: 18px;
   padding: 3px;
 }
-main #whyus .appeal {
+main #whyus .profession {
   -webkit-animation: faq 0.2s ease-in-out;
           animation: faq 0.2s ease-in-out;
 }
-main #whyus .appeal form input {
+main #whyus .profession form input {
   width: 45%;
   height: 45px;
   border: none;
@@ -815,24 +815,24 @@ main #whyus .appeal form input {
   font-weight: 400;
   padding-left: 10px;
 }
-main #whyus .appeal form input,
-main #whyus .appeal form select {
+main #whyus .profession form input,
+main #whyus .profession form select {
   background-color: #F0F2F5;
 }
-main #whyus .appeal form input:focus {
+main #whyus .profession form input:focus {
   background-color: white;
   outline: none !important;
   border: 2px solid rgb(236, 236, 236);
 }
-main #whyus .appeal form .message {
+main #whyus .profession form .message {
   margin-top: 28px;
 }
-main #whyus .appeal form .message textarea {
+main #whyus .profession form .message textarea {
   width: 94%;
   border: none;
   padding-left: 10px;
 }
-main #whyus .appeal form .message textarea::-moz-placeholder {
+main #whyus .profession form .message textarea::-moz-placeholder {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 15px;
   font-style: normal;
@@ -841,7 +841,7 @@ main #whyus .appeal form .message textarea::-moz-placeholder {
   letter-spacing: normal;
   line-height: 20px;
 }
-main #whyus .appeal form .message textarea:-ms-input-placeholder {
+main #whyus .profession form .message textarea:-ms-input-placeholder {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 15px;
   font-style: normal;
@@ -850,7 +850,7 @@ main #whyus .appeal form .message textarea:-ms-input-placeholder {
   letter-spacing: normal;
   line-height: 20px;
 }
-main #whyus .appeal form .message textarea::placeholder {
+main #whyus .profession form .message textarea::placeholder {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 15px;
   font-style: normal;
@@ -859,16 +859,16 @@ main #whyus .appeal form .message textarea::placeholder {
   letter-spacing: normal;
   line-height: 20px;
 }
-main #whyus .appeal form .message textarea,
-main #whyus .appeal form .message select {
+main #whyus .profession form .message textarea,
+main #whyus .profession form .message select {
   background-color: #F0F2F5;
 }
-main #whyus .appeal form .message textarea:focus {
+main #whyus .profession form .message textarea:focus {
   background-color: white;
   outline: none !important;
   border: 2px solid rgb(236, 236, 236);
 }
-main #whyus .appeal .btn button {
+main #whyus .profession .btn button {
   width: 160px;
   border-radius: 50px;
   height: 50px;
@@ -1272,6 +1272,9 @@ main #photoalbum .lastresult h2 {
   font-weight: 400;
   letter-spacing: normal;
   line-height: 30px;
+}
+main #photoalbum .text-center img {
+  width: 50%;
 }
 main #contactinfo {
   margin-top: 30px;

@@ -202,7 +202,7 @@
                                     <a href="./service.html">XIDMƏTLƏR</a>
                                     <div class="dropdown-menu">
                                         <ul>
-                                         @*   @foreach (Category category in Model.Categories)
+                                            @foreach (Category category in Model.Categories)
                                             {
                                                 <li>
                                                     <a asp-controller="Category" asp-action="index" asp-route-id="@category.Id">
@@ -217,7 +217,7 @@
                                                         </ul>
                                                     </div>
                                                 </li>
-                                            }*@
+                                            }
                                         </ul>
                                     </div>
                                 </li>
@@ -235,10 +235,10 @@
                                     <a asp-controller="branch" asp-action="index">FİLİALLAR</a>
                                     <div class="dropdown-menu p-2">
                                         <ul>
-                                            @*@foreach (Branch branch in Model.Branches)
+                                            @foreach (Branch branch in Model.Branches)
                                                 {
-                                                <li><a asp-controller="branch" asp-action="index">@branch.Name </a></li>
-                                                }*@
+                                                <li><a asp-controller="branch" asp-action="index" >@branch.Name </a></li>
+                                                }
                                         </ul>
                                     </div>
                                 </li>

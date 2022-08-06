@@ -1047,7 +1047,7 @@ main {
             }
         }
 
-        .profession {
+        .appeal {
             animation: faq .2s ease-in-out;
 
             h3 {
@@ -1069,7 +1069,7 @@ main {
             }
         }
 
-        .appeal {
+        .profession {
             animation: faq .2s ease-in-out;
 
             form {
@@ -1628,6 +1628,11 @@ main {
                 font-weight: 400;
                 letter-spacing: normal;
                 line-height: 30px;
+            }
+        }
+        .text-center{
+            img{
+                width: 50%;
             }
         }
     }

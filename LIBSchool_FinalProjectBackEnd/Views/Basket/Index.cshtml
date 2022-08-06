@@ -1,0 +1,168 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="title-service" class="mt-3 p-5">
+        <h1>SƏBƏT</h1>
+    </section>
+
+    <section id="table">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sil</th>
+                                <th scope="col">Kursun adı</th>
+                                <th scope="col">Tədris formatı</th>
+                                <th scope="col">Qiymət</th>
+                                <th scope="col">Sayı</th>
+                                <th scope="col">Ümumi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th><i class="fa-solid fa-xmark mt-5"></i></th>
+                                <td>
+                                    <img width="100px" height="100px"
+                                         src="~/assets/img/courses/Səkil-general-english-ingilis-dili-kursu.jpg"
+                                         alt=""><span class="ms-3"><a href="#">Ümumi ingilis dili</a></span>
+                                </td>
+                                <td>
+                                    <div class="info">
+                                        <span>Qrup şəklində hazırlıq</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="info">
+                                        <span>79.00 AZN</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <form action="">
+                                        <input value="1" type="number" min="1">
+                                    </form>
+                                </td>
+                                <td>
+                                    <div class="info">
+                                        <span style="color: #2C75E4; ">79.00 AZN</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-xmark mt-5"></i></th>
+                                <td>
+                                    <img width="100px" height="100px"
+                                         src="~/assets/img/courses/Səkil-Məktəbli-rus-dili-kursu-270x283.jpg"
+                                         alt=""><span class="ms-3"><a href="#">Məktəbli rus dili</a></span>
+                                </td>
+                                <td>
+                                    <div class="info">
+                                        <span>Qrup şəklində hazırlıq</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="info">
+                                        <span>65.00 AZN</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <form action="">
+                                        <input value="1" type="number" min="1">
+                                    </form>
+                                </td>
+                                <td>
+                                    <div class="info">
+                                        <span style="color: #2C75E4; ">65.00 AZN</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-1">
+                    <div class="shortline mt-4 ms-2"></div>
+                </div>
+                <div class="col-11">
+                    <div class="longline mt-4"></div>
+                </div>
+
+                <div class="col-lg-8 mt-4">
+                    <h2>Bunlar sizin diqqətinizi çəkə bilər...</h2>
+
+                    <div class="owl-carousel owl-theme">
+                        @foreach (Course course in Model.Courses.TakeLast(3))
+                        {
+                            <div class="item">
+                                <div data-aos="zoom-in-up" data-aos-delay="50" class="box mt-4">
+                                    <div class="price">
+                                        <p>@course.GroupPrice AZN</p>
+                                    </div>
+                                    <div class="image">
+                                        <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id">
+                                            <img src="~/assets/img/courses/@course.Image"
+                                             alt="">
+                                        </a>
+                                    </div>
+                                    <div class="textbox">
+                                        <div class="title ms-3 mt-3">
+                                            <span>@course.Name</span>
+                                        </div>
+                                        <div class="btn mt-3">
+                                            <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                                        </div>
+                                    </div>
+                                    <div class="comment">
+                                        <div class="icons mt-2">
+                                            <span class="me-2 ms-3"><i class="fa-solid fa-comment me-1"></i>0</span>
+                                            <span><i class="fa-solid fa-user me-1"></i>0</span>
+                                        </div>
+                                        <div class="monthly d-flex justify-content-end me-3">
+                                            <span>
+                                                @course.GroupPrice AZN @if (@course.İndividualPrice == null)
+                                                {
+                                                    @(" " + @course.İndividualPrice)
+                                                    ;
+                                                }
+                                                else
+                                                {
+                                                    @("- " + @course.İndividualPrice + "AZN")
+                                                    ;
+                                                }
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                    <h3 class="text-center">
+                        Ümumi ödəniş məbləği
+                    </h3>
+                    <div class="paybox ms-3">
+                        <div class="totalprice m-5">
+                            <p>Cəmi<span class="ms-5">927.00 AZN</span></p>
+                            <p>Ümumi<span class="ms-5">927.00 AZN</span></p>
+                        </div>
+
+                    </div>
+                    <div class="btn mt-3 ms-1">
+                        <a href="./completeTheOrder.html" class="btn btn-dark">İndi sifariş edin</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>
+

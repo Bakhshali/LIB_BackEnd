@@ -264,7 +264,7 @@
                     <i class="fa-regular fa-building"></i>
                 </div>
                 <div class="number mt-3 ">
-                    <h2 class="counter">10</h2>
+                    <h2 class="counter">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="YearExperience").Value</h2>
                     <span>İLLİK TƏCRÜBƏ</span>
                 </div>
             </div>
@@ -273,7 +273,7 @@
                     <i class="fa-solid fa-briefcase"></i>
                 </div>
                 <div class="number mt-3">
-                    <h2 class="counter">70</h2>
+                    <h2 class="counter">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="Teacher").Value</h2>
                     <span>SERTİFİKATLI MÜƏLLİM</span>
                 </div>
             </div>
@@ -282,7 +282,7 @@
                     <i class="fa-solid fa-user-group"></i>
                 </div>
                 <div class="number mt-3">
-                    <h2 class="counter">11500</h2>
+                    <h2 class="counter">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="graduate").Value</h2>
                     <span>MƏZUN SAYI</span>
                 </div>
             </div>
@@ -305,14 +305,25 @@
                 <div class="electron mt-3">
                     <h4>ELEKTRON POÇTUNUZ</h4>
                     <div class="subs mt-4">
-                        <div class="send">
-                            <input placeholder="Enter your E-mail" type="text">
-                        </div>
+                        <form method="post">
+                            <div class="send">
+                                <input placeholder="Enter your E-mail" asp-for="Special.Email">
+                                <span asp-validation-for="Special.Email" class="text-light" style="font-size:16px"></span>
+                            </div>
 
-                        <div class="btn">
+                            @if (ViewBag.IsSuccess == true)
+                            {
+                                <div class="alert alert-success alert-dismissible fade show col-12 mt-1" role="alert">
+                                    <span  style="font-size:17px"> Müraciətiniz üçün təşəkkür edirik. Sizinlə 1-2 iş günü ərzində əməkdaşlarımız əlaqə saxlayacaqlar.</span>
+                                </div>
+                            }
 
-                            <button class="btn btn-dark">Subscribe</button>
-                        </div>
+
+                            <div class="btn">
+
+                                <button type="submit" class="btn btn-dark">Subscribe</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

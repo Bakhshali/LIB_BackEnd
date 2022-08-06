@@ -23,6 +23,8 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         public List<Contact> Contacts { get; set; }
         public Contact Contact { get; set; }
         public Career Careers { get; set; }
+        public Writeus Writeus { get; set; }
+        public Special Special { get; set; }
 
     }
 }

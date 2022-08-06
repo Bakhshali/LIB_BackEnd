@@ -1,0 +1,47 @@
+﻿@model List<Writeus>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Name <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Phone <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Email <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Subject <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+
+                <th scope="col">Detail <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Delete <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Writeus writeus in Model)
+            {
+                <tr>
+                    <td>@writeus.Name</td>
+                    <td>@writeus.Phone</td>
+                    <td>@writeus.Email</td>
+                    <td>
+                        @if (@writeus.Subject.Length >= 30)
+                        {
+                            @(@writeus.Subject.Substring(0,30) + "...")
+
+                        }
+                        else
+                        {
+                            @writeus.Subject
+                        }
+                    </td>
+                    <td><a asp-controller="write" asp-action="detail" asp-route-id="@writeus.Id" class="btn btn-success" style="border-radius:15px; background-color:#FFA500;border:none; width:50px;"><i style="font-size:17px" class="fa-solid fa-circle-info"></i></a></td>
+                    <td><a asp-controller="write" asp-action="delete" asp-route-id="@writeus.Id" class="btn btn-danger" style="border-radius:15px;border:none; width:50px;"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+

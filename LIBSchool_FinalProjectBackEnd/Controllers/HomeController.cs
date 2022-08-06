@@ -17,8 +17,10 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(bool isSuccess = false)
         {
+            ViewBag.IsSuccess = isSuccess;
+
             HomeVM model = new HomeVM()
             {
                 Settings = await _context.Settings.ToListAsync(),
@@ -27,8 +29,32 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 SubCategories = await _context.SubCategories.ToListAsync(),
                 Courses = await _context.Courses.ToListAsync(),
                 Quizzes = await _context.Quizzes.ToListAsync(),
+                Branches = await _context.Branches.ToListAsync(),
             };
             return View(model);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+
+        public async Task<IActionResult> Index(Special special)
+        {
+            HomeVM model = new HomeVM
+            {
+                Categories = await _context.Categories.ToListAsync(),
+                SubCategories = await _context.SubCategories.ToListAsync(),
+                Courses = await _context.Courses.ToListAsync(),
+                Sliders = await _context.Sliders.ToListAsync(),
+                Branches = await _context.Branches.ToListAsync(),
+                Settings = await _context.Settings.ToListAsync(),
+            };
+
+            if (!ModelState.IsValid) return View(model);
+
+            await _context.Specials.AddAsync(special);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", new { IsSuccess = true });
         }
     }
 }

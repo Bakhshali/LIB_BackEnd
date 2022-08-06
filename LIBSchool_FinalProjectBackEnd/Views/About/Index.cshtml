@@ -30,11 +30,11 @@
                     <div class="line"></div>
                     <div class="box p-3">
                         <div class="title d-flex justify-content-around">
-                            <span class="aboutinfo" style="color: #273044 ;">TƏCRÜBƏ</span>
-                            <span class="writeus">BİZƏ YAZIN</span>
+                            <span class="aboutinfo" style="color: #273044 ;">BİZƏ YAZIN</span>
+                            <span class="writeus">TƏCRÜBƏ</span>
                         </div>
                     </div>
-                    <div class="profession mt-5   ">
+                    <div class="appeal mt-5   ">
                         <h3>Professional heyət və tədris sistemi</h3>
                         <ul>
                             <li>Onlayn tədris sistemi</li>
@@ -42,18 +42,31 @@
                             <li>10 illik iş təcrübəsi</li>
                         </ul>
                     </div>
-                    <div class="appeal mt-5">
-                        <form action="">
-                            <input type="text" placeholder="Adınız">
-                            <input class="ms-4" type="text" placeholder="Telefon">
-                            <input class="mt-4" type="text" placeholder="Emailiniz">
+                    <div class="profession mt-5" @ViewBag.mainbaku>
+
+                        
+                        @if (ViewBag.IsSuccess == true)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show col-11" role="alert">
+                                <span style="font-size:17px"><i class="fa-regular fa-circle-check me-2"></i> <span>Müraciətiniz yollanıldı təşəkkür edirik.</span></span>
+                            </div>
+                        }
+                        <form method="post">
+                            <input asp-for="Writeus.Name" placeholder="Adınız">
+                            <input class="ms-4" asp-for="Writeus.Phone" placeholder="Telefon">
+                            <input class="mt-4" asp-for="Writeus.Email" placeholder="Emailiniz">
                             <div class="message">
-                                <textarea name="" id="" rows="8" placeholder="Mövzu"></textarea>
+                                <textarea asp-for="Writeus.Subject" rows="8" placeholder="Mövzu"></textarea>
+                            </div>
+                            <div class="btn mt-3">
+                                <button type="submit" class="btn btn-dark">MÜRACİƏT ET</button>
                             </div>
                         </form>
-                        <div class="btn mt-3">
-                            <button type="submit" class="btn btn-dark">MÜRACİƏT ET</button>
-                        </div>
+                        <span class="text-danger" style="font-size:18px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Writeus.Name"></span>
+                        <span class="text-danger" style="font-size:18px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Writeus.Phone"></span>
+                        <span class="text-danger" style="font-size:18px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Writeus.Email"></span>
+                        <span class="text-danger" style="font-size:18px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Writeus.Subject"></span>
+
                     </div>
                 </div>
             </div>
@@ -104,7 +117,7 @@
                             <p class="mt-4">Bunun üçün ofisə gəlməyə ehtiyac yoxdur. Kursu seç, ödəniş et və öyrənməyə başla.</p>
                         </div>
                         <div class="btn mt-2">
-                            <a href="./course.html" class="btn btn-dark">Kursa Başla</a>
+                            <a asp-controller="filtercourse" asp-action="index" class="btn btn-dark">Kursa Başla</a>
                         </div>
                     </div>
                     <div class="socials d-flex mt-4">

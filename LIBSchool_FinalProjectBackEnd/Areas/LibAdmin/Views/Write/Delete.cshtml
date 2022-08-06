@@ -1,0 +1,29 @@
+﻿@model Writeus
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="m-4">
+    <div>
+        <h4 class="mt-3">Name</h4>
+        <p>@Model.Name</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Email</h4>
+        <p>@Model.Email</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Phone</h4>
+        <p>@Model.Phone</p>
+    </div>
+    <div>
+        <h4 class="mt-3">Question</h4>
+        <p>@Model.Subject</p>
+    </div>
+    <form method="post">
+        <div>
+            <button type="submit" class="btn btn-danger mt-2">Delete</button>
+        </div>
+    </form>
+</div>
+

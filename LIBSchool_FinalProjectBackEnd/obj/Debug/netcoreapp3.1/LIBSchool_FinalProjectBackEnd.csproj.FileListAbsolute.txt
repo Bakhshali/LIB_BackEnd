@@ -169,7 +169,6 @@ C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBa
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Category\Create.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Category\Edit.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Category\Delete.cshtml.g.cs
-C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Branch\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Branch\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Branch\Create.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Branch\Detail.cshtml.g.cs
@@ -214,3 +213,9 @@ C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBa
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Vacancy\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Vacancy\Detail.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Vacancy\Delete.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Write\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Write\Detail.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Write\Delete.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\FilterCourse\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Location\Index.cshtml.g.cs
