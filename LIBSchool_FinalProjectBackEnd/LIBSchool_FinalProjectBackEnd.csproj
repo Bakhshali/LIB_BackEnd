@@ -1902,8 +1902,6 @@
     <None Include="wwwroot\admin\vendor\jquery\jquery.slim.js" />
     <None Include="wwwroot\admin\vendor\jquery\jquery.slim.min.js" />
     <None Include="wwwroot\admin\vendor\jquery\jquery.slim.min.map" />
-    <None Include="wwwroot\assets\img\1f538.svg" />
-    <None Include="wwwroot\assets\img\achivement\sPJTWy.webp" />
     <None Include="wwwroot\assets\jquery.counterup.min.js" />
     <None Include="wwwroot\assets\js\basket.js" />
     <None Include="wwwroot\assets\js\password.js" />
@@ -1916,7 +1914,6 @@
   <ItemGroup>
     <Folder Include="Areas\LibAdmin\Data\" />
     <Folder Include="Areas\LibAdmin\Models\" />
-    <Folder Include="wwwroot\assets\img\cv\" />
   </ItemGroup>
 
 </Project>

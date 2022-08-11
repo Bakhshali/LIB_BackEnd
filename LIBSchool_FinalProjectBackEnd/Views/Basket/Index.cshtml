@@ -1,6 +1,16 @@
 ﻿@model HomeVM
 @{
     ViewData["Title"] = "Index";
+
+       decimal total = default;
+    decimal totalprice = default;
+    @foreach (BasketItem item in Model.BasketItems)
+    {
+        //total += item.Count * item.Course.GroupPrice;
+        totalprice = total;
+    }
+ 
+   
 }
 
 <main>
@@ -24,62 +34,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th><i class="fa-solid fa-xmark mt-5"></i></th>
-                                <td>
-                                    <img width="100px" height="100px"
-                                         src="~/assets/img/courses/Səkil-general-english-ingilis-dili-kursu.jpg"
-                                         alt=""><span class="ms-3"><a href="#">Ümumi ingilis dili</a></span>
-                                </td>
-                                <td>
-                                    <div class="info">
-                                        <span>Qrup şəklində hazırlıq</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="info">
-                                        <span>79.00 AZN</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <form action="">
-                                        <input value="1" type="number" min="1">
-                                    </form>
-                                </td>
-                                <td>
-                                    <div class="info">
-                                        <span style="color: #2C75E4; ">79.00 AZN</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th><i class="fa-solid fa-xmark mt-5"></i></th>
-                                <td>
-                                    <img width="100px" height="100px"
-                                         src="~/assets/img/courses/Səkil-Məktəbli-rus-dili-kursu-270x283.jpg"
-                                         alt=""><span class="ms-3"><a href="#">Məktəbli rus dili</a></span>
-                                </td>
-                                <td>
-                                    <div class="info">
-                                        <span>Qrup şəklində hazırlıq</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="info">
-                                        <span>65.00 AZN</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <form action="">
-                                        <input value="1" type="number" min="1">
-                                    </form>
-                                </td>
-                                <td>
-                                    <div class="info">
-                                        <span style="color: #2C75E4; ">65.00 AZN</span>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach (BasketItem item in Model.BasketItems)
+                            {
+                                <tr>
+                                    <th><a asp-controller="basket" asp-action="DeleteBasket" asp-route-id="@item.Course.Id"><i class="fa-solid fa-xmark mt-5"></i></a></th>
+
+
+                                    <td>
+                                        <img width="100px" height="100px"
+                                         src="~/assets/img/courses/@item.Course.Image"
+                                         alt=""><span class="ms-3"><a href="#">Ümumi @item.Course.Name</a></span>
+                                    </td>
+                                    <td>
+                                        <div class="info">
+                                            <span>Qrup şəklində hazırlıq</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="info">
+                                            <span>@item.Price AZN</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <form action="">
+                                            <input asp-for="@item.Count" type="number" min="1">
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <div class="info">
+                                            @*<span style="color: #2C75E4; "> @(total=item.Count * item.Course.GroupPrice)x AZN</span>*@
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -106,7 +93,7 @@
                             <div class="item">
                                 <div data-aos="zoom-in-up" data-aos-delay="50" class="box mt-4">
                                     <div class="price">
-                                        <p>@course.GroupPrice AZN</p>
+                                        @*<p>@course.GroupPrice AZN</p>*@
                                     </div>
                                     <div class="image">
                                         <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id">
@@ -129,14 +116,14 @@
                                         </div>
                                         <div class="monthly d-flex justify-content-end me-3">
                                             <span>
-                                                @course.GroupPrice AZN @if (@course.İndividualPrice == null)
+                                                @*@course.GroupPrice AZN @if (@course.İndividualPrice == null)*@
                                                 {
-                                                    @(" " + @course.İndividualPrice)
+                                                    @*@(" " + @course.İndividualPrice)*@
                                                     ;
                                                 }
                                                 else
                                                 {
-                                                    @("- " + @course.İndividualPrice + "AZN")
+                                                    @*@("- " + @course.İndividualPrice + "AZN")*@
                                                     ;
                                                 }
                                             </span>
@@ -153,8 +140,9 @@
                     </h3>
                     <div class="paybox ms-3">
                         <div class="totalprice m-5">
-                            <p>Cəmi<span class="ms-5">927.00 AZN</span></p>
-                            <p>Ümumi<span class="ms-5">927.00 AZN</span></p>
+                                <p>Cəmi<span class="ms-5">@totalprice AZN</span></p>
+                                <p>Ümumi<span class="ms-5">@totalprice AZN</span></p>
+                            
                         </div>
 
                     </div>
@@ -166,3 +154,7 @@
     </section>
 </main>
 
+@section scripts{
+<script src="~/assets/js/basket.js"></script>
+
+}

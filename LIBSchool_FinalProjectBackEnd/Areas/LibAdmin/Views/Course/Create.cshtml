@@ -10,44 +10,44 @@
     </div>
     <form method="post" enctype="multipart/form-data" class="mt-4">
         <div>
-            <input class="form-control" asp-for="Name" placeholder="Kurs adı"> <br/>
+            <input class="form-control" asp-for="Name" placeholder="Kurs adı"> <br />
             <span class="text-danger" asp-validation-for="Name"></span>
         </div>
         <div>
-            <input class="form-control" asp-for="SubName" placeholder="ikinci adı(əgər varsa)"> <br/>
+            <input class="form-control" asp-for="SubName" placeholder="ikinci adı(əgər varsa)"> <br />
             <span class="text-danger" asp-validation-for="SubName"></span>
         </div>
         <div>
-            <input class="form-control" asp-for="BelongTitle" placeholder="Kurs haqqında(başlıq)"> <br/>
+            <input class="form-control" asp-for="BelongTitle" placeholder="Kurs haqqında(başlıq)"> <br />
             <span class="text-danger" asp-validation-for="BelongTitle"></span>
         </div>
         <div>
-            <input class="form-control" asp-for="BelongText" placeholder="Kurs haqqında(yazı)"> <br/>
+            <input class="form-control" asp-for="BelongText" placeholder="Kurs haqqında(yazı)"> <br />
             <span class="text-danger" asp-validation-for="BelongText"></span>
         </div>
-         <div>
-            <input class="form-control" asp-for="Condition" placeholder="Şərtlər"> <br/>
+        <div>
+            <input class="form-control" asp-for="Condition" placeholder="Şərtlər"> <br />
             <span class="text-danger" asp-validation-for="Condition"></span>
         </div>
         <div>
-            <input class="form-control" asp-for="İnformation" placeholder="ilkin məlumat(əgər varsa)"> <br/>
+            <input class="form-control" asp-for="İnformation" placeholder="ilkin məlumat(əgər varsa)"> <br />
             <span class="text-danger" asp-validation-for="İnformation"></span>
         </div>
-       
+
         <div>
-            <input class="form-control" asp-for="GroupPrice" placeholder="Qrup şəkildə hazırlıq qiyməti_*"> <br/>
-            <span class="text-danger" asp-validation-for="GroupPrice"></span>
-        </div>
-         <div>
-            <input class="form-control" asp-for="İndividualPrice" placeholder="Fərdi hazırlıq_*"> <br/>
-            <span class="text-danger" asp-validation-for="İndividualPrice"></span>
-        </div>
-           <div>
-            <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select> <br/>
+            <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"><option>Kateqoriya</option></select>  <br />
             <span class="text-danger" asp-validation-for="CategoryId"></span>
         </div>
+         <div>
+            <select class="form-control"  asp-items="@(new SelectList(ViewBag.Prices,"Id","Price"))"><option>Group Price</option></select>  <br />
+            <span class="text-danger" asp-validation-for="CourseEducations"></span>
+        </div>
         <div>
-            <input asp-for="Photo"><br/>
+            <select class="form-control" asp-for="CourseEducations" asp-items="@(new SelectList(ViewBag.Prices,"Id","Price"))"><option>Individual Price</option></select>  <br />
+            <span class="text-danger" asp-validation-for="CourseEducations"></span>
+        </div>
+        <div>
+            <input asp-for="Photo"><br />
             <span class="text-danger" asp-validation-for="Photo"></span>
         </div>
         <div>

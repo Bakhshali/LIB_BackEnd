@@ -2,6 +2,7 @@
 using LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Utilities;
 using LIBSchool_FinalProjectBackEnd.DAL;
 using LIBSchool_FinalProjectBackEnd.Models;
+using LIBSchool_FinalProjectBackEnd.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,14 +26,19 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Course> courses = await _context.Courses.ToListAsync();
-            return View(courses);
+            HomeVM model = new HomeVM
+            {
+                Courses = await _context.Courses.ToListAsync(),
+                CourseEducations = await _context.CourseEducations.ToListAsync(),
+            };
+            return View(model);
         }
 
         public async Task<IActionResult> Create()
         {
             ViewBag.Categories = await _context.Categories.ToListAsync();
-
+            ViewBag.Prices = await _context.CourseEducations.ToListAsync();
+            List<CourseEducation> courses = await _context.CourseEducations.ToListAsync();
             return View();
         }
 
@@ -70,6 +76,7 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
         {
 
             Course course = await _context.Courses.FindAsync(id);
+            List<CourseEducation> courses = await _context.CourseEducations.ToListAsync();
             if (course == null) return NotFound();
             return View(course);
         }
@@ -95,8 +102,7 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
 
             existedCourse.Name = course.Name;
             existedCourse.SubName = course.SubName;
-            existedCourse.GroupPrice = course.GroupPrice;
-            existedCourse.İndividualPrice = course.İndividualPrice;
+           
             existedCourse.CategoryId = course.CategoryId;
             existedCourse.BelongText = course.BelongText;
             existedCourse.BelongTitle = course.BelongTitle;

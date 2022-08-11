@@ -22,7 +22,10 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
            
             HomeVM model = new HomeVM
             {
+                Categories = await _context.Categories.ToListAsync(),
                 Branches = await _context.Branches.ToListAsync(),
+                Courses = await _context.Courses.ToListAsync(),
+                Contacts = await _context.Contacts.ToListAsync(),
             };
             return View(model);
         }
@@ -34,10 +37,14 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         {
             HomeVM model = new HomeVM
             {
+                Categories = await _context.Categories.ToListAsync(),
                 Branches = await _context.Branches.ToListAsync(),
+                Courses = await _context.Courses.ToListAsync(),
             };
            
             if (!ModelState.IsValid) return View(model);
+
+
 
             await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();

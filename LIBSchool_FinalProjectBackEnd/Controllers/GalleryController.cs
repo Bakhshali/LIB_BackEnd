@@ -19,6 +19,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         {
             HomeVM model = new HomeVM()
             {
+                Branches = await _context.Branches.ToListAsync(),
                 Galleries = await _context.Galleries.ToListAsync(),
                 Albums = await _context.Albums.ToListAsync(),
                 Settings = await _context.Settings.ToListAsync(),

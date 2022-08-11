@@ -48,9 +48,9 @@ namespace LIBSchool_FinalProjectBackEnd
                 option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
                 option.Lockout.AllowedForNewUsers = true;
 
-                option.SignIn.RequireConfirmedEmail = false;
+                option.SignIn.RequireConfirmedEmail = true;
 
-                option.User.RequireUniqueEmail = false;
+                option.User.RequireUniqueEmail = true;
                 option.User.AllowedUserNameCharacters = "qwertyuiopasdfghjklzxcvbnm_1234567890";
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();

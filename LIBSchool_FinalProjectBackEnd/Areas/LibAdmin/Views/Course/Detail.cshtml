@@ -45,13 +45,13 @@
     </div>
     <div>
         <h4 class="mt-3">Qrup şəklində hazırlıq</h4>
-        <p>@Model.GroupPrice AZN</p>
+        <p>@Model.CourseEducations.FirstOrDefault(c=>c.EducationId==1 && c.CourseId==Model.Id).Price AZN</p>
     </div>
      <div>
-        @if (@Model.İndividualPrice != null)
+        @if (Model.CourseEducations.FirstOrDefault(c=>c.EducationId==2 && c.CourseId==Model.Id).Price != null)
         {
             <h4 class="mt-3">Fərdi hazırlıq</h4>
-            <p>@Model.İndividualPrice Azn</p>
+            <p>@Model.CourseEducations.FirstOrDefault(c=>c.EducationId==2 && c.CourseId==Model.Id).Price Azn</p>
         }
     </div>
     <div>

@@ -21,10 +21,24 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         public List<Album> Albums { get; set; }
         public List<Gallery> Galleries { get; set; }
         public List<Contact> Contacts { get; set; }
+        public List<Writeus> Writeuss { get; set; }
+        public List<Career> Careerss { get; set; }
+        public List<Special> Specials { get; set; }
         public Contact Contact { get; set; }
         public Career Careers { get; set; }
         public Writeus Writeus { get; set; }
         public Special Special { get; set; }
+
+
+        public List<QuizInfo> QuizInfos { get; set; }
+        public QuizInfo QuizInfo { get; set; }
+        public List<QuizTeacher> QuizTeachers { get; set; }
+        public List<QuizTime> QuizTimes { get; set; }
+        public List<BasketItem> BasketItems { get; set; }
+        public BasketItem BasketItem { get; set; }
+        public List<CourseEducation> CourseEducations { get; set; }
+        public CourseEducation CourseEducation { get; set; }
+
 
     }
 }

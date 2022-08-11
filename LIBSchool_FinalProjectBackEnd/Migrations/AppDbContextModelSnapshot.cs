@@ -105,6 +105,34 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("BasketItems");
+                });
+
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Branch", b =>
                 {
                     b.Property<int>("Id")
@@ -239,9 +267,6 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.Property<string>("Condition")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("GroupPrice")
-                        .HasColumnType("decimal(5,2)");
-
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -252,9 +277,6 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.Property<string>("SubName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal?>("İndividualPrice")
-                        .HasColumnType("decimal(5,2)");
-
                     b.Property<string>("İnformation")
                         .HasColumnType("nvarchar(max)");
 
@@ -263,6 +285,46 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.CourseEducation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EducationId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("EducationId");
+
+                    b.ToTable("CourseEducations");
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Education", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Educations");
                 });
 
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Gallery", b =>
@@ -310,6 +372,74 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Quizzes");
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.QuizInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Listener")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("QuizTeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuizTimeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuizTeacherId");
+
+                    b.HasIndex("QuizTimeId");
+
+                    b.ToTable("QuizInfos");
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.QuizTeacher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QuizTeachers");
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.QuizTime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Time")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QuizTimes");
                 });
 
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Result", b =>
@@ -611,11 +741,54 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.BasketItem", b =>
+                {
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.AppUser", "AppUser")
+                        .WithMany("Basket")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Course", b =>
                 {
                     b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Category", "Category")
                         .WithMany("Courses")
                         .HasForeignKey("CategoryId");
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.CourseEducation", b =>
+                {
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Course", "Course")
+                        .WithMany("CourseEducations")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Education", "Education")
+                        .WithMany("CourseEducations")
+                        .HasForeignKey("EducationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.QuizInfo", b =>
+                {
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.QuizTeacher", "QuizTeacher")
+                        .WithMany("QuizInfos")
+                        .HasForeignKey("QuizTeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.QuizTime", "QuizTime")
+                        .WithMany("QuizInfos")
+                        .HasForeignKey("QuizTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Student", b =>

@@ -31,7 +31,7 @@
         <div>
             <input class="form-control" asp-for="İnformation" placeholder="ilkin məlumat(əgər varsa)"> <br/>
             <span class="text-danger" asp-validation-for="İnformation"></span>
-        </div>
+        </div>@*
         <div>
             <input class="form-control" asp-for="GroupPrice" placeholder="Qrup şəkildə hazırlıq qiyməti_*"> <br/>
             <span class="text-danger" asp-validation-for="GroupPrice"></span>
@@ -39,7 +39,7 @@
          <div>
             <input class="form-control" asp-for="İndividualPrice" placeholder="Fərdi hazırlıq_*"> <br/>
             <span class="text-danger" asp-validation-for="İndividualPrice"></span>
-        </div>
+        </div>*@
         <div>
             <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select> <br/>
             <span class="text-danger" asp-validation-for="CategoryId"></span>

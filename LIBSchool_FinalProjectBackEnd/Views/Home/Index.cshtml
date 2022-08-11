@@ -3,6 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+@if (TempData["Verify"] != null)
+{
+    <input type="hidden" id="verifyJS" />
+}
 <section id="slider">
     <div id="carouselExampleCaptions" class="carousel slide mt-3" data-bs-ride="false">
         <div class="carousel-inner">
@@ -119,86 +124,59 @@
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
             <h3>Level testləri</h3>
-            <div class="col-lg-3 infotest">
-                <div class="boxtest">
-                    <div class="image ms-4 mt-4">
-                        <img width="45px" src="./assets/img/account/stm_lms_avatar1.png" alt="">
-                        <span>Test Test</span>
-                    </div>
-                    <div class="text ms-4 mt-4">
-                        <h4>Rus dili level testi</h4>
-                        <p class="mt-4">
-                            Ödənişsiz olaraq rus dili level testi imtahanında iştirak edə
-                            bilərsiniz. Elə indi daxil olun və dil səviyyənizi təyin edin!
-                        </p>
-                        <span><i class="fa-regular fa-clock"></i> 1 saat </span>
-                    </div>
-                    <div class="btn ms-2 mt-4">
-                        <a href="./infoquiz.html" class="btn btn-dark">DAHA ƏTRAFLI</a>
-                    </div>
-                    <div class="wishlist ms-4 mt-3 d-flex">
-                        <i class="fa-regular fa-heart me-2"></i>
-                        <span class="mt-1">Bəyənmə siyahısına əlavə et</span>
-                        <strong class="ms-5">Pulsuz</strong>
-                    </div>
-                </div>
-                <div class="box mt-4">
+            @foreach (QuizInfo info in Model.QuizInfos)
+            {
 
-                    <div class="image">
-                        <img src="./assets/img/quiz-time/LIB-dil-mərkəzi-rus-dili-testi-300x150.jpg" alt="">
-                    </div>
-                    <div class="text ms-3 mt-3">
-                        <p>Quiz</p>
-                        <strong>Rus dili level testi</strong>
-                    </div>
-                    <div class="line"></div>
-                    <div class="info ms-3 mt-3 d-flex justify-content-between">
-                        <span><i class="fa-regular fa-clock me-2"></i>1 saat</span>
-                        <strong style="font-size: 18px;" class="me-4">Pulsuz</strong>
-                    </div>
-                </div>
+                <div class="col-lg-3 infotest">
+                    <div class="boxtest">
+                        <div class="image ms-4 mt-4">
+                            <img width="45px" src="~/assets/img/account/stm_lms_avatar1.png" alt="">
+                            @foreach (QuizTeacher teacher in Model.QuizTeachers.Where(s => s.Id == info.QuizTeacherId))
+                            {
 
-            </div>
-            <div class="col-lg-3 infotest">
-                <div class="boxtest">
-                    <div class="image ms-4 mt-4">
-                        <img width="45px" src="./assets/img/account/stm_lms_avatar1.png" alt="">
-                        <span>Test Test</span>
+                                <span>@teacher.Name</span>
+                            }
+                        </div>
+                        <div class="text ms-4 mt-4">
+                            <a asp-controller="quizdetail" asp-action="index" asp-route-id="@info.Id" style="color:#273044"> <h4>@info.Name level testi</h4></a>
+                            <p class="mt-4">
+                                Ödənişsiz olaraq rus dili level testi imtahanında iştirak edə
+                                bilərsiniz. Elə indi daxil olun və dil səviyyənizi təyin edin!
+                            </p>
+                            <span>
+                                <i class="fa-regular fa-clock"></i> @foreach (QuizTime time in Model.QuizTimes.Where(t => t.Id == info.QuizTimeId))
+                                {
+                                    @time.Time
+                                } dəqiqə
+                            </span>
+                        </div>
+                        <div class="btn ms-2 mt-4">
+                            <a asp-controller="quizdetail" asp-action="index" asp-route-id="@info.Id" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                        </div>
+                        <div class="wishlist ms-4 mt-3 d-flex">
+                            <i class="fa-regular fa-heart me-2"></i>
+                            <span class="mt-1">Bəyənmə siyahısına əlavə et</span>
+                            <strong class="ms-5">Pulsuz</strong>
+                        </div>
                     </div>
-                    <div class="text ms-4 mt-4">
-                        <h4>Rus dili level testi</h4>
-                        <p class="mt-4">
-                            Ödənişsiz olaraq rus dili level testi imtahanında iştirak edə
-                            bilərsiniz. Elə indi daxil olun və dil səviyyənizi təyin edin!
-                        </p>
-                        <span><i class="fa-regular fa-clock"></i> 1 saat </span>
-                    </div>
-                    <div class="btn ms-2 mt-4">
-                        <a href="./infoquiz.html" class="btn btn-dark">DAHA ƏTRAFLI</a>
-                    </div>
-                    <div class="wishlist ms-4 mt-3 d-flex">
-                        <i class="fa-regular fa-heart me-2"></i>
-                        <span class="mt-1">Bəyənmə siyahısına əlavə et</span>
-                        <strong class="ms-5">Pulsuz</strong>
-                    </div>
-                </div>
-                <div class="box mt-4">
+                    <div class="box mt-4">
 
-                    <div class="image">
-                        <img src="./assets/img/quiz-time/LIB-dil-mərkəzi-rus-dili-testi-300x150.jpg" alt="">
+                        <div class="image">
+                            <img src="~/assets/img/quiz-time/@info.Image" alt="">
+                        </div>
+                        <div class="text ms-3 mt-3">
+                            <p>Quiz</p>
+                            <strong>@info.Name level testi</strong>
+                        </div>
+                        <div class="line"></div>
+                        <div class="info ms-3 mt-3 d-flex justify-content-between">
+                            <span><i class="fa-regular fa-clock me-2"></i>1 saat</span>
+                            <strong style="font-size: 18px;" class="me-4">Pulsuz</strong>
+                        </div>
                     </div>
-                    <div class="text ms-3 mt-3">
-                        <p>Quiz</p>
-                        <strong>Rus dili level testi</strong>
-                    </div>
-                    <div class="line"></div>
-                    <div class="info ms-3 mt-3 d-flex justify-content-between">
-                        <span><i class="fa-regular fa-clock me-2"></i>1 saat</span>
-                        <strong style="font-size: 18px;" class="me-4">Pulsuz</strong>
-                    </div>
-                </div>
 
-            </div>
+                </div>
+            }
         </div>
     </div>
 </section>
@@ -211,7 +189,10 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="box mt-4">
                         <div class="price">
-                            <p>@course.GroupPrice AZN</p>
+                            @foreach (CourseEducation item in Model.CourseEducations.Where(c => c.EducationId == 1).Where(c => c.CourseId == course.Id))
+                            {
+                                <p>@item.Price AZN</p>
+                            }
                         </div>
                         <div class="image">
                             <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id">
@@ -234,16 +215,26 @@
                             </div>
                             <div class="monthly d-flex justify-content-end me-3">
                                 <span>
-                                    @course.GroupPrice AZN @if (@course.İndividualPrice == null)
+                                    @foreach (CourseEducation item in Model.CourseEducations.Where(c => c.EducationId == 1).Where(c => c.CourseId == course.Id))
                                     {
-                                        @(" " + @course.İndividualPrice)
+                                        @(item.Price + "AZN")
                                         ;
+
+                                        @foreach (CourseEducation individual in Model.CourseEducations.Where(c => c.EducationId == 2).Where(c => c.CourseId == course.Id))
+                                        {
+                                            @if (@individual.Price == null)
+                                            {
+                                                @(" " + @individual.Price)
+                                                ;
+                                            }
+                                            else
+                                            {
+                                                @(" - " + @individual.Price + "AZN")
+                                                ;
+                                            }
+                                        }
                                     }
-                                    else
-                                    {
-                                        @("- " + @course.İndividualPrice + "AZN")
-                                        ;
-                                    }
+
                                 </span>
                             </div>
                         </div>
@@ -314,7 +305,7 @@
                             @if (ViewBag.IsSuccess == true)
                             {
                                 <div class="alert alert-success alert-dismissible fade show col-12 mt-1" role="alert">
-                                    <span  style="font-size:17px"> Müraciətiniz üçün təşəkkür edirik. Sizinlə 1-2 iş günü ərzində əməkdaşlarımız əlaqə saxlayacaqlar.</span>
+                                    <span style="font-size:17px"> Müraciətiniz üçün təşəkkür edirik. Sizinlə 1-2 iş günü ərzində əməkdaşlarımız əlaqə saxlayacaqlar.</span>
                                 </div>
                             }
 
@@ -452,4 +443,30 @@
     </div>
 </section>
 
+@section scripts{
+    <script>
+    $(document).ready(function(){
+        if($("#verifyJS").length){
+            Command:toastr["success"]("Please verify your email")
+            toastr.options = {
+                "closeButton":false,
+                "debug":false,
+                "newestOnTop":false,
+                "progressBar":false,
+                "positionClass":"toast-top-rigt",
+                "preventDublicates":false,
+                "onclick":null,
+                "showDuration":"300",
+                "hideDuration":"1000",
+                "timeOut":"5000",
+                "extendedTimeOut":"1000",
+                "showEasing":"swing",
+                "hideEasing":"linear",
+                "showMethod":"fadeIn",
+                "hideMethod":"fadeOut"
 
+            }
+        }
+    })
+    </script>
+}

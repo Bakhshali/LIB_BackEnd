@@ -35,5 +35,12 @@ namespace LIBSchool_FinalProjectBackEnd.DAL
         public DbSet<Career> Careers { get; set; }
         public DbSet<Writeus> Writeus { get; set; }
         public DbSet<Special> Specials { get; set; }
+        public DbSet<QuizInfo> QuizInfos { get; set; }
+        public DbSet<QuizTeacher> QuizTeachers { get; set; }
+        public DbSet<QuizTime> QuizTimes { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<CourseEducation> CourseEducations { get; set; }
+
     }
 }

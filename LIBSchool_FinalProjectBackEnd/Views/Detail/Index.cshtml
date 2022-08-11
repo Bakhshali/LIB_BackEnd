@@ -14,7 +14,7 @@
             <div class="row p-1">
                 <div class="text">
                     <a asp-controller="home" asp-action="index"><span>HOME</span></a><i class="fa-solid fa-angle-right ms-2 me-2"></i>
-                    <a ><span style="text-transform:uppercase" lang="tr">@Model.Course.Name</span></a>
+                    <a><span style="text-transform:uppercase" lang="tr">@Model.Course.Name</span></a>
                 </div>
             </div>
         </div>
@@ -57,10 +57,10 @@
                         </div>
                         <div class="text ms-3">
                             <span>Kateqoriya:</span> <br>
-                            @foreach (Category category in Model.Categories.FindAll(c=>c.Id == @Model.Course.CategoryId))
-                           {
-                               <a href="" style="text-transform:uppercase" lang="tr">@category.Name / </a>  <a href="" style="text-transform:uppercase" lang="tr">@Model.Course.Name</a>
-                           }
+                            @foreach (Category category in Model.Categories.FindAll(c => c.Id == @Model.Course.CategoryId))
+                            {
+                                <a href="" style="text-transform:uppercase" lang="tr">@category.Name / </a>  <a href="" style="text-transform:uppercase" lang="tr">@Model.Course.Name</a>
+                            }
                         </div>
                     </div>
                     <div class="images mt-4">
@@ -70,25 +70,25 @@
                     <div class="infocourse mt-5">
                         @if (@Model.Course.İnformation != null)
                         {
-                             <strong>
-                            <img width="20px" src="~/assets/img/1f538.svg" alt="">
-                            @if (@Model.Course.SubName != null)
-                            {
-                                @( @Model.Course.Name + " proqramı - " + (@Model.Course.SubName.ToLower()))
-                                ;
-                                ;
-                            }
-                            else
-                            {
-                                @( @Model.Course.Name + " proqramı  -")
-                                ;
-                            }
-                            ilkin məlumat:
-                        </strong>
+                            <strong>
+                                <img width="20px" src="~/assets/img/1f538.svg" alt="">
+                                @if (@Model.Course.SubName != null)
+                                {
+                                    @( @Model.Course.Name + " proqramı - " + (@Model.Course.SubName.ToLower()))
+                                    ;
+                                    ;
+                                }
+                                else
+                                {
+                                    @( @Model.Course.Name + " proqramı  -")
+                                    ;
+                                }
+                                ilkin məlumat:
+                            </strong>
                         }
                     </div>
                     <p>
-                       @Model.Course.İnformation
+                        @Model.Course.İnformation
                     </p>
 
                     <div class="infocourse mt-5">
@@ -109,7 +109,10 @@
                     </div>
                     <ul>
                         <li>
-                            <strong>@if(@Model.Course.BelongTitle!=null){@(Model.Course.BelongTitle + " – ")}</strong>@Model.Course.BelongText
+                            <strong>@if (@Model.Course.BelongTitle != null)
+                                {
+                                    @(Model.Course.BelongTitle + " – ")
+                                }</strong>@Model.Course.BelongText
                         </li>
                     </ul>
                     <p>
@@ -135,7 +138,7 @@
                     </div>
 
                     <p>
-                       @Model.Course.Condition
+                        @Model.Course.Condition
                     </p>
                     <p>
                         Keyfiyyətdən əmin olmağınız üçün ilk dərs ödənişsizdir. Sınaq dərsdə iştirak üçün <a href="#">level testi</a> linkinə daxil olub dil səviyyənizi təyin edə, qeydiyyatla bizə
@@ -166,39 +169,52 @@
                 <div class="col-lg-3">
                     <div class="choose ms-3">
                         <p>QİYMƏT</p>
+
                         <span>
-                            @if (Model.Course.İndividualPrice != null)
+
+                            @if (Model.CourseEducations.FirstOrDefault(c => c.EducationId == 2 && c.CourseId == Model.Course.Id).Price != null)
                             {
-                               @(@Model.Course.GroupPrice + " AZN-" +  @Model.Course.İndividualPrice + " AZN")
+                                @(Model.CourseEducations.FirstOrDefault(c=>c.EducationId==1 && c.CourseId==Model.Course.Id).Price + " AZN-" +  Model.CourseEducations.FirstOrDefault(c=>c.EducationId==2 && c.CourseId==Model.Course.Id).Price + " AZN")
                             }
                             else
                             {
-                                @(@Model.Course.GroupPrice + "AZN")
+                                @(Model.CourseEducations.FirstOrDefault(c=>c.EducationId==1 && c.CourseId==Model.Course.Id).Price + "AZN")
                             }
+
+
                         </span>
                     </div>
-                    @if (@Model.Course.İndividualPrice != null)
-                    {
-                        <div class="education mt-2 ms-3">
-                            <p for="">Tədris formatı</p>
-                            <select name="" id="selCourse">
-                                <option value="">Seçim edin</option>
-                                <option value="individual">Fərdi hazırlıq</option>
-                                <option value="group">Qrup şəklində hazırlıq</option>
-                            </select>
-                            <div class="individual" id="price">
-                                <p>Yayın son endirimi!</p>
-                                <span>@Model.Course.İndividualPrice AZN</span>
+                    <form method="post">
+                        @if (Model.CourseEducations.FirstOrDefault(c => c.EducationId == 2 && c.CourseId == Model.Course.Id).Price != null)
+                        {
+                            <div class="education mt-2 ms-3">
+                                <p for="">Tədris formatı</p>
+                                <select asp-for="CourseEducation.EducationId" id="selCourse" asp-items="@(new SelectList(ViewBag.Education,"Id","Name"))">
+                                    <option value="">Seçim edin</option>@*
+                                    <option value="individual" >Fərdi hazırlıq</option>
+                                    <option value="group">Qrup şəklində hazırlıq</option>*@
+                                </select>
+                                <div class="individual" id="price">
+                                    <p>Yayın son endirimi!</p>
+                                    <span>@Model.CourseEducations.FirstOrDefault(c=>c.EducationId==2 && c.CourseId==Model.Course.Id).Price AZN</span>
+                                </div>
+                                <div class="group" id="price">
+                                    <p>Yayın son endirimi!</p>
+                                    <span>@Model.CourseEducations.FirstOrDefault(c=>c.EducationId==1 && c.CourseId==Model.Course.Id).Price AZN</span>
+                                </div>
                             </div>
-                            <div class="group" id="price">
-                                <p>Yayın son endirimi!</p>
-                                <span>@Model.Course.GroupPrice AZN</span>
-                            </div>
+                        }
+                        <div class="btn mt-4 ms-1">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a asp-controller="basket" asp-action="AddBasket" asp-route-id="@Model.Course.Id" id="submit" class="btn btn-dark">SƏBƏTƏ ƏLAVƏ ET</a>
+                            }
+                            else
+                            {
+                                <a asp-controller="account" asp-action="login" asp-route-id="@Model.Course.Id" id="submit" class="btn btn-dark">SƏBƏTƏ ƏLAVƏ ET</a>
+                            }
                         </div>
-                    }
-                    <div class="btn mt-4 ms-1">
-                        <button type="submit" id="submit" class="btn btn-dark">SƏBƏTƏ ƏLAVƏ ET</button>
-                    </div>
+                    </form>
                     <div class="line mt-4 ms-3"></div>
 
                     <div class="socials d-flex">
@@ -209,10 +225,10 @@
                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="pinterestShare").Value"></i></a>
                         </div>
                         <div class="facebooks mt-4 ms-4 insta">
-                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").Value"></i></a>
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="instagram").Value"></i></a>
                         </div>
                         <div class="facebooks mt-4 ms-4 twit">
-                             <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").Value"></i></a>
+                            <a href="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").URL"><i class="@layoutservice.GetDatas().Result.FirstOrDefault(i=>i.Key=="twitShare").Value"></i></a>
                         </div>
 
                     </div>

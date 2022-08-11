@@ -955,7 +955,7 @@ main {
             letter-spacing: -0.4px;
             line-height: 55px;
             text-align: center;
-            text-transform:uppercase;
+            text-transform: uppercase;
         }
 
         p {
@@ -1630,8 +1630,9 @@ main {
                 line-height: 30px;
             }
         }
-        .text-center{
-            img{
+
+        .text-center {
+            img {
                 width: 50%;
             }
         }
@@ -2049,7 +2050,7 @@ main {
         }
 
         .btn {
-            button {
+            a {
                 width: 290px;
                 height: 75px;
                 background-color: #2C75E4;
@@ -2057,11 +2058,10 @@ main {
                 border-radius: 0px;
                 font-family: Verdana, Geneva, sans-serif;
                 font-size: 18px;
-                font-style: normal;
-                font-variant: normal;
                 font-weight: 700;
-                letter-spacing: -0.2px;
-                line-height: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -2928,6 +2928,16 @@ main {
             }
         }
 
+        .choosepicture{
+            input{
+                a{
+
+                    &:hover{
+                        background-color: red;
+                    }
+                }
+            }
+        }
         h3 {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 30px;
@@ -2951,8 +2961,14 @@ main {
 
                 input {
                     width: 100%;
+                }
 
+                .eyeiconscript {
 
+                    input {
+    
+                        padding-left: 45px;
+                    }
                 }
             }
 
@@ -2964,16 +2980,18 @@ main {
             }
 
             input {
-                padding-left: 45px;
+
                 font-family: 'Times New Roman', Times, serif;
                 font-weight: 400;
             }
 
+            
+
             .iconkey {
                 i {
                     position: absolute;
-                    top: 61%;
-                    left: 8%;
+                    top: 26%;
+                    left: 5%;
                     font-size: 18px;
                     color: #AAAAAA;
                 }
@@ -2982,8 +3000,8 @@ main {
             .iconeye {
                 i {
                     position: absolute;
-                    top: 61%;
-                    right: 7%;
+                    top: 26%;
+                    right: 5%;
                     font-size: 17px;
                     color: #AAAAAA;
                 }
@@ -3299,10 +3317,11 @@ footer {
     }
 }
 
-@keyframes LeftTo{
+@keyframes LeftTo {
     0% {
         transform: translateX(50px);
     }
+
     100% {
         transform: translateX(0px);
     }

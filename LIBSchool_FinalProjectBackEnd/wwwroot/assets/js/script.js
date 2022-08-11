@@ -1,10 +1,11 @@
-$('.counter').counterUp({
-    delay: 10,
-    time: 1500
-});
+
 // quiz and subject(many to many),course and education format(many to many), faq and question(one to many),
 
 $(document).ready(function () {
+    //$('.counter').counterUp({
+    //    delay: 10,
+    //    time: 1500
+    //});
     $(".registerbox input").click(function () {
         $(".registerbox").css('background', '#385BCE');
         $(".registerbox label").css('color', 'white');

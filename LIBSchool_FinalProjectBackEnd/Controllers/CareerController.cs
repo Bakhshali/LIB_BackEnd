@@ -2,8 +2,10 @@
 using LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Utilities;
 using LIBSchool_FinalProjectBackEnd.DAL;
 using LIBSchool_FinalProjectBackEnd.Models;
+using LIBSchool_FinalProjectBackEnd.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace LIBSchool_FinalProjectBackEnd.Controllers
@@ -21,6 +23,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
         public IActionResult Index()
         {
+           
             return View();
         }
 
@@ -29,6 +32,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
         public async Task<IActionResult> Index(Career career)
         {
+        
             if (!ModelState.IsValid) return View();
 
             if (career.Photo != null)

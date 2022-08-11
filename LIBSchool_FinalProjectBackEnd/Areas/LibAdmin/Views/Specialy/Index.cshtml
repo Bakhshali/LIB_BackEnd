@@ -1,0 +1,26 @@
+﻿@model List<Special>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Email <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+                <th scope="col">Delete <i style="font-size:14px" class="fa-solid fa-arrow-down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Special special in Model)
+            {
+                <tr>
+                    <td>@special.Email</td>
+                    <td ><a asp-controller="specialy" asp-action="delete" asp-route-id="@special.Id" class="btn btn-danger" style="border-radius:15px;border:none; width:50px;"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

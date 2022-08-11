@@ -16,14 +16,6 @@ namespace LIBSchool_FinalProjectBackEnd.Models
         public string Name { get; set; }
 
         public string SubName { get; set; }
-
-        [Required]
-        [Column(TypeName = "decimal(5,2)")]
-        public decimal GroupPrice { get; set; }
-
-        
-        [Column(TypeName = "decimal(5,2)")]
-        public decimal? İndividualPrice { get; set; }
         
         public string İnformation { get; set; }
         
@@ -37,8 +29,11 @@ namespace LIBSchool_FinalProjectBackEnd.Models
 
         public Category Category { get; set; }
 
+
         [NotMapped]
         public IFormFile Photo { get; set; }
+
+        public List<CourseEducation> CourseEducations { get; set; }
 
 
 

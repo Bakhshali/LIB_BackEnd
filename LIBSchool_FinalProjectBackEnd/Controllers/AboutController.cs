@@ -3,6 +3,7 @@ using LIBSchool_FinalProjectBackEnd.Models;
 using LIBSchool_FinalProjectBackEnd.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,12 +17,17 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index (bool isSuccess = false)
+        public async Task<IActionResult> Index(bool isSuccess = false)
         {
             ViewBag.IsSuccess = isSuccess;
 
+            List<Writeus> writeus = await _context.Writeus.ToListAsync();
+
             HomeVM model = new HomeVM()
             {
+                Writeuss = writeus,
+                Careerss = await _context.Careers.ToListAsync(),
+                Branches = await _context.Branches.ToListAsync(),
                 Students = await _context.Students.ToListAsync(),
                 Results = await _context.Results.ToListAsync(),
                 Teams = await _context.Teams.ToListAsync(),
@@ -37,10 +43,11 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Index (Writeus writeus)
+        public async Task<IActionResult> Index(Writeus writeus)
         {
             HomeVM model = new HomeVM()
             {
+                Branches = await _context.Branches.ToListAsync(),
                 Students = await _context.Students.ToListAsync(),
                 Results = await _context.Results.ToListAsync(),
                 Teams = await _context.Teams.ToListAsync(),
@@ -56,7 +63,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             {
                 var message = false;
 
-                foreach(var modelstate in ViewData.ModelState.Values)
+                foreach (var modelstate in ViewData.ModelState.Values)
                 {
                     if (message)
                     {
@@ -78,12 +85,12 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 return View(model);
 
             }
-            
-      
+
+
             await _context.Writeus.AddAsync(writeus);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", new { IsSuccess = true});
+            return RedirectToAction("Index", new { IsSuccess = true });
         }
     }
 }

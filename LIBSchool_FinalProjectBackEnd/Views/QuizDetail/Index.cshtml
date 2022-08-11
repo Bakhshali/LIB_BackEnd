@@ -1,0 +1,206 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+<main>
+    <section id="quizinfo">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="title">
+                        <h1>
+                            @Model.QuizInfo.Name level testi
+                        </h1>
+                    </div>
+                    <div class="aboutbox d-flex mt-5">
+                        <div class="left d-flex">
+                            <div class="image">
+                                <img src="~/assets/img/stm_lms_avatar1.png" alt="">
+                            </div>
+                            <div class="text ms-3">
+                                <span>
+                                    Teacher @foreach (var teacher in Model.QuizTeachers.Where(q => q.Id == @Model.QuizInfo.QuizTeacherId))
+                                    {
+                                        <p>@teacher.Name</p>
+                                    }
+                                </span>
+                            </div>
+                        </div>
+                        <div class="right d-flex ms-5">
+                            <div class="icon">
+                                <i class="fa-regular fa-bookmark mt-2"></i>
+                            </div>
+                            <div class="text ms-3">
+                                <span>Kateqoriya <p>Quiz</p> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aboutquiz mt-5">
+                        <ul class="d-flex justify-content-between ">
+                            <div class="box col-lg-4 text-center"
+                                 style="background-color: white ; border-top:solid 3px #385BCE" id="quizboxs">
+                            <li>Haqqında</li>
+                    </div>
+                    <div class="boxmidle col-lg-4 text-center" id="quizboxs">
+                        <li>Tədris methodu</li>
+                    </div>
+                    <div class="boxlaste col-lg-4 text-center" id="quizboxs">
+                        <li>Şərtlər</li>
+                    </div>
+                    </ul>
+                </div>
+                <div class="quizimage">
+                    <img src="~/assets/img/quiz-time/@Model.QuizInfo.Image" alt="">
+                    <p class="mt-5">
+                        Ödənişsiz olaraq @Model.QuizInfo.Name.ToLower() level testi imtahanında iştirak edə
+                        bilərsiniz.
+                    </p>
+                    <p>Elə indi <a href="">daxil olun</a> və dil səviyyənizi təyin edin!</p>
+                </div>
+                <div class="educationFormat mt-5">
+                    <h3>
+                            @Model.QuizInfo.Name level testi
+                    </h3>
+                    <div class="box d-flex justify-content-between mt-4">
+                        <div class="namequiz mt-2 mb-2">
+                            <span class="ms-2 me-2" style="color: rgb(170,170,170);">
+                                1<i style="color:#385BCE ;"
+                                    class="fa-regular fa-message ms-2"></i>
+                            </span>
+                            <span>LIB – @Model.QuizInfo.Name (Level Test)</span>
+                        </div>
+                        <div class="numberquiz mt-2 me-4">
+                            <span>@Model.QuizInfo.Question questions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="condition mt-5">
+                    <ul>
+                        <li>İmtahan da iştirak etmək üçün qeydiyyatdan keçməlisiniz</li>
+                        <li>
+                            İmtahan müddəti
+                                @foreach (var time in Model.QuizTimes.Where(q => q.Id == Model.QuizInfo.QuizTimeId))
+                                {
+                                    @time.Time
+                                }
+                            dəqiqədir, vaxt bitdikdən sonra imtahan avtomatik dayanacaq
+                        </li>
+                        <li>İmtahan @Model.QuizInfo.Question sualdan ibarət olacaq</li>
+                        <li>Sualları yazıb bitirdikdən sonra nəticələriniz qarşınıza çıxacaq</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="btn mt-5">
+                    <a href="" class="btn btn-dark">İNDİ BAŞLA</a>
+                </div>
+                <div class="listener mt-5 ms-3 d-flex">
+                    <div class="left">
+                        <span>Hazırda kursda olan dinləyici</span> <br>
+                        <strong>: @Model.QuizInfo.Listener dinləyici </strong>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-user-group"></i> <br>
+                    </div>
+
+                </div>
+                <div class="line mt-4"></div>
+                <div class="listener mt-5 ms-3 d-flex justify-content-between">
+                    <div class="left">
+                        <span>Dərs müddəti</span>
+                        <strong>
+                            :   @foreach (var time in Model.QuizTimes.Where(q => q.Id == Model.QuizInfo.QuizTimeId))
+                                {
+                                    @time.Time
+                                } dəqiqə
+                        </strong>
+                    </div>
+                    <div class="icon me-5">
+                        <i class="fa-regular fa-clock"></i> <br>
+                    </div>
+                </div>
+                <div class="line mt-4"></div>
+                <div class="listener mt-5 ms-3 d-flex justify-content-between">
+                    <div class="left">
+                        <span>Mühazirə</span>
+                        <strong>: 0 </strong>
+                    </div>
+                    <div class="icon me-5">
+                        <i class="fa-solid fa-bullhorn"></i> <br>
+                    </div>
+                </div>
+                <div class="line mt-4"></div>
+                <div class="working mt-5">
+                    <div class="title ms-4 mt-4">
+                        <h4>Working hours</h4>
+                    </div>
+                    <div class="watch mt-4">
+                        <ul>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Monday</span>
+                                </div>
+                                <div class="clock me-3">
+                                    <span>9:30 am - 6.00 pm</span>
+                                </div>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Tuesdays</span>
+                                </div>
+                                <div class="clock me-3">
+                                    <span>9:30 am - 6.00 pm</span>
+                                </div>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Wednesday</span>
+                                </div>
+                                <div class="clock me-3">
+                                    <span>9:30 am - 6.00 pm</span>
+                                </div>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Thursday</span>
+                                </div>
+                                <div class="clock me-3">
+                                    <span>9:30 am - 6.00 pm</span>
+                                </div>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Fridays</span>
+                                </div>
+                                <div class="clock me-3">
+                                    <span>9:30 am - 5.00 pm</span>
+                                </div>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Saturday</span>
+                                </div>
+                                <div style="background-color:rgb(221, 46, 46) ; width: 25%; border-radius: 5px; " class="clock me-3 d-flex justify-content-center align-items-center">
+                                    <span style="color: white;">Bağlı</span>
+                                </div>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <div class="week">
+                                    <span>Sunday</span>
+                                </div>
+                                <div style="background-color:rgb(221, 46, 46) ; width: 25%; border-radius: 5px; " class="clock me-3 d-flex justify-content-center align-items-center">
+                                    <span style="color: white;">Bağlı</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section scripts{
+<script src=~/assets/js/quizinfo.js></script>
+}

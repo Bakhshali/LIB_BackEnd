@@ -1620,7 +1620,7 @@ main #detailcourse .education #price span {
   letter-spacing: normal;
   line-height: 22px;
 }
-main #detailcourse .btn button {
+main #detailcourse .btn a {
   width: 290px;
   height: 75px;
   background-color: #2C75E4;
@@ -1628,11 +1628,10 @@ main #detailcourse .btn button {
   border-radius: 0px;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 18px;
-  font-style: normal;
-  font-variant: normal;
   font-weight: 700;
-  letter-spacing: -0.2px;
-  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main #detailcourse .line {
   width: 290px;
@@ -2331,6 +2330,9 @@ main #myprofil .image img {
 main #myprofil .image img:hover {
   opacity: 30%;
 }
+main #myprofil .choosepicture input a:hover {
+  background-color: red;
+}
 main #myprofil h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
@@ -2353,6 +2355,9 @@ main #myprofil .box .main {
 main #myprofil .box .main input {
   width: 100%;
 }
+main #myprofil .box .main .eyeiconscript input {
+  padding-left: 45px;
+}
 main #myprofil .box label {
   color: #273044;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -2360,21 +2365,20 @@ main #myprofil .box label {
   font-weight: 500;
 }
 main #myprofil .box input {
-  padding-left: 45px;
   font-family: "Times New Roman", Times, serif;
   font-weight: 400;
 }
 main #myprofil .box .iconkey i {
   position: absolute;
-  top: 61%;
-  left: 8%;
+  top: 26%;
+  left: 5%;
   font-size: 18px;
   color: #AAAAAA;
 }
 main #myprofil .box .iconeye i {
   position: absolute;
-  top: 61%;
-  right: 7%;
+  top: 26%;
+  right: 5%;
   font-size: 17px;
   color: #AAAAAA;
 }

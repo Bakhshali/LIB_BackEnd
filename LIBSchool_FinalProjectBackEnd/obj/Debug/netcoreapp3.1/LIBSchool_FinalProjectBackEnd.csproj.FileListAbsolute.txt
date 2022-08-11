@@ -219,3 +219,14 @@ C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBa
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\FilterCourse\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
 C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Location\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Specialy\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Specialy\Delete.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Service\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\QuizDetail\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Quiz\Index.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Quiz\Detail.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Quiz\Create.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Quiz\Delete.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\LibAdmin\Views\Quiz\Edit.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Users\Ali\source\repos\LIBSchool_FinalProjectBackEnd\LIBSchool_FinalProjectBackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs

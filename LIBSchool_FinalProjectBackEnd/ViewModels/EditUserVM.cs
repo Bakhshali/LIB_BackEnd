@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LIBSchool_FinalProjectBackEnd.ViewModels
 {
@@ -7,14 +9,11 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         [Required, StringLength(maximumLength: 15)]
         public string Name { get; set; }
 
-        [Required, StringLength(maximumLength: 20)]
-        public string Surname { get; set; }
-
         [Required, StringLength(maximumLength: 15)]
         public string Username { get; set; }
 
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
+        [DataType(DataType.Password)]
+        public string CurrentPassword { get; set; }
 
         [DataType(DataType.Password)]
         public string Password { get; set; }
@@ -22,6 +21,8 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         [DataType(DataType.Password), Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
 
-        public bool IsCondition { get; set; }
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+
     }
 }
