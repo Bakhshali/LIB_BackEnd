@@ -54,6 +54,13 @@ namespace LIBSchool_FinalProjectBackEnd
                 option.User.AllowedUserNameCharacters = "qwertyuiopasdfghjklzxcvbnm_1234567890";
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CourseManager", policy => policy.RequireAssertion(context =>
+                       context.User.IsInRole(Helpers.Helper.Admin.ToString()) || context.User.IsInRole(Helpers.Helper.SuperAdmin.ToString())
+                 ));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

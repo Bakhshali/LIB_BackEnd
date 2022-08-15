@@ -21,9 +21,9 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             _env = env;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(bool isSuccess = false)
         {
-           
+            ViewBag.IsSuccess = isSuccess;
             return View();
         }
 
@@ -55,7 +55,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             await _context.Careers.AddAsync(career);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { IsSuccess = true });
         }
 
     }

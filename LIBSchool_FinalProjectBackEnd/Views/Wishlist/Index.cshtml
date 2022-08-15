@@ -1,0 +1,80 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="favorite" style="border-top:solid 4px #E5E5E5 ;" class="mt-4">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    @if (Model.WishlistItems.Count == 0)
+                    {
+                        <span><i class="fa-solid fa-star me-3" style="color:rgb(241,89,34) ;"></i>Bəyəndiyiniz elanları ürək işarəsinə klik edərək seçilmişlərə əlavə edin.</span>
+                    }
+                    else
+                    {
+                         <span><i class="fa-solid fa-star me-3" style="color:rgb(241,89,34) ;"></i>Favorite courses</span>
+                    }
+                </div>
+                <div class="col-1">
+                    <div class="shortline mt-4 ms-2"></div>
+                </div>
+                <div class="col-11">
+                    <div class="longline mt-4"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="course">
+        <div class="container">
+            <div class="row  mt-5">
+
+                @foreach (WishlistItem item in Model.WishlistItems)
+                {
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 coursefiltershow">
+                        <div data-aos="zoom-in-up" data-aos-delay="50" class="box mt-4">
+                            <div class="price">
+                                <p>89.00 AZN</p>
+                            </div>
+
+                            <div class="close">
+                                <form method="post">
+                                    <a asp-controller="Wishlist" asp-action="DeleteWishlist" asp-route-id="@item.Course.Id"> <i class="fa-solid fa-xmark"></i></a>
+                                </form>
+                            </div>
+
+                            <div class="image">
+                                <a href="./detail.html"><img src="~/assets/img/courses/@item.Course.Image" alt=""></a>
+                            </div>
+                            <div class="textbox">
+                                <div class="title ms-3 mt-3">
+                                    <span>İngilis dili ümumi</span>
+                                </div>
+                                <div class="btn mt-3">
+                                    <a href="./detail.html" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="icons mt-2">
+                                    <span class="me-2 ms-3"><i class="fa-solid fa-comment me-1"></i>0</span>
+                                    <span><i class="fa-solid fa-user me-1"></i>0</span>
+                                </div>
+                                <div class="monthly d-flex justify-content-end me-3">
+                                    <span>89.00 AZN - 159.00 AZN</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </section>
+</main>
+

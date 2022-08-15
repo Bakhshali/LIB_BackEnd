@@ -23,6 +23,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             List<Course> courses = await _context.Courses.Where(c => c.Name.Contains(searchCourse)).ToListAsync();
 
             ViewBag.Search = searchCourse;
+            ViewBag.Courses = await _context.Courses.ToListAsync();
             Category category = await _context.Categories.FindAsync(id);
             Course course = await _context.Courses.FirstOrDefaultAsync();
             ViewBag.Categories = categories;
@@ -32,19 +33,11 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
 
             HomeVM model = new HomeVM()
-            {
-                Writeuss = await _context.Writeus.ToListAsync(),
-                Settings = await _context.Settings.ToListAsync(),
-                Contacts = await _context.Contacts.ToListAsync(),
-                Careerss = await _context.Careers.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(),
-                Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
-                Courses = await _context.Courses.ToListAsync(),
-                Branches = await _context.Branches.ToListAsync(),
+            {               
+                Categories = await _context.Categories.ToListAsync(),               
+                Courses = await _context.Courses.ToListAsync(),            
                 Category = category,
                 Course = course,
-                Quizzes = await _context.Quizzes.ToListAsync(),
             };
             return View(model);
 

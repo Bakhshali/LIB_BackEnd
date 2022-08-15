@@ -1,0 +1,28 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="m-3 mt-5">
+    <div class="title">
+        <h2 style="color:#273044"><span style="color:#FF0000">#</span> Düzəliş et</h2>
+    </div>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        <div>
+            <input asp-for="Name" class="form-control"> <br />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <input asp-for="Surname" class="form-control"> <br />
+            <span class="text-danger" asp-validation-for="Surname"></span>
+        </div>
+        <div>
+            <span style="font-size:18px">Blok</span> <br />
+            <input asp-for="IsBlock" style="width:20px;height:20px">
+            <span class="text-danger" asp-validation-for="IsBlock"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success mt-3">Yadda saxla</button>
+        </div>
+    </form>
+</div>

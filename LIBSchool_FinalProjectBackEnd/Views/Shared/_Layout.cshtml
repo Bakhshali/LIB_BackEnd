@@ -41,11 +41,12 @@
                         <div class="account d-flex justify-content-end">
                             <div class="responsiveIconsTopbar">
                                 <ul class="d-flex justify-content-end">
-                                    <li><a href="./wishlist.html"><i class="fa-regular fa-heart"></i></a></li>
+                                    <li><a asp-controller="wishlist" asp-action="index"><i class="fa-regular fa-heart"></i></a></li>
                                     <li>
                                         <a href="./basket.html">
                                             <i class="fa-solid fa-basket-shopping"></i>
-                                            <sup>@foreach (var item in basketItems)
+                                            <sup>
+                                                @foreach (var item in basketItems)
                                                 {
                                                     @if (item.AppUserId != null)
                                                     {
@@ -108,47 +109,29 @@
                                 </li>
                                 <div class="serviceClick">
                                     <ul>
-                                        <li>
-                                            <a href="./search.html">İngilis dili</a>
-                                            <div class="languageboxes">
-                                                <ul>
-                                                    <li><a href="./detail.html">- Ümumi ingilis dili</a></li>
-                                                    <li><a href="">- İELTS proqramı</a></li>
-                                                    <li><a href="">- Məktəblilər üçün ingilis dili</a></li>
-                                                    <li><a href="">- İngilis dili youtalk</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="">Rus dili</a>
-                                            <div class="languageboxes">
-                                                <ul>
-                                                    <li><a href="">- Rus dili ümumi</a></li>
-                                                    <li><a href="">- Məktəblilər rus dili</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="">Alman dili</a>
-                                            <div class="languageboxes">
-                                                <ul>
-                                                    <li><a href="">- Alman dili danışıq kursu</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="">Self study proqramı</a>
-                                            <div class="languageboxes">
-                                                <ul>
-                                                    <li><a href="">- İngilis dili self study proqramı</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
+                                        @foreach (Category category in categories)
+                                        {
+                                            <li>
+                                                <a asp-controller="Category" asp-action="index" asp-route-id="@category.Id">
+                                                    @category.Name <i class="fa-solid fa-angle-right me-2"></i>
+                                                </a>
+                                                <div class="languageboxes">
+                                                    <ul>
+                                                        @foreach (Course course in courses.FindAll(s => s.CategoryId == category.Id))
+                                                        {
+                                                            <li><a asp-controller="detail" asp-action="index" asp-route-id="@course.Id"> - @course.Name</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                        }
+
                                     </ul>
                                 </div>
                                 <li class="d-flex justify-content-between yellowabout">
                                     <div class="aboutRespo">
-                                        <a href="./about.html">HAQQIMIZDA</a>
+                                        <a asp-controller="about" asp-action="index">HAQQIMIZDA</a>
                                     </div>
                                     <div class="iconmenuabout">
                                         <i class="fa-solid fa-angle-right"></i>
@@ -161,9 +144,9 @@
                                         <li>
                                             <div class="languageboxes">
                                                 <ul>
-                                                    <li><a href="./about.html">- Nə üçün biz?</a></li>
-                                                    <li><a href="./about.html">- Komandamız</a></li>
-                                                    <li><a href="./career.html">- Komandamıza qoşulun</a></li>
+                                                    <li><a asp-controller="about" asp-action="index">- Nə üçün biz?</a></li>
+                                                    <li><a asp-controller="about" asp-action="index">- Komandamız</a></li>
+                                                    <li><a asp-controller="career" asp-action="index">- Komandamıza qoşulun</a></li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -171,7 +154,7 @@
                                 </div>
                                 <li class="d-flex justify-content-between yellowbranch">
                                     <div class="branchRespo">
-                                        <a href="./branch.html">FİLİALLAR</a>
+                                        <a asp-controller="location" asp-action="index">FİLİALLAR</a>
                                     </div>
                                     <div class="iconmenubranch">
                                         <i class="fa-solid fa-angle-right"></i>
@@ -184,21 +167,25 @@
                                         <li>
                                             <div class="languageboxes">
                                                 <ul>
-                                                    <li><a href="./branch.html #mainbranch">- Mərkəz Filialı</a></li>
-                                                    <li>
-                                                        <a href="./branch.html #anotherbranch">- Əhmədli Filialı</a>
-                                                    </li>
+                                                    @foreach (Branch branch in branches)
+                                                    {
+                                                        <li><a asp-controller="location" asp-action="index"> - @branch.Name </a></li>
+                                                    }
                                                 </ul>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                                <li><a href="./gallery.html">QALEREYA</a></li>
-                                <li><a href="./contact.html">ƏLAQƏ</a></li>
+                                <li><a asp-controller="gallery" asp-action="index">QALEREYA</a></li>
+                                <li><a asp-controller="contact" asp-action="index">ƏLAQƏ</a></li>
                             </ul>
                             <div class="searchinputResponsive">
-                                <input type="text" placeholder="Search...">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <form method="get">
+                                    <input type="search" placeholder="Search..." value="@ViewBag.Search" name="searchCourse">
+                                    <button asp-controller="Search" asp-action="index" type="submit" style="border:none">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
 
@@ -252,12 +239,13 @@
                                 </li>
                                 <li><a asp-controller="gallery" asp-action="index">QALEREYA</a></li>
                                 <li><a asp-controller="contact" asp-action="index">ƏLAQƏ</a></li>
-                                <li><a href="./wishlist.html"><i class="fa-regular fa-heart"></i></a></li>
+                                <li><a asp-controller="wishlist" asp-action="index"><i class="fa-regular fa-heart"></i></a></li>
                                 <li>
-                                    <a asp-controller="basket" asp-action="index" >
+                                    <a asp-controller="Basket" asp-action="Index">                      
                                         <i class="fa-solid fa-basket-shopping"></i>
-                                        <sup>@basketItems.Count</sub>
+                                         <sup>@basketItems.Count</sup>
                                     </a>
+
                                 </li>
                                 <li>
                                     <a href="" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -319,7 +307,7 @@
             </div>
         </section>
     </footer>
-    
+
     @*@*    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>*@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -333,9 +321,9 @@
     <script>
         AOS.init();
     </script>
-   
+
     @RenderSection("scripts", required: false)
-     <script src="~/assets/js/script.js"></script>
+    <script src="~/assets/js/script.js"></script>
 </body>
 
 </html>

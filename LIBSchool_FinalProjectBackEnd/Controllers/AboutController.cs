@@ -26,37 +26,22 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             HomeVM model = new HomeVM()
             {
                 Writeuss = writeus,
-                Careerss = await _context.Careers.ToListAsync(),
-                Branches = await _context.Branches.ToListAsync(),
-                Students = await _context.Students.ToListAsync(),
-                Results = await _context.Results.ToListAsync(),
                 Teams = await _context.Teams.ToListAsync(),
-                Settings = await _context.Settings.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(),
-                Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
-                Courses = await _context.Courses.ToListAsync(),
-                Quizzes = await _context.Quizzes.ToListAsync(),
+                Results = await _context.Results.ToListAsync(),
+                Students = await _context.Students.ToListAsync(),
             };
             return View(model);
         }
-
+        
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Index(Writeus writeus)
         {
             HomeVM model = new HomeVM()
             {
-                Branches = await _context.Branches.ToListAsync(),
                 Students = await _context.Students.ToListAsync(),
                 Results = await _context.Results.ToListAsync(),
                 Teams = await _context.Teams.ToListAsync(),
-                Settings = await _context.Settings.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(),
-                Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
-                Courses = await _context.Courses.ToListAsync(),
-                Quizzes = await _context.Quizzes.ToListAsync(),
             };
 
             if (!ModelState.IsValid)
@@ -80,16 +65,11 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                         modelstate.Errors.Clear();
                         modelstate.Errors.Add(firstError);
                     }
-
                 }
                 return View(model);
-
             }
-
-
             await _context.Writeus.AddAsync(writeus);
             await _context.SaveChangesAsync();
-
             return RedirectToAction("Index", new { IsSuccess = true });
         }
     }

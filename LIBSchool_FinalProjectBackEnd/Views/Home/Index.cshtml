@@ -4,10 +4,18 @@
     ViewData["Title"] = "Index";
 }
 
-@if (TempData["Verify"] != null)
+@if (ViewBag.IsSuccess == true)
 {
-    <input type="hidden" id="verifyJS" />
+    <div style="z-index: 1000; position: absolute; top: 50px; right: 20px; " class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex justify-content-end" style="background-color:green;opacity:60%;">
+            <div class="toast-body" style="color:white">
+                Your order is success!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
 }
+
 <section id="slider">
     <div id="carouselExampleCaptions" class="carousel slide mt-3" data-bs-ride="false">
         <div class="carousel-inner">
@@ -25,7 +33,7 @@
                         <h1>@slider.Title</h1>
                         <p>@slider.Subtitle</p>
                         <div class="btn">
-                            <a href="./service.html" class="btn btn-danger">Elə indi başla</a>
+                            <a asp-controller="service" asp-action="index" class="btn btn-danger">Elə indi başla</a>
                         </div>
                     </div>
                 </div>
@@ -46,56 +54,18 @@
 <section id="language">
     <div class="container">
         <div class="row d-flex justify-content-center justify-content-evenly">
-            <div class="col-lg-2 col-md-6 col-sm-12">
-                <div data-aos="flip-left" data-aos-delay="50" data-aos-offset="0" class="box  mt-5">
-                    <a href="./detail.html">
-                        <span>
-                            <i class="fa-regular fa-comments me-2"></i>Ümumi İngilis
-                            dili
-                        </span>
-                    </a>
+            @foreach (Course course1 in Model.Courses.TakeLast(5))
+            {
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <div data-aos="flip-left" data-aos-delay="50" data-aos-offset="0" class="box  mt-5">
+                        <a asp-controller="detail" asp-action="index" asp-route-id="@course1.Id">
+                            <span>
+                                <i class="fa-regular fa-comments me-2"></i>@course1.Name
+                            </span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
-                <div data-aos="flip-left" data-aos-delay="150" data-aos-offset="0" class="box mt-5">
-                    <a href="./detail.html">
-                        <span>
-                            <i class="fa-solid fa-person-chalkboard me-2"></i>IELTS
-                            kursu
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
-                <div data-aos="flip-left" data-aos-delay="250" data-aos-offset="0" class="box mt-5">
-                    <a href="./detail.html">
-                        <span>
-                            <i class="fa-solid fa-person-circle-question me-2"></i>Rus
-                            dili ümumi
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
-                <div data-aos="flip-left" data-aos-delay="350" data-aos-offset="0" class="box mt-5">
-                    <a href="./detail.html">
-                        <span>
-                            <i class="fa-solid fa-earth-asia me-2"></i>Alman dili
-                            ümumi
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
-                <div data-aos="flip-left" data-aos-delay="450" data-aos-offset="0" class="box mt-5">
-                    <a href="./detail.html">
-                        <span>
-                            <i class="fa-solid fa-computer me-2"></i>Self study
-                            proqramı
-                        </span>
-                    </a>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
@@ -127,7 +97,7 @@
             @foreach (QuizInfo info in Model.QuizInfos)
             {
 
-                <div class="col-lg-3 infotest">
+                <div class="col-lg-3 infotest" @* data-aos="zoom-in-down"*@>
                     <div class="boxtest">
                         <div class="image ms-4 mt-4">
                             <img width="45px" src="~/assets/img/account/stm_lms_avatar1.png" alt="">
@@ -187,7 +157,7 @@
             @foreach (Course course in Model.Courses)
             {
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="box mt-4">
+                    <div class="box mt-4" data-aos="zoom-out-down">
                         <div class="price">
                             @foreach (CourseEducation item in Model.CourseEducations.Where(c => c.EducationId == 1).Where(c => c.CourseId == course.Id))
                             {
@@ -195,10 +165,12 @@
                             }
                         </div>
                         <div class="image">
+                            <a asp-controller="wishlist" asp-action="addwishlist" asp-route-id="@course.Id"><i class="fa-regular fa-heart clickshow" style="position:absolute;right:10px; font-size:25px;top:10px;color:white;"></i></a>
                             <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id">
                                 <img src="./assets/img/courses/@course.Image"
                                  alt="">
                             </a>
+
                         </div>
                         <div class="textbox">
                             <div class="title ms-3 mt-3">
@@ -255,7 +227,7 @@
                     <i class="fa-regular fa-building"></i>
                 </div>
                 <div class="number mt-3 ">
-                    <h2 class="counter">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="YearExperience").Value</h2>
+                    <h2 class="counter" data-target="@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="YearExperience").Value">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="YearExperience").Value</h2>
                     <span>İLLİK TƏCRÜBƏ</span>
                 </div>
             </div>
@@ -264,7 +236,7 @@
                     <i class="fa-solid fa-briefcase"></i>
                 </div>
                 <div class="number mt-3">
-                    <h2 class="counter">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="Teacher").Value</h2>
+                    <h2 class="counter" data-target="@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="Teacher").Value">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="Teacher").Value</h2>
                     <span>SERTİFİKATLI MÜƏLLİM</span>
                 </div>
             </div>
@@ -273,7 +245,7 @@
                     <i class="fa-solid fa-user-group"></i>
                 </div>
                 <div class="number mt-3">
-                    <h2 class="counter">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="graduate").Value</h2>
+                    <h2 class="counter" data-target="@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="graduate").Value">@layoutservice.GetDatas().Result.FirstOrDefault(s=>s.Key=="graduate").Value</h2>
                     <span>MƏZUN SAYI</span>
                 </div>
             </div>
@@ -302,12 +274,7 @@
                                 <span asp-validation-for="Special.Email" class="text-light" style="font-size:16px"></span>
                             </div>
 
-                            @if (ViewBag.IsSuccess == true)
-                            {
-                                <div class="alert alert-success alert-dismissible fade show col-12 mt-1" role="alert">
-                                    <span style="font-size:17px"> Müraciətiniz üçün təşəkkür edirik. Sizinlə 1-2 iş günü ərzində əməkdaşlarımız əlaqə saxlayacaqlar.</span>
-                                </div>
-                            }
+
 
 
                             <div class="btn">
@@ -442,31 +409,11 @@
         </div>
     </div>
 </section>
-
 @section scripts{
-    <script>
-    $(document).ready(function(){
-        if($("#verifyJS").length){
-            Command:toastr["success"]("Please verify your email")
-            toastr.options = {
-                "closeButton":false,
-                "debug":false,
-                "newestOnTop":false,
-                "progressBar":false,
-                "positionClass":"toast-top-rigt",
-                "preventDublicates":false,
-                "onclick":null,
-                "showDuration":"300",
-                "hideDuration":"1000",
-                "timeOut":"5000",
-                "extendedTimeOut":"1000",
-                "showEasing":"swing",
-                "hideEasing":"linear",
-                "showMethod":"fadeIn",
-                "hideMethod":"fadeOut"
 
-            }
-        }
-    })
-    </script>
+<script src="~/assets/js/quiztest.js"></script>
+<script src="~/assets/js/app.js"></script>
+
+
 }
+

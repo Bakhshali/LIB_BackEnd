@@ -19,15 +19,8 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         {
             HomeVM model = new HomeVM()
             {
-                Branches = await _context.Branches.ToListAsync(),
                 Galleries = await _context.Galleries.ToListAsync(),
                 Albums = await _context.Albums.ToListAsync(),
-                Settings = await _context.Settings.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(),
-                Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
-                Courses = await _context.Courses.ToListAsync(),
-                Quizzes = await _context.Quizzes.ToListAsync(),
             };
             return View(model);
         }

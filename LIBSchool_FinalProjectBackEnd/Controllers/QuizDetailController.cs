@@ -25,6 +25,8 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 QuizInfo = info,
                 QuizTimes = await _context.QuizTimes.ToListAsync(),
                 QuizTeachers = await _context.QuizTeachers.ToListAsync(),
+                QuizInfos = await _context.QuizInfos.ToListAsync(),
+                Answers = await _context.Answers.ToListAsync(),
             };
 
             return View(model);

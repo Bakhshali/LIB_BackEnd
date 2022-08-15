@@ -35,7 +35,7 @@
 
                 <div class="col-lg-4 mt-4 mb-4" id="searchinput">
                     <form method="get">
-                        <input type="search" value="@ViewBag.Search" name="searching" style="width:70% ;" placeholder="Search the courses">
+                        <input type="search" value="@ViewBag.Search" name="searchCourse" style="width:70%; padding-left:10px" placeholder="Search the courses">
                         <input type="submit" asp-controller="search" asp-action="index"
                                style="width: 25%; background-color: #EAB830; color: white;">
                     </form>
@@ -44,17 +44,21 @@
 
                 <div class="col-lg-5 mt-3">
                     <div class="box mb-3  d-flex justify-content-evenly">
-                        <select>
-                            @foreach (Category category1 in Model.Categories.Where(c => c.Id == Model.Category.Id))
-                            {
+                        <form method="post">
+                            <select asp-for="Course" name="searchCourse" asp-items="@(new SelectList(ViewBag.Courses,"Id","Name"))">
+                                @foreach (Category category1 in Model.Categories.Where(c => c.Id == Model.Category.Id))
+                                {
+                                    <a asp-controller="category" asp-action="index" asp-route-id="@category1.Id">
+                                    <option value="">@category1.Name</option>
+                                    </a>
 
-                                <a asp-controller="category" asp-action="index" asp-route-id="@category1.Id">
-                                <option value="">@category1.Name</option>
-                                </a>
+
+                                }
+                            </select>
 
 
-                            }
-                        </select>
+                            <input type="submit" value="submit" asp-controller="category" asp-action="index" />
+                        </form>
                     </div>
                 </div>
 
@@ -67,25 +71,27 @@
             <div class="row  mt-3">
                 @foreach (Course course in Model.Courses.Where(c => c.CategoryId == Model.Category.Id))
                 {
-                    <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
 
                         <div data-aos="zoom-in-up" data-aos-delay="200" class="box mt-4">
                             <div class="price">
                                 <p>89.00 AZN</p>
                             </div>
                             <div class="image">
-                                <img src="~/assets/img/courses/@course.Image"
-                                 alt="">
+                                <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id">
+                                    <img style="width:80%" src="~/assets/img/courses/@course.Image"
+                                     alt="">
+                                </a>
                             </div>
-                            <div class="textbox">
+                            <div class="textbox" style="width:80%">
                                 <div class="title ms-3 mt-3">
                                     <span>@course.Name</span>
                                 </div>
                                 <div class="btn mt-3">
-                                    <a href="" class="btn btn-dark">DAHA ƏTRAFLI</a>
+                                    <a asp-controller="detail" asp-action="index" asp-route-id="@course.Id" class="btn btn-dark">DAHA ƏTRAFLI</a>
                                 </div>
                             </div>
-                            <div class="comment">
+                            <div class="comment" style="width:80%">
                                 <div class="icons mt-2">
                                     <span class="me-2 ms-3"><i class="fa-solid fa-comment me-1"></i>0</span>
                                     <span><i class="fa-solid fa-user me-1"></i>0</span>

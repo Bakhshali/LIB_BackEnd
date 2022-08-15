@@ -35,9 +35,16 @@ namespace LIBSchool_FinalProjectBackEnd.ViewModels
         public List<QuizTeacher> QuizTeachers { get; set; }
         public List<QuizTime> QuizTimes { get; set; }
         public List<BasketItem> BasketItems { get; set; }
+        public List<WishlistItem> WishlistItems { get; set; }
         public BasketItem BasketItem { get; set; }
         public List<CourseEducation> CourseEducations { get; set; }
         public CourseEducation CourseEducation { get; set; }
+        public List<Education> Educations { get; set; }
+
+        public List<Question> Questions { get; set; }
+        public List<Answer> Answers { get; set; }
+
+
 
 
     }

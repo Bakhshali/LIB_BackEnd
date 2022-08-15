@@ -38,14 +38,24 @@
             <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"><option>Kateqoriya</option></select>  <br />
             <span class="text-danger" asp-validation-for="CategoryId"></span>
         </div>
-         <div>
+
+        <div>
+            <select class="form-control" asp-for="EducationId" asp-items="@(new SelectList(ViewBag.Education,"Id","Name"))"><option>Kateqoriya</option></select>  <br />
+            <span class="text-danger" asp-validation-for="EducationId"></span>
+        </div>
+
+        <div>
+            <select class="form-control" asp-for="CourseEducations.FirstOrDefault(c=>c.EducationId==2 && c.CourseId==Model.Id).Id" asp-items="@(new SelectList(ViewBag.Education,"Id","Price"))"><option>Price</option></select>  <br />
+            <span class="text-danger" asp-validation-for="CourseEducationId"></span>
+        </div>
+        @*   <div>
             <select class="form-control"  asp-items="@(new SelectList(ViewBag.Prices,"Id","Price"))"><option>Group Price</option></select>  <br />
             <span class="text-danger" asp-validation-for="CourseEducations"></span>
-        </div>
-        <div>
+            </div>
+            <div>
             <select class="form-control" asp-for="CourseEducations" asp-items="@(new SelectList(ViewBag.Prices,"Id","Price"))"><option>Individual Price</option></select>  <br />
             <span class="text-danger" asp-validation-for="CourseEducations"></span>
-        </div>
+            </div>*@
         <div>
             <input asp-for="Photo"><br />
             <span class="text-danger" asp-validation-for="Photo"></span>

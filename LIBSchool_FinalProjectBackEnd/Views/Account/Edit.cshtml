@@ -12,8 +12,9 @@
                     <div class="col-lg-2 col-sm-6 col-md-6">
 
                         <div class="image mt-5">
-                            <img src="~/assets/img/profile/@Model." alt="">
-                            <span class="text-danger" style="font-size:14px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="@Model.Photo"></span>
+                           @*@foreac*@
+
+                      @*      <span class="text-danger" style="font-size:14px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="@Model.Photo"></span>*@
                         </div>
                         <div class="choosepicture">
                             <input type="file" id="upload" style="display: none;"> <a href="" class="btn btn-success ms-3" style="width: 80%; background-color: #17D292; border-radius: 50px;border:solid 2px white" onclick="document.getElementById('upload').click(); return false;"><i class="fa-solid fa-camera"></i></a>

@@ -34,6 +34,30 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.ToTable("Albums");
                 });
 
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Answer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Answers")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("Answers");
+                });
+
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -51,6 +75,9 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsBlock")
                         .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
@@ -350,6 +377,22 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.ToTable("Galleries");
                 });
 
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Question", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Questions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Questions");
+                });
+
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Quiz", b =>
                 {
                     b.Property<int>("Id")
@@ -582,6 +625,28 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.ToTable("Teams");
                 });
 
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.WishlistItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("Wishlists");
+                });
+
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Writeus", b =>
                 {
                     b.Property<int>("Id")
@@ -741,6 +806,15 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.Answer", b =>
+                {
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Question", "Question")
+                        .WithMany("Answers")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.BasketItem", b =>
                 {
                     b.HasOne("LIBSchool_FinalProjectBackEnd.Models.AppUser", "AppUser")
@@ -805,6 +879,19 @@ namespace LIBSchool_FinalProjectBackEnd.Migrations
                     b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Category", "Category")
                         .WithMany("SubCategories")
                         .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LIBSchool_FinalProjectBackEnd.Models.WishlistItem", b =>
+                {
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.AppUser", "AppUser")
+                        .WithMany("Wishlists")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("LIBSchool_FinalProjectBackEnd.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

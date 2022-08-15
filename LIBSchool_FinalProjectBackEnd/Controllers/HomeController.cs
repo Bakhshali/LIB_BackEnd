@@ -26,14 +26,12 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 Settings = await _context.Settings.ToListAsync(),
                 Sliders = await _context.Sliders.ToListAsync(),
                 Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
                 Courses = await _context.Courses.ToListAsync(),
-                Quizzes = await _context.Quizzes.ToListAsync(),
-                Branches = await _context.Branches.ToListAsync(),
                 QuizInfos = await _context.QuizInfos.ToListAsync(),
                 QuizTeachers = await _context.QuizTeachers.ToListAsync(),
                 QuizTimes = await _context.QuizTimes.ToListAsync(),
                 CourseEducations = await _context.CourseEducations.ToListAsync(),
+
             };
             return View(model);
         }
@@ -48,13 +46,11 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 Settings = await _context.Settings.ToListAsync(),
                 Sliders = await _context.Sliders.ToListAsync(),
                 Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
                 Courses = await _context.Courses.ToListAsync(),
-                Quizzes = await _context.Quizzes.ToListAsync(),
-                Branches = await _context.Branches.ToListAsync(),
                 QuizInfos = await _context.QuizInfos.ToListAsync(),
                 QuizTeachers = await _context.QuizTeachers.ToListAsync(),
                 QuizTimes = await _context.QuizTimes.ToListAsync(),
+                CourseEducations = await _context.CourseEducations.ToListAsync(),
             };
             if (!ModelState.IsValid) return View(model);
 

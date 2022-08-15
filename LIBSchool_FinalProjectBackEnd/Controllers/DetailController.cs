@@ -28,17 +28,13 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
             HomeVM model = new HomeVM()
             {
-                Branches = await _context.Branches.ToListAsync(),
-                Settings = await _context.Settings.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(),
                 Categories = await _context.Categories.ToListAsync(),
-                SubCategories = await _context.SubCategories.ToListAsync(),
                 Courses = await _context.Courses.Include(s=>s.CourseEducations).ThenInclude(c=>c.Education).ToListAsync(),
                 Course = course,
                 Category = category,
-                Quizzes = await _context.Quizzes.ToListAsync(),
                 CourseEducations = await _context.CourseEducations.ToListAsync(),
-                CourseEducation = await _context.CourseEducations.FirstOrDefaultAsync()
+                CourseEducation = await _context.CourseEducations.FirstOrDefaultAsync(),
+                Educations = await _context.Educations.ToListAsync(),
             };
             return View(model);
         }

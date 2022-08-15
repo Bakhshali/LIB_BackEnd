@@ -85,6 +85,12 @@
                     <div class="title mt-4">
                         <h3>Sualınız var?</h3>
                     </div>
+                    @if (ViewBag.IsSuccess == true)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show col-8" role="alert">
+                            <span style="font-size:18px"><i class="fa-regular fa-circle-check me-2"></i> <span>Müraciətiniz yollanıldı təşəkkür edirik.</span></span>
+                        </div>
+                    }
                     <form method="post" class="mt-4">
                         <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="@Model.Contact.Name"></span>  <br />
                         <input asp-for="@Model.Contact.Name" placeholder="Adınız">

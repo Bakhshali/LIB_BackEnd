@@ -36,6 +36,8 @@
                         <tbody>
                             @foreach (BasketItem item in Model.BasketItems)
                             {
+                                
+                                <form method="post">
                                 <tr>
                                     <th><a asp-controller="basket" asp-action="DeleteBasket" asp-route-id="@item.Course.Id"><i class="fa-solid fa-xmark mt-5"></i></a></th>
 
@@ -43,7 +45,7 @@
                                     <td>
                                         <img width="100px" height="100px"
                                          src="~/assets/img/courses/@item.Course.Image"
-                                         alt=""><span class="ms-3"><a href="#">Ümumi @item.Course.Name</a></span>
+                                         alt=""><span class="ms-3"><a href="#">@item.Course.Name</a></span>
                                     </td>
                                     <td>
                                         <div class="info">
@@ -56,9 +58,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <form action="">
                                             <input asp-for="@item.Count" type="number" min="1">
-                                        </form>
                                     </td>
                                     <td>
                                         <div class="info">
@@ -66,6 +66,9 @@
                                         </div>
                                     </td>
                                 </tr>
+
+                                    <button type="submit">Sebeti yenile</button>
+                                </form>
                             }
                         </tbody>
                     </table>

@@ -205,14 +205,8 @@
                             </div>
                         }
                         <div class="btn mt-4 ms-1">
-                            @if (User.Identity.IsAuthenticated)
-                            {
                                 <a asp-controller="basket" asp-action="AddBasket" asp-route-id="@Model.Course.Id" id="submit" class="btn btn-dark">SƏBƏTƏ ƏLAVƏ ET</a>
-                            }
-                            else
-                            {
-                                <a asp-controller="account" asp-action="login" asp-route-id="@Model.Course.Id" id="submit" class="btn btn-dark">SƏBƏTƏ ƏLAVƏ ET</a>
-                            }
+                          
                         </div>
                     </form>
                     <div class="line mt-4 ms-3"></div>

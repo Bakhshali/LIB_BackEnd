@@ -3,6 +3,18 @@
     ViewData["Title"] = "Register";
 }
 
+@if(TempData["Verify"] != null)
+{
+      <div style="z-index: 1000; position: absolute; top: 50px; right: 20px; " class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex justify-content-end" style="background-color:green;opacity:60%;">
+            <div class="toast-body" style="color:white">
+                Your order is success!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
 <main>
     <section id="account">
         <div class="container">
@@ -64,3 +76,7 @@
         </div>
     </section>
 </main>
+
+@section scripts{
+<script src="~/assets/js/quiztest.js"></script>
+}

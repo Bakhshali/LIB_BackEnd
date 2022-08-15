@@ -18,11 +18,15 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             _context = context;
         }
 
-        public async Task <IActionResult> Index(string searchCourse)
+        public async Task<IActionResult> Index(string searchCourse, string namecourse)
         {
-           ViewBag.Search = searchCourse;
+            ViewBag.Search = searchCourse;
 
-            List<Course> courses = await _context.Courses.Where(c=>c.Name.Contains(searchCourse)).ToListAsync();
+            ViewBag.FilterName = await _context.Courses.ToListAsync();
+            //ViewBag.Course = await _context.Courses.Where(c => c.Name.Contains(searchCourse)).FirstOrDefaultAsync(c=>c.Name==); 
+
+            List<Course> courses = await _context.Courses.Where(c => c.Name.Contains(searchCourse)).ToListAsync();
+
             List<Category> categories = await _context.Categories.ToListAsync();
 
             HomeVM model = new HomeVM
@@ -31,7 +35,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 Courses = courses,
                 Categories = categories,
                 CourseEducations = await _context.CourseEducations.ToListAsync(),
-                
+
             };
             return View(model);
         }

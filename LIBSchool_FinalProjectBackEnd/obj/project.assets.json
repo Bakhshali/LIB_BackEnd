@@ -11,6 +11,20 @@
           "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authorization/3.1.28": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Metadata": "3.1.28",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.28",
+          "Microsoft.Extensions.Options": "3.1.28"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.27": {
         "type": "package",
         "compile": {
@@ -55,6 +69,15 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Metadata/3.1.28": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor/2.2.0": {
@@ -556,7 +579,7 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.27": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.28": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
@@ -608,7 +631,7 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Logging.dll": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/3.1.27": {
+      "Microsoft.Extensions.Logging.Abstractions/3.1.28": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
@@ -617,11 +640,11 @@
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Options/3.1.27": {
+      "Microsoft.Extensions.Options/3.1.28": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.27",
-          "Microsoft.Extensions.Primitives": "3.1.27"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.28",
+          "Microsoft.Extensions.Primitives": "3.1.28"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll": {}
@@ -630,7 +653,7 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll": {}
         }
       },
-      "Microsoft.Extensions.Primitives/3.1.27": {
+      "Microsoft.Extensions.Primitives/3.1.28": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
@@ -2661,6 +2684,23 @@
         "lib/NETFramework40/DataAnnotationsExtensions.dll"
       ]
     },
+    "Microsoft.AspNetCore.Authorization/3.1.28": {
+      "sha512": "icLS7zjfqQS4neScYmEMtlVTqtmdp4vmQeVwnfgBhJvGmT+iRgIaSChSYyipewwSYiuWB26kqP7/h8qT31qtZA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authorization/3.1.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
+        "microsoft.aspnetcore.authorization.3.1.28.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.27": {
       "sha512": "0cUCH/E+tceVmPjRsAUGKzyoM3tPq1IUaw3iKsxlfFZLmY0EhlalWUsDalcRq8crGAlKa4YbtbOIgOgh/h54TQ==",
       "type": "package",
@@ -2725,6 +2765,23 @@
         "lib/netstandard2.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
         "microsoft.aspnetcore.identity.entityframeworkcore.3.1.27.nupkg.sha512",
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Metadata/3.1.28": {
+      "sha512": "pMo9hImGxlL8u0dpK0/2QBh474198oUzmakgIVHZ2BAuuxzazI1xBVJ4KU0R+gpiCKBN23pHQ6GgvfLQtSa1AQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.metadata/3.1.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
+        "microsoft.aspnetcore.metadata.3.1.28.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor/2.2.0": {
@@ -3345,17 +3402,17 @@
         "microsoft.extensions.dependencyinjection.nuspec"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.27": {
-      "sha512": "LpfjoAuQFVbSMo5XhpXpEyQ6T0xD3wrcOcQqbyEXETbiMZNTQcbR7qyX5Nzb8cU9GFd1LLzz29kE6JB18MvoSg==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.28": {
+      "sha512": "uO7jKl8mfmqp4E7lfHvRwO+n6eb2YZVDzyEgFNXcOavWSxMvU0qBXyzvfpFBLLeAMcubP49dNtx5Gu/yIVdJxg==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.27",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.3.1.27.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.3.1.28.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec"
       ]
     },
@@ -3409,24 +3466,24 @@
         "microsoft.extensions.logging.nuspec"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/3.1.27": {
-      "sha512": "alKZjFaM7C4DNbuDxtJgubp6Ou/UmXxgEDwE2jWa3gD6reAOiDEg9Y955w9CKozdmVpa2qh32JSvacO+LIpOpw==",
+    "Microsoft.Extensions.Logging.Abstractions/3.1.28": {
+      "sha512": "QcCzhUcHiUVR+RZzi4f51e9pDFSBeaypruu3N2+8sv4R9ZDGHeSYMHGzRirlkckNACgOdowYUq5p0wlauz73+w==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/3.1.27",
+      "path": "microsoft.extensions.logging.abstractions/3.1.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.3.1.27.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.3.1.28.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec"
       ]
     },
-    "Microsoft.Extensions.Options/3.1.27": {
-      "sha512": "91kVzn1Q8w+7PJjBE83HDx/sk66fQOrasHSCGbKU+6cv/st2Td6G6lrAgVp+VQPmbB2o5uQTIb2rLAsPODNW6Q==",
+    "Microsoft.Extensions.Options/3.1.28": {
+      "sha512": "uXiv46Bfd8bDvWng27u9MSOhwQ1otkNf9mf+NzBa3Ty/8MlutuUCIXpUzFo2bo3TvoZ4+VONrSQEHhWHeIQDDw==",
       "type": "package",
-      "path": "microsoft.extensions.options/3.1.27",
+      "path": "microsoft.extensions.options/3.1.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3435,14 +3492,14 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.3.1.27.nupkg.sha512",
+        "microsoft.extensions.options.3.1.28.nupkg.sha512",
         "microsoft.extensions.options.nuspec"
       ]
     },
-    "Microsoft.Extensions.Primitives/3.1.27": {
-      "sha512": "LHJTWE/IEXf56LxWqTGzeC9XFKAAVaVOhdLlo2kgVgE/8GSFrgrE5r9mRDmED27O2CHyqf9YXPX6P6BN+OZWdA==",
+    "Microsoft.Extensions.Primitives/3.1.28": {
+      "sha512": "KXPub1KNWGogTI/3vW9cFcwCweOubwUhDS5GUnNOTt4277Ngks5YSC0Ea/xSd2kP3lAmA6p4MJlvuO/0IauHew==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/3.1.27",
+      "path": "microsoft.extensions.primitives/3.1.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3451,7 +3508,7 @@
         "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.3.1.27.nupkg.sha512",
+        "microsoft.extensions.primitives.3.1.28.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec"
       ]
     },
@@ -8639,6 +8696,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "DataAnnotationsExtensions >= 5.0.1.27",
+      "Microsoft.AspNetCore.Authorization >= 3.1.28",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.27",
       "Microsoft.EntityFrameworkCore >= 3.1.27",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.27",
@@ -8688,6 +8746,10 @@
           "DataAnnotationsExtensions": {
             "target": "Package",
             "version": "[5.0.1.27, )"
+          },
+          "Microsoft.AspNetCore.Authorization": {
+            "target": "Package",
+            "version": "[3.1.28, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

@@ -35,6 +35,14 @@ namespace LIBSchool_FinalProjectBackEnd.Models
 
         public List<CourseEducation> CourseEducations { get; set; }
 
+        [NotMapped]
+        public List<int> CourseEducationId { get; set; }
+
+
+        [NotMapped]
+        public List<int> EducationId { get; set; }
+
+
 
 
     }

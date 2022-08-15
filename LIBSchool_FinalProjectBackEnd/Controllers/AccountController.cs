@@ -1,9 +1,16 @@
-﻿using LIBSchool_FinalProjectBackEnd.Models;
+﻿using LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Extensions;
+using LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Utilities;
+using LIBSchool_FinalProjectBackEnd.DAL;
+using LIBSchool_FinalProjectBackEnd.Helpers;
+using LIBSchool_FinalProjectBackEnd.Models;
 using LIBSchool_FinalProjectBackEnd.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
@@ -14,11 +21,13 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Register()
@@ -40,6 +49,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 Email = register.Email,
                 Surname = register.Surname,
                 Name = register.Name,
+
             };
 
             if (register.IsCondition)
@@ -59,6 +69,8 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
                 ModelState.AddModelError("", "Zəhmət olmasa sözləşməni qəbul edin");
                 return View();
             }
+
+            await _userManager.AddToRoleAsync(user, Helper.Member.ToString());
 
             string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             string link = Url.Action(nameof(VerifyEmail), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
@@ -91,7 +103,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
             smtp.Send(mail);
 
-
+            TempData["Verify"] = true;
 
             return RedirectToAction("Index", "Home");
         }
@@ -122,6 +134,7 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> ForgotPassword(ForgotVM forgot)
         {
+
             AppUser user = await _userManager.FindByEmailAsync(forgot.AppUser.Email);
 
             if (user == null) return BadRequest();
@@ -203,39 +216,51 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
             if (user == null)
             {
-                return NotFound();
+                ModelState.AddModelError("", "Username ve ya Password yanlisdir");
+                return View();
             }
 
-            if (login.RememberMe == true)
-            {
-                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, true, true);
+            IList<string> roles = await _userManager.GetRolesAsync(user);
 
-                if (!result.Succeeded)
+            string role = roles.FirstOrDefault(r => r == Helper.Member.ToString());
+
+            if (user.IsBlock == false)
+            {
+
+                if (login.RememberMe == true)
                 {
-                    ModelState.AddModelError("", "Username ve ya Password yanlisdir");
-                    return View();
+                    Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, true, true);
+
+                    if (!result.Succeeded)
+                    {
+                        ModelState.AddModelError("", "Username ve ya Password yanlisdir");
+                        return View();
+                    }
+                }
+                else
+                {
+                    Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, false, true);
+
+                    if (!result.Succeeded)
+                    {
+                        if (result.IsLockedOut)
+                        {
+                            ModelState.AddModelError("", "Sifreni 3 defe yanlis girdyiniz ucun 1 deq lik bloklandiniz!");
+                            return View();
+                        }
+                        ModelState.AddModelError("", "Username ve ya Password yanlisdir");
+                        return View();
+                    }
                 }
             }
             else
             {
-                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, false, true);
-
-                if (!result.Succeeded)
-                {
-                    if (result.IsLockedOut)
-                    {
-                        ModelState.AddModelError("", "Sifreni 3 defe yanlis girdyiniz ucun 1 deq lik bloklandiniz!");
-                        return View();
-                    }
-                    ModelState.AddModelError("", "Username ve ya Password yanlisdir");
-                    return View();
-                }
+                ModelState.AddModelError("", "Sizin girişiniz məhdudlaşdırılıb,zəhmət olmasa admin ilə əlaqə saxlayın");
+                return View();
             }
             return RedirectToAction("Index", "Home");
 
         }
-
-
 
         public async Task<IActionResult> Edit()
         {
@@ -256,6 +281,8 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Edit(EditUserVM user)
         {
+
+
             AppUser existeduser = await _userManager.FindByNameAsync(User.Identity.Name);
             bool result = user.Password == null && user.ConfirmPassword == null && user.CurrentPassword != null;
             EditUserVM edit = new EditUserVM
@@ -265,7 +292,6 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
 
             };
             if (!ModelState.IsValid) return View(edit);
-
 
             if (result)
             {
@@ -298,11 +324,30 @@ namespace LIBSchool_FinalProjectBackEnd.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 
+
+        public async Task CreateRole()
+        {
+
+            if (!await _roleManager.RoleExistsAsync(Helper.Admin.ToString()))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(Helper.Admin.ToString()));
+            }
+            if (!await _roleManager.RoleExistsAsync(Helper.Member.ToString()))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(Helper.Member.ToString()));
+            }
+            if (!await _roleManager.RoleExistsAsync(Helper.SuperAdmin.ToString()))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(Helper.SuperAdmin.ToString()));
+            }
+        }
     }
 }

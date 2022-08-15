@@ -6,6 +6,8 @@ $(document).ready(function () {
     //    delay: 10,
     //    time: 1500
     //});
+
+  
     $(".registerbox input").click(function () {
         $(".registerbox").css('background', '#385BCE');
         $(".registerbox label").css('color', 'white');

@@ -37,9 +37,12 @@ namespace LIBSchool_FinalProjectBackEnd.Areas.LibAdmin.Controllers
         public async Task<IActionResult> Create()
         {
             ViewBag.Categories = await _context.Categories.ToListAsync();
-            ViewBag.Prices = await _context.CourseEducations.ToListAsync();
-            List<CourseEducation> courses = await _context.CourseEducations.ToListAsync();
-            return View();
+
+            //ViewBag.Prices = await _context.CourseEducations.ToListAsync();
+
+            ViewBag.Education = await _context.Educations.ToListAsync();
+            Course courses = await _context.Courses.Include(c=>c.CourseEducations).FirstOrDefaultAsync();
+            return View(courses);
         }
 
         [HttpPost]

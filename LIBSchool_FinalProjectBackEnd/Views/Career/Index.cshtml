@@ -8,9 +8,16 @@
         <h1>KARYERA</h1>
     </section>
 
+
     <section id="careerwrite">
         <div class="container">
             <div class="row mt-5">
+                @if (ViewBag.IsSuccess == true)
+                {
+                    <div class="alert alert-success alert-dismissible fade show col-8" role="alert">
+                        <span style="font-size:18px"><i class="fa-regular fa-circle-check me-2"></i> <span>Müraciətiniz yollanıldı təşəkkür edirik, sizinlə qısa müddət ərzində əməkdaşımız əlaqə saxlayacaq.</span></span>
+                    </div>
+                }
                 <form method="post" enctype="multipart/form-data">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="inputs">
@@ -44,10 +51,12 @@
                             <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Subject"></span>
                         </div>
 
-                        <div class="col-lg-12 col-md-12 col-sm-12 mt-4" style="background-color:white">
-                            <H5 class="ms-3">CV yükləyin<abbr class="required ms-2 text-danger" title="required">*</abbr></H5>
-                            <input asp-for="Photo"> <br />
-                            <span class="text-danger" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Photo"></span>
+                        <div class="col-lg-3 col-md-3 col-sm-3 mt-4" style="background-color:white">
+                            <H5 class="ms-1">CV yükləyin<abbr class="required ms-2 text-danger" title="required">*</abbr></H5>
+                            <div class="choosepicture mt-4">
+                                <input asp-for="Photo" id="upload" style="display: none;"> <a href="" class="btn btn-success " style="width: 80%; background-color: #17D292; border-radius: 50px;border:solid 2px white" onclick="document.getElementById('upload').click(); return false;"><i class="fa-solid fa-camera" style="font-size:20px"></i></a>
+                                <span class="text-danger ms-3" style="font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif" asp-validation-for="Photo"></span>
+                            </div>
                         </div>
 
                         <div class="btn mt-3">
